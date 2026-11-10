@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en-IN" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Projects | iShoweLectro</title>
+  <meta name="description" content="Browse 500+ IEEE-based engineering projects by domain: ECE, robotics, PCB design, Edge AI, IoT, vision, real-time hardware, hardware ML and software.">
+  <link rel="canonical" href="{{siteUrl}}projects/">
+  <meta property="og:title" content="Projects | iShoweLectro">
+  <meta property="og:image" content="{{siteUrl}}assets/img/og-image.jpg">
+  <meta name="theme-color" content="#4a0b0e">
+  <link rel="icon" href="{{root}}assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="{{root}}assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="{{root}}assets/css/styles.css">
+  <script type="module" src="{{root}}assets/js/main.js"></script>
+  <script type="module" src="{{root}}assets/js/catalogue.js"></script>
+</head>
+<body data-page="projects">
+  <!-- @header -->
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="{{root}}">Home</a> / Projects</nav>
+        <h1>Project library</h1>
+        <p>Search by keyword or filter by domain. Open any project to see its abstract, block diagram and schematic.</p>
+      </div>
+    </section>
+    <section class="section" style="padding-top:2rem">
+      <div class="container">
+        <div class="toolbar">
+          <label class="search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <span class="visually-hidden">Search projects</span>
+            <input type="search" id="q" placeholder="Search projects, components or codes…" autocomplete="off">
+          </label>
+        </div>
+        <div class="chips" id="domain-chips" role="group" aria-label="Filter by domain"></div>
+        <p class="result-count" id="count" aria-live="polite"></p>
+        <div class="grid grid--3" id="results"></div>
+        <div class="load-more"><button class="btn btn--ghost" id="more" type="button" hidden>Load more projects</button></div>
+        <noscript><p class="empty">Turn on JavaScript to search the catalogue, or see the <a href="{{root}}sitemap.xml">full list of project pages</a>.</p></noscript>
+      </div>
+    </section>
+  </main>
+  <!-- @footer -->
+</body>
+</html>

@@ -1,0 +1,20 @@
+[
+  { "id": "arduino-uno-r3", "name": "Arduino Uno R3 (compatible)", "category": "Boards", "price": 450, "unit": "piece", "razorpayLink": "", "note": "With USB cable" },
+  { "id": "arduino-nano", "name": "Arduino Nano (CH340)", "category": "Boards", "price": 280, "unit": "piece", "razorpayLink": "", "note": "" },
+  { "id": "esp32-devkit", "name": "ESP32 DevKit V1", "category": "Boards", "price": 420, "unit": "piece", "razorpayLink": "", "note": "Wi-Fi + Bluetooth" },
+  { "id": "nodemcu-esp8266", "name": "NodeMCU ESP8266", "category": "Boards", "price": 260, "unit": "piece", "razorpayLink": "", "note": "" },
+  { "id": "esp32-cam", "name": "ESP32-CAM with OV2640", "category": "Boards", "price": 550, "unit": "piece", "razorpayLink": "", "note": "" },
+  { "id": "hc-sr04", "name": "HC-SR04 Ultrasonic Sensor", "category": "Sensors", "price": 70, "unit": "piece", "razorpayLink": "", "note": "" },
+  { "id": "dht11", "name": "DHT11 Temperature & Humidity Sensor", "category": "Sensors", "price": 90, "unit": "piece", "razorpayLink": "", "note": "" },
+  { "id": "mpu6050", "name": "MPU6050 Accelerometer + Gyro", "category": "Sensors", "price": 150, "unit": "piece", "razorpayLink": "", "note": "" },
+  { "id": "ir-sensor", "name": "IR Obstacle Sensor Module", "category": "Sensors", "price": 40, "unit": "piece", "razorpayLink": "", "note": "" },
+  { "id": "soil-moisture", "name": "Soil Moisture Sensor", "category": "Sensors", "price": 60, "unit": "piece", "razorpayLink": "", "note": "" },
+  { "id": "l298n", "name": "L298N Motor Driver", "category": "Motors & Drivers", "price": 160, "unit": "piece", "razorpayLink": "", "note": "" },
+  { "id": "sg90", "name": "SG90 Micro Servo", "category": "Motors & Drivers", "price": 90, "unit": "piece", "razorpayLink": "", "note": "" },
+  { "id": "bo-motor-wheel", "name": "BO Motor with Wheel", "category": "Motors & Drivers", "price": 80, "unit": "piece", "razorpayLink": "", "note": "" },
+  { "id": "relay-1ch", "name": "5V Relay Module (1 channel)", "category": "Modules", "price": 50, "unit": "piece", "razorpayLink": "", "note": "" },
+  { "id": "lcd-16x2-i2c", "name": "16x2 LCD with I2C Module", "category": "Modules", "price": 190, "unit": "piece", "razorpayLink": "", "note": "" },
+  { "id": "gps-neo6m", "name": "NEO-6M GPS Module", "category": "Modules", "price": 380, "unit": "piece", "razorpayLink": "", "note": "" },
+  { "id": "breadboard-830", "name": "Breadboard (830 points)", "category": "Accessories", "price": 90, "unit": "piece", "razorpayLink": "", "note": "" },
+  { "id": "jumper-wires", "name": "Jumper Wires (40 pcs, M-M / M-F / F-F)", "category": "Accessories", "price": 70, "unit": "set", "razorpayLink": "", "note": "" }
+]

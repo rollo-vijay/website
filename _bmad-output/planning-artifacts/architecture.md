@@ -1,93 +1,79 @@
-# Architecture: Business Landing Page
+# Architecture: iShoweLectro Website
 
-**Version:** 1.0 | **Date:** 2026-11-10 | **Input:** prd.md
+**Version:** 2.0 | **Date:** 2026-11-10 | **Input:** prd.md v2.0
 
 ## 1. Overview
-Static site of hand-written HTML, CSS, and vanilla JavaScript. No framework, no bundler. GitHub Actions publishes the `site/` folder to GitHub Pages.
+Static site: hand-written HTML/CSS/vanilla JS plus JSON data. A dependency-free Node script generates one HTML page per project and the sitemap. GitHub Actions runs the build and publishes `dist/` to GitHub Pages.
 
 ```
-Developer --git push--> GitHub repo (main)
-                           |
-                           v
-                GitHub Actions (pages.yml)
-                           | upload-pages-artifact (site/)
-                           v
-                    GitHub Pages CDN --HTTPS--> Visitor browser
-                                                     | form POST
-                                                     v
-                                               Formspree --> Business email
+site/ (source) + site/data/*.json
+        │  node scripts/build.mjs   (GitHub Actions)
+        ▼
+dist/  ── copy of site/ + projects/<slug>/index.html + sitemap.xml
+        │  actions/deploy-pages
+        ▼
+https://rollo-vijay.github.io/website/
+        │ enquiry / order
+        ▼
+WhatsApp (+91 78455 76330)      Razorpay Payment Links (hosted by Razorpay)
 ```
 
 ## 2. Tech Stack
-| Layer | Choice | Rationale |
-|---|---|---|
-| Markup | Semantic HTML5 | Accessibility, SEO |
-| Styles | CSS3 (custom properties, Grid, Flexbox) | No build step |
-| Scripts | Vanilla ES2020 | Tiny payload |
-| Forms | Formspree (free tier) | Works with static hosting |
-| Hosting | GitHub Pages | Free, HTTPS, CDN |
-| CI/CD | GitHub Actions (`actions/deploy-pages`) | Auto deploy |
-| QA | Lighthouse, html-validate | Quality gates |
+| Concern | Choice |
+|---|---|
+| Markup / style | Semantic HTML5, one CSS file with design tokens |
+| Scripts | Vanilla ES modules, no framework |
+| 3D | three.js r128 (UMD from cdnjs), loaded only on the home page |
+| Data | `site/data/projects.json`, `site/data/products.json` |
+| Build | `scripts/build.mjs` (Node 20+, no npm dependencies) |
+| Hosting / CI | GitHub Pages via GitHub Actions |
+| Orders | WhatsApp click-to-chat (`wa.me`), Razorpay Payment Links |
 
-## 3. Repository Structure
+## 3. Repository Layout
 ```
-/
-├── site/                  <- the only folder published
-│   ├── index.html
-│   ├── 404.html
-│   ├── assets/
-│   │   ├── css/styles.css
-│   │   ├── js/main.js
-│   │   └── img/           (logo.svg, hero.webp, og-image.png, favicon.svg)
-│   ├── robots.txt
-│   ├── sitemap.xml
-│   ├── CNAME              (optional, custom domain)
-│   └── .nojekyll
-├── .github/workflows/pages.yml
-├── _bmad/ , _bmad-output/ , .claude/   (planning/tooling - not published)
-└── README.md
+site/
+  index.html              home (3D hero, domains, services, featured, FAQ, contact)
+  projects/index.html     catalogue (search + filter, client-side from JSON)
+  shop/index.html         parts shop + cart
+  404.html
+  data/projects.json      project records (source of truth)
+  data/products.json      product records
+  assets/css/styles.css
+  assets/js/{main,hero3d,catalogue,shop,config}.js
+  assets/img/             logo, icons, og image
+  assets/projects/<slug>/ optional block-diagram / schematic images
+scripts/build.mjs         copies site → dist, generates project pages + sitemap
+.github/workflows/pages.yml
 ```
 
-## 4. Key Design Decisions
-- **ADR-1 No framework:** content is static; frameworks add weight with no benefit.
-- **ADR-2 Single CSS file with design tokens:** `:root` custom properties for color, spacing, type; dark mode via `prefers-color-scheme`.
-- **ADR-3 Progressive enhancement:** nav, FAQ, and form work without JS; JS adds mobile menu toggle and AJAX form submit.
-- **ADR-4 Actions-based Pages deploy** of `site/` only, so BMAD planning files stay unpublished.
-- **ADR-5 `.nojekyll`** to skip Jekyll processing.
-
-## 5. Deployment
-`.github/workflows/pages.yml`:
-```yaml
-name: Deploy to GitHub Pages
-on:
-  push:
-    branches: [main]
-  workflow_dispatch:
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-concurrency:
-  group: pages
-  cancel-in-progress: true
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: site
-      - id: deployment
-        uses: actions/deploy-pages@v4
+## 4. Data Model
+**Project**
+```json
+{
+  "slug": "smart-helmet-accident-detection",
+  "code": "ISE-IOT-001",
+  "title": "...",
+  "domain": "Wireless & IoT",
+  "featured": true,
+  "abstract": "...",
+  "ieee": { "title": "", "ref": "" },
+  "features": ["..."],
+  "components": ["..."],
+  "diagram": { "columns": [["Sensor A","Sensor B"],["MCU"],["Output"]], "edges": ["Sensor A>MCU", "MCU>Output"] },
+  "blockDiagramImage": "",
+  "schematicImage": ""
+}
 ```
-**Setup:** Repo -> Settings -> Pages -> Source: **GitHub Actions**.
-**Custom domain:** add `site/CNAME` + DNS (`A` records to GitHub Pages IPs, or `CNAME` to `<user>.github.io`), then enable **Enforce HTTPS**.
+**Product**: `{ "id", "name", "category", "price", "unit", "razorpayLink", "note" }`
 
-## 6. Security
-- HTTPS enforced; no secrets in repo; Formspree honeypot field against spam.
-- Content-Security-Policy `<meta>` limiting scripts to `'self'` and `form-action` to Formspree.
+## 5. Key Decisions
+- **ADR-1 Static + JSON:** 500+ projects managed by editing JSON; no CMS or server.
+- **ADR-2 Generated per-project pages:** real URLs (`/projects/<slug>/`) for SEO and sharing, so a build step replaces "no build" from v1.
+- **ADR-3 SVG block diagrams from data:** every project gets a diagram even before artwork exists; an uploaded image overrides it.
+- **ADR-4 WhatsApp as the order channel:** zero cost and familiar to customers; Razorpay Payment Links are optional per product, and no payment data touches the site.
+- **ADR-5 Progressive 3D:** three.js loads only on the home page, pauses off-screen, and falls back to CSS.
+- **ADR-6 Relative URLs everywhere** so the site works under `/website/` and on a future custom domain.
+
+## 6. Deployment
+Workflow: checkout → `node scripts/build.mjs` → `upload-pages-artifact` (path `dist`) → `deploy-pages`. Source setting: GitHub Actions.
+Local preview: `node scripts/build.mjs && npx serve dist`.

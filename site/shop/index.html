@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en-IN" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Electronics Shop | iShoweLectro</title>
+  <meta name="description" content="Arduino, ESP32, sensors, motors, drivers and modules for your project. Order on WhatsApp or pay online. Chromepet, Chennai.">
+  <link rel="canonical" href="{{siteUrl}}shop/">
+  <meta property="og:title" content="Electronics Shop | iShoweLectro">
+  <meta property="og:image" content="{{siteUrl}}assets/img/og-image.jpg">
+  <meta name="theme-color" content="#4a0b0e">
+  <link rel="icon" href="{{root}}assets/img/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="{{root}}assets/img/apple-touch-icon.png">
+  <link rel="stylesheet" href="{{root}}assets/css/styles.css">
+  <script type="module" src="{{root}}assets/js/main.js"></script>
+  <script type="module" src="{{root}}assets/js/shop.js"></script>
+</head>
+<body data-page="shop">
+  <!-- @header -->
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="{{root}}">Home</a> / Shop</nav>
+        <h1>Electronics shop</h1>
+        <p>Add parts to your cart and send the order on WhatsApp, or tap <strong>Pay online</strong> where it is shown. Stock, final price and delivery or pickup are confirmed on WhatsApp.</p>
+      </div>
+    </section>
+    <section class="section" style="padding-top:2rem">
+      <div class="container">
+        <div class="toolbar">
+          <label class="search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <span class="visually-hidden">Search parts</span>
+            <input type="search" id="q" placeholder="Search parts…" autocomplete="off">
+          </label>
+        </div>
+        <div class="chips" id="cat-chips" role="group" aria-label="Filter by category"></div>
+        <p class="result-count" id="count" aria-live="polite"></p>
+        <div class="grid grid--4" id="products"></div>
+        <p class="empty" style="padding-top:2rem">Can't find a part? <a href="https://wa.me/917845576330" target="_blank" rel="noopener">Ask us on WhatsApp</a>.</p>
+      </div>
+    </section>
+  </main>
+  <!-- @footer -->
+
+  <button class="btn btn--primary cart-fab" id="cart-open" type="button" aria-haspopup="dialog">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2 3h3l2.7 12.4a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 2-1.6L22 7H6"/></svg>
+    Cart <span class="count" id="cart-count">0</span>
+  </button>
+
+  <div class="drawer-backdrop" id="cart-backdrop" hidden></div>
+  <aside class="drawer" id="cart" role="dialog" aria-modal="true" aria-labelledby="cart-title" hidden>
+    <header>
+      <h2 id="cart-title" style="font-size:1.2rem">Your cart</h2>
+      <button class="icon-btn" id="cart-close" type="button" aria-label="Close cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    </header>
+    <div class="drawer__body" id="cart-lines"></div>
+    <footer>
+      <div class="total"><span>Total</span><span id="cart-total">₹0</span></div>
+      <div class="field"><label for="cart-name">Your name</label><input id="cart-name" autocomplete="name"></div>
+      <button class="btn btn--whatsapp btn--block" id="cart-order" type="button">Order on WhatsApp</button>
+      <button class="btn btn--ghost btn--sm" id="cart-clear" type="button">Clear cart</button>
+    </footer>
+  </aside>
+</body>
+</html>

@@ -1,0 +1,302 @@
+[
+  {
+    "slug": "smart-helmet-accident-detection",
+    "code": "ISE-IOT-001",
+    "title": "Smart Helmet with Accident Detection and Alert",
+    "domain": "Wireless & IoT",
+    "featured": true,
+    "abstract": "A helmet that detects crashes with an accelerometer, checks whether the rider is wearing it, and sends the GPS location to emergency contacts over GSM.",
+    "ieee": { "title": "", "ref": "" },
+    "features": ["Crash detection from sudden acceleration change", "Helmet-worn check before ignition", "GPS location sent by SMS", "Buzzer and LED alert"],
+    "components": ["ESP32", "MPU6050 accelerometer", "NEO-6M GPS", "SIM800L GSM", "IR sensor", "Buzzer", "Li-ion battery"],
+    "diagram": {
+      "columns": [["MPU6050", "IR Sensor", "GPS", "Battery"], ["ESP32"], ["SIM800L GSM", "Buzzer"]],
+      "edges": ["Battery>ESP32", "MPU6050>ESP32", "IR Sensor>ESP32", "GPS>ESP32", "ESP32>SIM800L GSM", "ESP32>Buzzer"]
+    }
+  },
+  {
+    "slug": "iot-smart-agriculture-monitoring",
+    "code": "ISE-IOT-002",
+    "title": "IoT Smart Agriculture Monitoring and Auto Irrigation",
+    "domain": "Wireless & IoT",
+    "featured": false,
+    "abstract": "Monitors soil moisture, temperature and humidity, switches the pump automatically and shows live readings on a cloud dashboard.",
+    "ieee": { "title": "", "ref": "" },
+    "features": ["Automatic pump control", "Live cloud dashboard", "Threshold alerts", "Manual override from phone"],
+    "components": ["NodeMCU ESP8266", "Soil moisture sensor", "DHT11", "Relay module", "DC pump"],
+    "diagram": {
+      "columns": [["Soil Moisture", "DHT11"], ["NodeMCU"], ["Relay", "Cloud Dashboard"], ["Water Pump"]],
+      "edges": ["Soil Moisture>NodeMCU", "DHT11>NodeMCU", "NodeMCU>Relay", "NodeMCU>Cloud Dashboard", "Relay>Water Pump"]
+    }
+  },
+  {
+    "slug": "lora-long-range-sensor-network",
+    "code": "ISE-WSN-003",
+    "title": "LoRa-Based Long-Range Environmental Sensor Network",
+    "domain": "Wireless & IoT",
+    "featured": false,
+    "abstract": "Low-power sensor nodes send environmental data several kilometres over LoRa to a gateway that uploads it to the cloud.",
+    "ieee": { "title": "", "ref": "" },
+    "features": ["Multi-node star network", "Low-power sleep cycles", "Gateway with cloud upload"],
+    "components": ["Arduino Pro Mini", "SX1278 LoRa", "BME280", "ESP32 gateway", "Solar charger"],
+    "diagram": {
+      "columns": [["BME280"], ["Node MCU"], ["LoRa TX"], ["LoRa Gateway"], ["Cloud"]],
+      "edges": ["BME280>Node MCU", "Node MCU>LoRa TX", "LoRa TX>LoRa Gateway", "LoRa Gateway>Cloud"]
+    }
+  },
+  {
+    "slug": "line-follower-obstacle-avoiding-robot",
+    "code": "ISE-ROB-001",
+    "title": "Line Follower and Obstacle Avoiding Robot",
+    "domain": "Robotics",
+    "featured": true,
+    "abstract": "A two-wheel robot that follows a track with IR sensors and steers around obstacles detected by an ultrasonic sensor.",
+    "ieee": { "title": "", "ref": "" },
+    "features": ["PID line following", "Ultrasonic obstacle avoidance", "Speed control with PWM"],
+    "components": ["Arduino Uno", "IR sensor array", "HC-SR04", "L298N motor driver", "BO motors", "Chassis"],
+    "diagram": {
+      "columns": [["IR Array", "HC-SR04"], ["Arduino Uno"], ["L298N Driver"], ["DC Motors"]],
+      "edges": ["IR Array>Arduino Uno", "HC-SR04>Arduino Uno", "Arduino Uno>L298N Driver", "L298N Driver>DC Motors"]
+    }
+  },
+  {
+    "slug": "robotic-arm-gesture-control",
+    "code": "ISE-ROB-002",
+    "title": "Gesture-Controlled 4-DOF Robotic Arm",
+    "domain": "Robotics",
+    "featured": false,
+    "abstract": "A wearable glove with flex and motion sensors controls a four-axis robotic arm wirelessly.",
+    "ieee": { "title": "", "ref": "" },
+    "features": ["Flex-sensor glove", "Wireless control over nRF24L01", "Smooth servo motion"],
+    "components": ["Arduino Nano x2", "Flex sensors", "MPU6050", "nRF24L01 x2", "MG996R servos", "PCA9685"],
+    "diagram": {
+      "columns": [["Flex Sensors", "MPU6050"], ["Glove Nano"], ["nRF24 Link"], ["Arm Nano"], ["PCA9685"], ["Servos"]],
+      "edges": ["Flex Sensors>Glove Nano", "MPU6050>Glove Nano", "Glove Nano>nRF24 Link", "nRF24 Link>Arm Nano", "Arm Nano>PCA9685", "PCA9685>Servos"]
+    }
+  },
+  {
+    "slug": "autonomous-mapping-robot-ros",
+    "code": "ISE-ROB-003",
+    "title": "Autonomous Indoor Mapping Robot with ROS",
+    "domain": "Robotics",
+    "featured": false,
+    "abstract": "A mobile robot that builds a map of a room with LiDAR (SLAM) and navigates to goals set on the map.",
+    "ieee": { "title": "", "ref": "" },
+    "features": ["2D LiDAR SLAM", "Goal navigation", "Wheel odometry"],
+    "components": ["Raspberry Pi 4", "RPLiDAR A1", "Encoder motors", "Motor driver", "Arduino Mega"],
+    "diagram": {
+      "columns": [["RPLiDAR"], ["Raspberry Pi (ROS)", "Encoders"], ["Arduino Mega"], ["Motor Driver"], ["Motors"]],
+      "edges": ["RPLiDAR>Raspberry Pi (ROS)", "Encoders>Arduino Mega", "Raspberry Pi (ROS)>Arduino Mega", "Arduino Mega>Motor Driver", "Motor Driver>Motors"]
+    }
+  },
+  {
+    "slug": "custom-pcb-iot-weather-station",
+    "code": "ISE-PCB-001",
+    "title": "Custom PCB Design for an IoT Weather Station",
+    "domain": "PCB Design",
+    "featured": true,
+    "abstract": "A two-layer PCB designed from schematic to Gerber files for a solar-powered weather station, with power management and sensor headers.",
+    "ieee": { "title": "", "ref": "" },
+    "features": ["Two-layer board layout", "Solar charging circuit", "Gerber and BOM output", "Assembled and tested board"],
+    "components": ["ESP32-WROOM module", "TP4056 charger", "LDO regulator", "BME280", "Custom PCB"],
+    "diagram": {
+      "columns": [["Solar Panel"], ["TP4056 Charger"], ["LDO 3.3V"], ["ESP32 Module"], ["Sensors", "Wi-Fi"]],
+      "edges": ["Solar Panel>TP4056 Charger", "TP4056 Charger>LDO 3.3V", "LDO 3.3V>ESP32 Module", "ESP32 Module>Sensors", "ESP32 Module>Wi-Fi"]
+    }
+  },
+  {
+    "slug": "bldc-motor-controller-pcb",
+    "code": "ISE-PCB-002",
+    "title": "BLDC Motor Controller PCB",
+    "domain": "PCB Design",
+    "featured": false,
+    "abstract": "A three-phase MOSFET bridge controller board for brushless DC motors with current sensing and speed control.",
+    "ieee": { "title": "", "ref": "" },
+    "features": ["Three-phase inverter bridge", "Hall-sensor commutation", "Over-current protection"],
+    "components": ["STM32F103", "IR2101 gate drivers", "MOSFETs", "Shunt resistor", "BLDC motor"],
+    "diagram": {
+      "columns": [["Hall Sensors", "Current Sense"], ["STM32"], ["Gate Drivers"], ["MOSFET Bridge"], ["BLDC Motor"]],
+      "edges": ["Hall Sensors>STM32", "Current Sense>STM32", "STM32>Gate Drivers", "Gate Drivers>MOSFET Bridge", "MOSFET Bridge>BLDC Motor"]
+    }
+  },
+  {
+    "slug": "edge-ai-face-recognition-attendance",
+    "code": "ISE-EAI-001",
+    "title": "Edge AI Face Recognition Attendance System",
+    "domain": "Edge AI",
+    "featured": true,
+    "abstract": "Recognises students' faces on a Raspberry Pi without any cloud service and records attendance with timestamps.",
+    "ieee": { "title": "", "ref": "" },
+    "features": ["On-device face recognition", "Works offline", "Attendance export to Excel", "Unknown-face alert"],
+    "components": ["Raspberry Pi 4", "Pi Camera", "LCD display", "Buzzer"],
+    "diagram": {
+      "columns": [["Pi Camera"], ["Face Detection"], ["Face Recognition"], ["Attendance DB", "LCD Display"]],
+      "edges": ["Pi Camera>Face Detection", "Face Detection>Face Recognition", "Face Recognition>Attendance DB", "Face Recognition>LCD Display"]
+    }
+  },
+  {
+    "slug": "edge-ai-driver-drowsiness-detection",
+    "code": "ISE-EAI-002",
+    "title": "Driver Drowsiness Detection on an Edge Device",
+    "domain": "Edge AI",
+    "featured": false,
+    "abstract": "Tracks eye closure and yawning in real time and sounds an alarm when the driver shows signs of drowsiness.",
+    "ieee": { "title": "", "ref": "" },
+    "features": ["Eye aspect ratio tracking", "Yawn detection", "Real-time alarm"],
+    "components": ["Raspberry Pi 4 / Jetson Nano", "USB camera", "Buzzer", "Vibration motor"],
+    "diagram": {
+      "columns": [["Camera"], ["Facial Landmarks"], ["Drowsiness Logic"], ["Buzzer", "Vibration Motor"]],
+      "edges": ["Camera>Facial Landmarks", "Facial Landmarks>Drowsiness Logic", "Drowsiness Logic>Buzzer", "Drowsiness Logic>Vibration Motor"]
+    }
+  },
+  {
+    "slug": "tinyml-keyword-spotting",
+    "code": "ISE-HML-001",
+    "title": "TinyML Voice Keyword Spotting on a Microcontroller",
+    "domain": "Hardware ML",
+    "featured": true,
+    "abstract": "A small neural network on a microcontroller recognises spoken keywords and controls appliances without an internet connection.",
+    "ieee": { "title": "", "ref": "" },
+    "features": ["On-chip neural network", "Offline voice control", "Relay output for appliances"],
+    "components": ["ESP32-S3 / Arduino Nano 33 BLE", "I2S microphone", "Relay module"],
+    "diagram": {
+      "columns": [["I2S Microphone"], ["Feature Extraction"], ["TinyML Model"], ["Relay"], ["Appliance"]],
+      "edges": ["I2S Microphone>Feature Extraction", "Feature Extraction>TinyML Model", "TinyML Model>Relay", "Relay>Appliance"]
+    }
+  },
+  {
+    "slug": "fpga-cnn-accelerator",
+    "code": "ISE-HML-002",
+    "title": "FPGA-Based CNN Accelerator for Image Classification",
+    "domain": "Hardware ML",
+    "featured": false,
+    "abstract": "Implements the convolution layers of a small CNN in FPGA logic to classify images faster than software on a CPU.",
+    "ieee": { "title": "", "ref": "" },
+    "features": ["Pipelined convolution engine", "Fixed-point arithmetic", "Speed comparison with CPU"],
+    "components": ["Xilinx FPGA board", "Verilog / HLS", "UART interface"],
+    "diagram": {
+      "columns": [["Image Input"], ["Conv Engine"], ["Pooling"], ["Fully Connected"], ["Class Output"]],
+      "edges": ["Image Input>Conv Engine", "Conv Engine>Pooling", "Pooling>Fully Connected", "Fully Connected>Class Output"]
+    }
+  },
+  {
+    "slug": "vision-based-number-plate-recognition",
+    "code": "ISE-VIS-001",
+    "title": "Automatic Number Plate Recognition for Smart Parking",
+    "domain": "Vision",
+    "featured": true,
+    "abstract": "Reads vehicle number plates at the gate, checks them against an allowed list and opens the barrier automatically.",
+    "ieee": { "title": "", "ref": "" },
+    "features": ["Plate detection and OCR", "Allowed-vehicle database", "Servo-driven gate", "Entry/exit log"],
+    "components": ["Raspberry Pi 4", "Camera", "SG90 / MG995 servo", "IR sensor"],
+    "diagram": {
+      "columns": [["IR Sensor", "Camera"], ["Plate Detection"], ["OCR"], ["Database Check"], ["Gate Servo"]],
+      "edges": ["IR Sensor>Plate Detection", "Camera>Plate Detection", "Plate Detection>OCR", "OCR>Database Check", "Database Check>Gate Servo"]
+    }
+  },
+  {
+    "slug": "vision-fruit-quality-grading",
+    "code": "ISE-VIS-002",
+    "title": "Computer Vision Fruit Quality Grading Conveyor",
+    "domain": "Vision",
+    "featured": false,
+    "abstract": "A camera above a conveyor grades fruit by colour, size and defects and diverts rejected items with a servo arm.",
+    "ieee": { "title": "", "ref": "" },
+    "features": ["Colour and size grading", "Defect detection", "Automatic sorting arm"],
+    "components": ["Raspberry Pi", "Camera", "Conveyor motor", "Servo", "Arduino"],
+    "diagram": {
+      "columns": [["Camera"], ["Image Processing"], ["Grade Decision"], ["Arduino"], ["Sorting Servo", "Conveyor"]],
+      "edges": ["Camera>Image Processing", "Image Processing>Grade Decision", "Grade Decision>Arduino", "Arduino>Sorting Servo", "Arduino>Conveyor"]
+    }
+  },
+  {
+    "slug": "realtime-ecg-monitoring",
+    "code": "ISE-RTH-001",
+    "title": "Real-Time ECG and Heart-Rate Monitoring System",
+    "domain": "Real-time Hardware",
+    "featured": true,
+    "abstract": "Captures ECG signals, filters noise in real time, calculates heart rate and streams the waveform to a mobile app.",
+    "ieee": { "title": "", "ref": "" },
+    "features": ["Real-time digital filtering", "Heart-rate calculation", "Abnormal-rhythm alert", "Live waveform on phone"],
+    "components": ["AD8232 ECG module", "ESP32", "OLED display", "Electrodes"],
+    "diagram": {
+      "columns": [["Electrodes"], ["AD8232 Front-End"], ["ESP32 (Filter + HR)"], ["OLED", "Mobile App"]],
+      "edges": ["Electrodes>AD8232 Front-End", "AD8232 Front-End>ESP32 (Filter + HR)", "ESP32 (Filter + HR)>OLED", "ESP32 (Filter + HR)>Mobile App"]
+    }
+  },
+  {
+    "slug": "rtos-industrial-monitoring",
+    "code": "ISE-RTH-002",
+    "title": "RTOS-Based Industrial Machine Monitoring",
+    "domain": "Real-time Hardware",
+    "featured": false,
+    "abstract": "Uses FreeRTOS tasks to monitor vibration, temperature and current on a machine and trips it when limits are crossed.",
+    "ieee": { "title": "", "ref": "" },
+    "features": ["FreeRTOS multitasking", "Deterministic fault trip", "Modbus / CAN output"],
+    "components": ["STM32", "Vibration sensor", "Thermocouple + MAX6675", "ACS712 current sensor", "Relay"],
+    "diagram": {
+      "columns": [["Vibration", "Temperature", "Current"], ["STM32 FreeRTOS"], ["Relay Trip", "CAN / Modbus"]],
+      "edges": ["Vibration>STM32 FreeRTOS", "Temperature>STM32 FreeRTOS", "Current>STM32 FreeRTOS", "STM32 FreeRTOS>Relay Trip", "STM32 FreeRTOS>CAN / Modbus"]
+    }
+  },
+  {
+    "slug": "solar-mppt-charge-controller",
+    "code": "ISE-ECE-001",
+    "title": "Solar MPPT Charge Controller",
+    "domain": "ECE",
+    "featured": true,
+    "abstract": "A buck-converter charge controller that tracks the solar panel's maximum power point to charge a battery efficiently.",
+    "ieee": { "title": "", "ref": "" },
+    "features": ["Perturb-and-observe MPPT", "Voltage and current sensing", "Battery protection", "LCD readout"],
+    "components": ["Arduino Nano", "Buck converter", "MOSFET + driver", "Voltage divider", "ACS712", "16x2 LCD"],
+    "diagram": {
+      "columns": [["Solar Panel"], ["Buck Converter"], ["Battery"], ["Load"]],
+      "edges": ["Solar Panel>Buck Converter", "Buck Converter>Battery", "Battery>Load"]
+    }
+  },
+  {
+    "slug": "wireless-power-transfer-ev",
+    "code": "ISE-ECE-002",
+    "title": "Wireless Power Transfer for EV Charging (Prototype)",
+    "domain": "ECE",
+    "featured": false,
+    "abstract": "An inductive-coupling prototype that charges a small battery across an air gap, with efficiency measured against coil distance.",
+    "ieee": { "title": "", "ref": "" },
+    "features": ["Resonant inductive coupling", "Efficiency vs distance study", "Charging indicator"],
+    "components": ["Transmitter coil", "Receiver coil", "High-frequency oscillator", "Rectifier", "Battery"],
+    "diagram": {
+      "columns": [["DC Supply"], ["HF Oscillator"], ["TX Coil"], ["RX Coil"], ["Rectifier"], ["Battery"]],
+      "edges": ["DC Supply>HF Oscillator", "HF Oscillator>TX Coil", "TX Coil>RX Coil", "RX Coil>Rectifier", "Rectifier>Battery"]
+    }
+  },
+  {
+    "slug": "college-event-management-app",
+    "code": "ISE-SW-001",
+    "title": "College Event Management Web App",
+    "domain": "Software",
+    "featured": false,
+    "abstract": "A web app where students register for events, organisers manage participants and certificates are generated automatically.",
+    "ieee": { "title": "", "ref": "" },
+    "features": ["Student and organiser logins", "Event registration", "Auto-generated certificates", "Admin dashboard"],
+    "components": ["React", "Node.js / Express", "MongoDB"],
+    "diagram": {
+      "columns": [["Student / Organiser"], ["React Front-End"], ["Express API"], ["MongoDB", "Certificate Generator"]],
+      "edges": ["Student / Organiser>React Front-End", "React Front-End>Express API", "Express API>MongoDB", "Express API>Certificate Generator"]
+    }
+  },
+  {
+    "slug": "fake-news-detection-ml",
+    "code": "ISE-SW-002",
+    "title": "Fake News Detection with Machine Learning",
+    "domain": "Software",
+    "featured": true,
+    "abstract": "Classifies news articles as real or fake using NLP features and compares several machine-learning models.",
+    "ieee": { "title": "", "ref": "" },
+    "features": ["Text preprocessing pipeline", "Model comparison", "Web interface for checking articles"],
+    "components": ["Python", "scikit-learn", "Flask"],
+    "diagram": {
+      "columns": [["News Text"], ["Preprocessing"], ["Feature Extraction"], ["ML Classifier"], ["Result Page"]],
+      "edges": ["News Text>Preprocessing", "Preprocessing>Feature Extraction", "Feature Extraction>ML Classifier", "ML Classifier>Result Page"]
+    }
+  }
+]
