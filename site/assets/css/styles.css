@@ -141,7 +141,6 @@ a { color: var(--brand-700); }
     linear-gradient(160deg, #14080b 0%, #24090e 60%, #34100f 100%);
   color: var(--on-dark);
 }
-.hero__canvas { position: absolute; inset: 0; z-index: -1; width: 100%; height: 100%; }
 .hero::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
   background: linear-gradient(90deg, rgb(20 8 11 / .92) 0%, rgb(20 8 11 / .55) 50%, rgb(20 8 11 / .1) 100%); }
 .hero__content { padding-block: clamp(3rem, 2rem + 4vw, 5.5rem); max-width: 40rem; }
@@ -352,3 +351,74 @@ a { color: var(--brand-700); }
 .reveal { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
 .reveal.is-visible { opacity: 1; transform: none; }
 .no-js .reveal { opacity: 1; transform: none; }
+
+
+/* ==========================================================
+   Photorealistic 3D layer
+   A fixed WebGL canvas (.bg3d, see assets/js/scene3d.js) sits behind the page. Once the first
+   frame has rendered the script adds .has-3d to <html>; until then, and when WebGL is
+   unavailable, everything above keeps its normal opaque look.
+   ========================================================== */
+.bg3d { position: fixed; inset: 0; width: 100%; height: 100%; z-index: -2; opacity: 0; transition: opacity 1.4s ease; pointer-events: none; }
+.has-3d .bg3d { opacity: 1; }
+.has-3d body { background: #070304; }
+.has-3d body::before { content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(120% 95% at 50% 40%, transparent 50%, rgb(7 3 4 / .6) 100%); }
+
+/* glass panels */
+.has-3d .section { background: rgb(255 255 255 / .86); -webkit-backdrop-filter: blur(22px) saturate(1.4); backdrop-filter: blur(22px) saturate(1.4); border-block: 1px solid rgb(255 255 255 / .35); }
+.has-3d .section--alt { background: rgb(246 247 249 / .84); }
+.has-3d .stats { background: rgb(255 255 255 / .8); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); border-color: rgb(255 255 255 / .3); }
+.has-3d .site-header { background: rgb(255 255 255 / .8); -webkit-backdrop-filter: blur(18px) saturate(1.5); backdrop-filter: blur(18px) saturate(1.5); }
+.has-3d .site-footer { background: rgb(14 5 7 / .88); -webkit-backdrop-filter: blur(18px); backdrop-filter: blur(18px); }
+.has-3d .hero { background: none; }
+.has-3d .hero::after { background: linear-gradient(90deg, rgb(7 3 4 / .85) 0%, rgb(7 3 4 / .55) 42%, rgb(7 3 4 / 0) 78%); }
+.has-3d .page-hero { background: linear-gradient(180deg, rgb(7 3 4 / .62), rgb(7 3 4 / .18)); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px); border-bottom: 1px solid rgb(255 255 255 / .12); }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .has-3d .section, .has-3d .section--alt, .has-3d .stats, .has-3d .site-header { background: rgb(255 255 255 / .96); }
+}
+@media (max-width: 760px) {
+  .has-3d .section, .has-3d .section--alt, .has-3d .stats, .has-3d .site-footer { -webkit-backdrop-filter: none; backdrop-filter: none; background: rgb(255 255 255 / .93); }
+  .has-3d .site-footer { background: rgb(14 5 7 / .94); }
+}
+
+.hero { min-height: min(86vh, 54rem); display: flex; align-items: center; }
+.hero > .container { width: min(100% - 2rem, var(--container)); }
+.hero h1, .hero__lead { text-shadow: 0 2px 24px rgb(0 0 0 / .55); }
+
+/* scene windows: stretches of page where the 3D board is the content */
+.scene-gap { display: none; position: relative; height: clamp(34vh, 46vh, 56vh); pointer-events: none; }
+.has-3d .scene-gap { display: block; }
+.scene-label {
+  position: absolute; left: clamp(1rem, 6vw, 5rem); bottom: 1.6rem; display: grid; grid-template-columns: auto 1fr; column-gap: .75rem; align-items: center;
+  padding: .7rem 1.1rem .7rem .95rem; border-radius: 14px; color: var(--on-dark);
+  background: rgb(20 8 11 / .55); border: 1px solid rgb(255 255 255 / .16); box-shadow: 0 18px 40px rgb(0 0 0 / .45), inset 0 1px 0 rgb(255 255 255 / .12);
+  -webkit-backdrop-filter: blur(14px) saturate(1.3); backdrop-filter: blur(14px) saturate(1.3);
+}
+.scene-label i { grid-row: span 2; width: 10px; height: 10px; border-radius: 50%; background: var(--brand-400); box-shadow: 0 0 0 4px rgb(242 113 31 / .25), 0 0 18px var(--brand-400); animation: pulse-dot 2.2s ease-in-out infinite; }
+.scene-label b { font-size: .98rem; font-weight: 650; line-height: 1.25; }
+.scene-label small { font-size: .8rem; color: var(--on-dark-muted); line-height: 1.3; }
+@keyframes pulse-dot { 50% { box-shadow: 0 0 0 8px rgb(242 113 31 / 0), 0 0 26px var(--brand-400); } }
+.scene-gap:nth-of-type(even) .scene-label { left: auto; right: clamp(1rem, 6vw, 5rem); }
+
+/* depth on cards, buttons, reveals */
+.card, .plist > *, .steps li { box-shadow: 0 1px 0 rgb(255 255 255 / .7) inset, 0 2px 4px rgb(16 24 40 / .06), 0 12px 28px rgb(16 24 40 / .1); }
+.tilt { position: relative; transform-style: preserve-3d; will-change: transform; transition: transform .25s ease, box-shadow .25s ease; }
+.tilt::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity .25s;
+  background: radial-gradient(circle at var(--gx, 50%) var(--gy, 50%), rgb(255 255 255 / .6), rgb(255 255 255 / 0) 55%); }
+.tilt:hover { box-shadow: 0 1px 0 rgb(255 255 255 / .7) inset, 0 34px 60px rgb(40 8 10 / .3), 0 10px 20px rgb(40 8 10 / .16); }
+.tilt:hover::after { opacity: 1; }
+.btn--primary, .btn--accent, .btn--whatsapp { box-shadow: 0 1px 0 rgb(255 255 255 / .28) inset, 0 -2px 0 rgb(0 0 0 / .18) inset, 0 8px 18px rgb(74 11 14 / .32); }
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+.hero-search { box-shadow: 0 24px 50px rgb(0 0 0 / .5), 0 0 0 1px rgb(255 255 255 / .2); }
+
+.reveal { transform: perspective(1100px) translateY(30px) rotateX(9deg) scale(.97); transform-origin: 50% 100%; transition: opacity .7s ease, transform .8s cubic-bezier(.2, .8, .2, 1); }
+.reveal.is-visible { transform: none; }
+.scene-label.reveal { transform: translateY(24px) scale(.96); }
+.scene-label.reveal.is-visible { transform: none; }
+
+@media (max-width: 900px) {
+  .has-3d .hero::after { background: linear-gradient(180deg, rgb(7 3 4 / .8) 0%, rgb(7 3 4 / .62) 60%, rgb(7 3 4 / .35) 100%); }
+  .scene-label, .scene-gap:nth-of-type(even) .scene-label { left: 1rem; right: 1rem; bottom: 1rem; }
+}

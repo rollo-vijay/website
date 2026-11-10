@@ -4,6 +4,11 @@
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",
-    "preview": "node scripts/build.mjs && npx serve dist"
+    "preview": "node scripts/build.mjs && npx serve dist",
+    "build:scene": "node scripts/build-scene.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.28.2",
+    "three": "^0.187.0"
   }
 }

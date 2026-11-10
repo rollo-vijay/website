@@ -4,6 +4,16 @@ Engineering project centre website: 3D home page, project library with one page 
 
 Live: https://rollo-vijay.github.io/website/
 
+## 3D look
+Every page has a photorealistic 3D circuit board behind it (PBR materials, image-based lighting, soft shadows, bloom). The camera flies over the board as you scroll; on the home page the `.scene-gap[data-station="n"]` strips are the "windows" where each close-up lands. It loads after the page, needs WebGL 2, and is skipped on save-data connections, without WebGL, or with `?no3d` in the URL; the normal opaque layout is the fallback. Quality steps down automatically on slow devices.
+
+Source is in `src/scene/` (layout, procedural PCB texture, parts, renderer + camera). After editing it run:
+```
+npm install
+npm run build:scene
+```
+This bundles three.js and the scene into `site/assets/js/scene3d.js` (commit that file; the deploy does not run npm).
+
 ## Preview locally
 ```
 npm run preview
@@ -64,5 +74,6 @@ Every push to `main` builds and deploys via `.github/workflows/pages.yml`.
 
 ## Structure
 - `site/` — source pages, styles, scripts and data
+- `src/scene/` — 3D scene source, bundled by `npm run build:scene`
 - `scripts/build.mjs` — generates project pages, sitemap and robots into `dist/`
 - `_bmad/`, `_bmad-output/`, `.claude/` — BMAD planning tools and documents (not published)
