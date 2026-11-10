@@ -1,188 +1,195 @@
 [
- {
-  "id": "arduino-uno-r3",
-  "name": "Arduino Uno R3 (compatible)",
-  "category": "Boards",
-  "price": 450,
-  "unit": "piece",
-  "razorpayLink": "",
-  "note": "With USB cable",
-  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Arduino_Uno_-_R3.jpg?width=600",
-  "imageSource": "https://commons.wikimedia.org/wiki/File:Arduino_Uno_-_R3.jpg"
- },
- {
-  "id": "arduino-nano",
-  "name": "Arduino Nano (CH340)",
-  "category": "Boards",
-  "price": 280,
-  "unit": "piece",
-  "razorpayLink": "",
-  "note": "",
-  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Arduino_nano.jpg?width=600",
-  "imageSource": "https://commons.wikimedia.org/wiki/File:Arduino_nano.jpg"
- },
- {
-  "id": "esp32-devkit",
-  "name": "ESP32 DevKit V1",
-  "category": "Boards",
-  "price": 420,
-  "unit": "piece",
-  "razorpayLink": "",
-  "note": "Wi-Fi + Bluetooth",
-  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/ESP32_Dev_Board.jpg?width=600",
-  "imageSource": "https://commons.wikimedia.org/wiki/File:ESP32_Dev_Board.jpg"
- },
- {
-  "id": "nodemcu-esp8266",
-  "name": "NodeMCU ESP8266",
-  "category": "Boards",
-  "price": 260,
-  "unit": "piece",
-  "razorpayLink": "",
-  "note": "",
-  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/NodeMCU_DEVKIT_1.0.jpg?width=600",
-  "imageSource": "https://commons.wikimedia.org/wiki/File:NodeMCU_DEVKIT_1.0.jpg"
- },
- {
-  "id": "esp32-cam",
-  "name": "ESP32-CAM with OV2640",
-  "category": "Boards",
-  "price": 550,
-  "unit": "piece",
-  "razorpayLink": "",
-  "note": "",
-  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/ESP32-CAM.jpg?width=600",
-  "imageSource": "https://commons.wikimedia.org/wiki/File:ESP32-CAM.jpg"
- },
- {
-  "id": "hc-sr04",
-  "name": "HC-SR04 Ultrasonic Sensor",
-  "category": "Sensors",
-  "price": 70,
-  "unit": "piece",
-  "razorpayLink": "",
-  "note": "",
-  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/HC_SR04_Ultrasonic_Module.jpg?width=600",
-  "imageSource": "https://commons.wikimedia.org/wiki/File:HC_SR04_Ultrasonic_Module.jpg"
- },
- {
-  "id": "dht11",
-  "name": "DHT11 Temperature & Humidity Sensor",
-  "category": "Sensors",
-  "price": 90,
-  "unit": "piece",
-  "razorpayLink": "",
-  "note": "",
-  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Dht11_term_and_humidity_sensor.jpg?width=600",
-  "imageSource": "https://commons.wikimedia.org/wiki/File:Dht11_term_and_humidity_sensor.jpg"
- },
- {
-  "id": "mpu6050",
-  "name": "MPU6050 Accelerometer + Gyro",
-  "category": "Sensors",
-  "price": 150,
-  "unit": "piece",
-  "razorpayLink": "",
-  "note": "",
-  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/GY-521_MPU-6050_Module_3_Axis_Gyroscope_%2B_Accelerometer_0487.jpg?width=600",
-  "imageSource": "https://commons.wikimedia.org/wiki/File:GY-521_MPU-6050_Module_3_Axis_Gyroscope_+_Accelerometer_0487.jpg"
- },
- {
-  "id": "ir-sensor",
-  "name": "IR Obstacle Sensor Module",
-  "category": "Sensors",
-  "price": 40,
-  "unit": "piece",
-  "razorpayLink": "",
-  "note": ""
- },
- {
-  "id": "soil-moisture",
-  "name": "Soil Moisture Sensor",
-  "category": "Sensors",
-  "price": 60,
-  "unit": "piece",
-  "razorpayLink": "",
-  "note": ""
- },
- {
-  "id": "l298n",
-  "name": "L298N Motor Driver",
-  "category": "Motors & Drivers",
-  "price": 160,
-  "unit": "piece",
-  "razorpayLink": "",
-  "note": ""
- },
- {
-  "id": "sg90",
-  "name": "SG90 Micro Servo",
-  "category": "Motors & Drivers",
-  "price": 90,
-  "unit": "piece",
-  "razorpayLink": "",
-  "note": "",
-  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tower_Pro_SG90_micro_servo_motor.jpg?width=600",
-  "imageSource": "https://commons.wikimedia.org/wiki/File:Tower_Pro_SG90_micro_servo_motor.jpg"
- },
- {
-  "id": "bo-motor-wheel",
-  "name": "BO Motor with Wheel",
-  "category": "Motors & Drivers",
-  "price": 80,
-  "unit": "piece",
-  "razorpayLink": "",
-  "note": ""
- },
- {
-  "id": "relay-1ch",
-  "name": "5V Relay Module (1 channel)",
-  "category": "Modules",
-  "price": 50,
-  "unit": "piece",
-  "razorpayLink": "",
-  "note": ""
- },
- {
-  "id": "lcd-16x2-i2c",
-  "name": "16x2 LCD with I2C Module",
-  "category": "Modules",
-  "price": 190,
-  "unit": "piece",
-  "razorpayLink": "",
-  "note": "",
-  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/16x2_Character_LCD_Display.jpg?width=600",
-  "imageSource": "https://commons.wikimedia.org/wiki/File:16x2_Character_LCD_Display.jpg"
- },
- {
-  "id": "gps-neo6m",
-  "name": "NEO-6M GPS Module",
-  "category": "Modules",
-  "price": 380,
-  "unit": "piece",
-  "razorpayLink": "",
-  "note": ""
- },
- {
-  "id": "breadboard-830",
-  "name": "Breadboard (830 points)",
-  "category": "Accessories",
-  "price": 90,
-  "unit": "piece",
-  "razorpayLink": "",
-  "note": "",
-  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Solderless_Breadboard_with_LEDs.jpg?width=600",
-  "imageSource": "https://commons.wikimedia.org/wiki/File:Solderless_Breadboard_with_LEDs.jpg"
- },
- {
-  "id": "jumper-wires",
-  "name": "Jumper Wires (40 pcs, M-M / M-F / F-F)",
-  "category": "Accessories",
-  "price": 70,
-  "unit": "set",
-  "razorpayLink": "",
-  "note": "",
-  "image": "https://commons.wikimedia.org/wiki/Special:FilePath/A_few_Jumper_Wires.jpg?width=600",
-  "imageSource": "https://commons.wikimedia.org/wiki/File:A_few_Jumper_Wires.jpg"
- }
+  {
+    "id": "arduino-uno-r3",
+    "name": "Arduino Uno R3 (compatible)",
+    "category": "Boards",
+    "price": 450,
+    "unit": "piece",
+    "razorpayLink": "",
+    "note": "With USB cable",
+    "image": "assets/img/shop/arduino-uno-r3/main.png"
+  },
+  {
+    "id": "arduino-nano",
+    "name": "Arduino Nano (CH340)",
+    "category": "Boards",
+    "price": 280,
+    "unit": "piece",
+    "razorpayLink": "",
+    "note": "",
+    "image": "assets/img/shop/arduino-nano/main.png"
+  },
+  {
+    "id": "esp32-devkit",
+    "name": "ESP32 DevKit V1",
+    "category": "Boards",
+    "price": 420,
+    "unit": "piece",
+    "razorpayLink": "",
+    "note": "Wi-Fi + Bluetooth",
+    "image": "assets/img/shop/esp32-devkit/main.png"
+  },
+  {
+    "id": "esp32-s3-n16r8",
+    "name": "ESP32-S3 DevKitC N16R8",
+    "category": "Boards",
+    "price": null,
+    "unit": "piece",
+    "razorpayLink": "",
+    "note": "16 MB flash, 8 MB PSRAM, Wi-Fi + BLE 5",
+    "image": "assets/img/shop/esp32-s3-n16r8/main.png"
+  },
+  {
+    "id": "nodemcu-esp8266",
+    "name": "NodeMCU ESP8266",
+    "category": "Boards",
+    "price": 260,
+    "unit": "piece",
+    "razorpayLink": "",
+    "note": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/NodeMCU_DEVKIT_1.0.jpg?width=600",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:NodeMCU_DEVKIT_1.0.jpg"
+  },
+  {
+    "id": "esp32-cam",
+    "name": "ESP32-CAM with OV2640",
+    "category": "Boards",
+    "price": 550,
+    "unit": "piece",
+    "razorpayLink": "",
+    "note": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/ESP32-CAM.jpg?width=600",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:ESP32-CAM.jpg"
+  },
+  {
+    "id": "hc-sr04",
+    "name": "HC-SR04 Ultrasonic Sensor",
+    "category": "Sensors",
+    "price": 70,
+    "unit": "piece",
+    "razorpayLink": "",
+    "note": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/HC_SR04_Ultrasonic_Module.jpg?width=600",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:HC_SR04_Ultrasonic_Module.jpg"
+  },
+  {
+    "id": "dht11",
+    "name": "DHT11 Temperature & Humidity Sensor",
+    "category": "Sensors",
+    "price": 90,
+    "unit": "piece",
+    "razorpayLink": "",
+    "note": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Dht11_term_and_humidity_sensor.jpg?width=600",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Dht11_term_and_humidity_sensor.jpg"
+  },
+  {
+    "id": "mpu6050",
+    "name": "MPU6050 Accelerometer + Gyro",
+    "category": "Sensors",
+    "price": 150,
+    "unit": "piece",
+    "razorpayLink": "",
+    "note": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/GY-521_MPU-6050_Module_3_Axis_Gyroscope_%2B_Accelerometer_0487.jpg?width=600",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:GY-521_MPU-6050_Module_3_Axis_Gyroscope_+_Accelerometer_0487.jpg"
+  },
+  {
+    "id": "ir-sensor",
+    "name": "IR Obstacle Sensor Module",
+    "category": "Sensors",
+    "price": 40,
+    "unit": "piece",
+    "razorpayLink": "",
+    "note": ""
+  },
+  {
+    "id": "soil-moisture",
+    "name": "Soil Moisture Sensor",
+    "category": "Sensors",
+    "price": 60,
+    "unit": "piece",
+    "razorpayLink": "",
+    "note": ""
+  },
+  {
+    "id": "l298n",
+    "name": "L298N Motor Driver",
+    "category": "Motors & Drivers",
+    "price": 160,
+    "unit": "piece",
+    "razorpayLink": "",
+    "note": ""
+  },
+  {
+    "id": "sg90",
+    "name": "SG90 Micro Servo",
+    "category": "Motors & Drivers",
+    "price": 90,
+    "unit": "piece",
+    "razorpayLink": "",
+    "note": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Tower_Pro_SG90_micro_servo_motor.jpg?width=600",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Tower_Pro_SG90_micro_servo_motor.jpg"
+  },
+  {
+    "id": "bo-motor-wheel",
+    "name": "BO Motor with Wheel",
+    "category": "Motors & Drivers",
+    "price": 80,
+    "unit": "piece",
+    "razorpayLink": "",
+    "note": ""
+  },
+  {
+    "id": "relay-1ch",
+    "name": "5V Relay Module (1 channel)",
+    "category": "Modules",
+    "price": 50,
+    "unit": "piece",
+    "razorpayLink": "",
+    "note": ""
+  },
+  {
+    "id": "lcd-16x2-i2c",
+    "name": "16x2 LCD with I2C Module",
+    "category": "Modules",
+    "price": 190,
+    "unit": "piece",
+    "razorpayLink": "",
+    "note": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/16x2_Character_LCD_Display.jpg?width=600",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:16x2_Character_LCD_Display.jpg"
+  },
+  {
+    "id": "gps-neo6m",
+    "name": "NEO-6M GPS Module",
+    "category": "Modules",
+    "price": 380,
+    "unit": "piece",
+    "razorpayLink": "",
+    "note": ""
+  },
+  {
+    "id": "breadboard-830",
+    "name": "Breadboard (830 points)",
+    "category": "Accessories",
+    "price": 90,
+    "unit": "piece",
+    "razorpayLink": "",
+    "note": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Solderless_Breadboard_with_LEDs.jpg?width=600",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Solderless_Breadboard_with_LEDs.jpg"
+  },
+  {
+    "id": "jumper-wires",
+    "name": "Jumper Wires (40 pcs, M-M / M-F / F-F)",
+    "category": "Accessories",
+    "price": 70,
+    "unit": "set",
+    "razorpayLink": "",
+    "note": "",
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/A_few_Jumper_Wires.jpg?width=600",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:A_few_Jumper_Wires.jpg"
+  }
 ]
