@@ -54,7 +54,7 @@ function render() {
   grid.innerHTML = list.length
     ? list.map((p) => `
       <article class="card tilt product-card reveal">
-        <div class="product-card__art">${icon(p.category)}</div>
+        <div class="product-card__art"><img src="../${escapeHtml(p.image || `assets/img/products/${p.id}.svg`)}" alt="${escapeHtml(p.name)}" loading="lazy" width="600" height="420" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'product-card__fallback'}))"></div>
         <span class="tag" style="align-self:flex-start">${escapeHtml(p.category)}</span>
         <h3>${escapeHtml(p.name)}</h3>
         ${p.note ? `<p class="note">${escapeHtml(p.note)}</p>` : ''}

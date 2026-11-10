@@ -14,7 +14,7 @@ const SRC = join(ROOT, 'site');
 const OUT = join(ROOT, 'dist');
 const SITE_URL = (process.env.SITE_URL || 'https://rollo-vijay.github.io/website/').replace(/\/?$/, '/');
 const WA = '917845576330';
-const DOMAINS = ['ECE', 'Robotics', 'PCB Design', 'Edge AI', 'Wireless & IoT', 'Vision', 'Real-time Hardware', 'Hardware ML', 'Software'];
+const DOMAINS = ['ECE', 'Power Electronics', 'Robotics', 'PCB Design', 'Edge AI', 'Wireless & IoT', 'Vision', 'Real-time Hardware', 'Hardware ML', 'Software'];
 
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const wa = (text) => `https://wa.me/${WA}?text=${encodeURIComponent(text)}`;

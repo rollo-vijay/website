@@ -4428,10 +4428,594 @@
   }
  },
  {
+  "slug": "gan-totem-pole-bridgeless-pfc-rectifier-for-ev-on-board-charger",
+  "code": "ISE-PWR-001",
+  "title": "GaN Totem-Pole Bridgeless PFC Rectifier for EV On-Board Charger",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": true,
+  "highValue": true,
+  "abstract": "A bridgeless totem-pole PFC stage using GaN switches reaches high efficiency and near-unity power factor, with measured THD and efficiency curves.",
+  "existing": "Diode-bridge PFC stages waste energy as heat and limit charger power density.",
+  "proposed": "A bridgeless totem-pole PFC stage using GaN switches reaches high efficiency and near-unity power factor, with measured THD and efficiency curves. The DSP / STM32G4 reads AC Line Voltage, Inductor Current, Bus Voltage, processes the data on board and drives GaN Half-Bridge, Gate Driver, DC Bus.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "EV chargers",
+   "Server power"
+  ],
+  "hardware": [
+   "DSP / STM32G4",
+   "GaN FETs",
+   "Isolated gate driver",
+   "PFC inductor"
+  ],
+  "software": [
+   "MATLAB",
+   "PLECS",
+   "STM32CubeIDE"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "DSP / STM32G4",
+   "inputs": [
+    "AC Line Voltage",
+    "Inductor Current",
+    "Bus Voltage"
+   ],
+   "outputs": [
+    "GaN Half-Bridge",
+    "Gate Driver",
+    "DC Bus"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "llc-resonant-dc-dc-converter-with-soft-switching",
+  "code": "ISE-PWR-002",
+  "title": "LLC Resonant DC-DC Converter with Soft Switching",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "An LLC half-bridge converter regulates output by frequency control and achieves zero-voltage switching, shown with efficiency across load.",
+  "existing": "Hard-switched converters lose efficiency and radiate EMI at high frequency.",
+  "proposed": "An LLC half-bridge converter regulates output by frequency control and achieves zero-voltage switching, shown with efficiency across load. The STM32 / Dedicated LLC Controller reads Output Voltage, Resonant Current, processes the data on board and drives Half-Bridge, Resonant Tank, Transformer.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Adapters",
+   "LED drivers",
+   "Telecom power"
+  ],
+  "hardware": [
+   "STM32 / Dedicated LLC Controller",
+   "MOSFETs",
+   "LLC transformer",
+   "Resonant capacitor"
+  ],
+  "software": [
+   "LTspice",
+   "MATLAB"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "STM32 / Dedicated LLC Controller",
+   "inputs": [
+    "Output Voltage",
+    "Resonant Current"
+   ],
+   "outputs": [
+    "Half-Bridge",
+    "Resonant Tank",
+    "Transformer"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "three-phase-inverter-with-svpwm-for-induction-motor-drive",
+  "code": "ISE-PWR-003",
+  "title": "Three-Phase Inverter with SVPWM for Induction Motor Drive",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A three-phase inverter uses space-vector PWM with V/f control to run an induction motor with adjustable speed and measured harmonics.",
+  "existing": "Direct-on-line starting wastes energy and stresses the motor.",
+  "proposed": "A three-phase inverter uses space-vector PWM with V/f control to run an induction motor with adjustable speed and measured harmonics. The STM32 / DSP reads DC Bus Voltage, Phase Current, Speed Reference, processes the data on board and drives 3-Phase IGBT/MOSFET Bridge, Induction Motor, with UART Monitor for connectivity.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Pumps",
+   "Fans",
+   "Conveyors"
+  ],
+  "hardware": [
+   "STM32 / DSP",
+   "3-phase bridge module",
+   "Gate driver",
+   "Induction motor"
+  ],
+  "software": [
+   "MATLAB",
+   "STM32CubeIDE"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "STM32 / DSP",
+   "inputs": [
+    "DC Bus Voltage",
+    "Phase Current",
+    "Speed Reference"
+   ],
+   "outputs": [
+    "3-Phase IGBT/MOSFET Bridge",
+    "Induction Motor"
+   ],
+   "comms": [
+    "UART Monitor"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "dual-active-bridge-bidirectional-isolated-dc-dc-converter",
+  "code": "ISE-PWR-004",
+  "title": "Dual Active Bridge Bidirectional Isolated DC-DC Converter",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A DAB converter transfers power in both directions through phase-shift control, suited to battery storage and V2G experiments.",
+  "existing": "Non-isolated converters cannot give galvanic isolation with bidirectional flow.",
+  "proposed": "A DAB converter transfers power in both directions through phase-shift control, suited to battery storage and V2G experiments. The STM32 / DSP reads Port Voltages, Phase-Shift Current, processes the data on board and drives Two H-Bridges, HF Transformer.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Battery storage",
+   "Microgrids"
+  ],
+  "hardware": [
+   "STM32 / DSP",
+   "MOSFET bridges",
+   "HF transformer"
+  ],
+  "software": [
+   "MATLAB",
+   "PLECS"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "STM32 / DSP",
+   "inputs": [
+    "Port Voltages",
+    "Phase-Shift Current"
+   ],
+   "outputs": [
+    "Two H-Bridges",
+    "HF Transformer"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "flyback-smps-with-primary-side-regulation-and-protection",
+  "code": "ISE-PWR-005",
+  "title": "Flyback SMPS with Primary-Side Regulation and Protection",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "An isolated flyback supply with feedback, over-current and thermal shutdown is built, tested and compared with simulation.",
+  "existing": "Cheap adapters lack protection and regulate poorly under load changes.",
+  "proposed": "An isolated flyback supply with feedback, over-current and thermal shutdown is built, tested and compared with simulation. The Flyback Controller IC reads Mains AC, Output Feedback, processes the data on board and drives Isolated DC Output, Protection Latch.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Chargers",
+   "Auxiliary supplies"
+  ],
+  "hardware": [
+   "Flyback Controller IC",
+   "Flyback controller",
+   "Transformer",
+   "Optocoupler"
+  ],
+  "software": [
+   "LTspice"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "Flyback Controller IC",
+   "inputs": [
+    "Mains AC",
+    "Output Feedback"
+   ],
+   "outputs": [
+    "Isolated DC Output",
+    "Protection Latch"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "cascaded-h-bridge-multilevel-inverter-with-deep-learning-mppt",
+  "code": "ISE-PWR-006",
+  "title": "Cascaded H-Bridge Multilevel Inverter with Deep-Learning MPPT",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A multilevel inverter fed by PV strings uses a neural MPPT and low-THD modulation to deliver cleaner AC from solar.",
+  "existing": "Two-level inverters create high harmonics and need large filters.",
+  "proposed": "A multilevel inverter fed by PV strings uses a neural MPPT and low-THD modulation to deliver cleaner AC from solar. The STM32 / DSP reads PV Voltage/Current, Irradiance, processes the data on board and drives Cascaded H-Bridge, AC Load.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Includes a verified IEEE base paper reference"
+  ],
+  "applications": [
+   "Solar systems"
+  ],
+  "hardware": [
+   "STM32 / DSP",
+   "MOSFET H-bridges x2",
+   "PV panel"
+  ],
+  "software": [
+   "MATLAB",
+   "Simulink"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "STM32 / DSP",
+   "inputs": [
+    "PV Voltage/Current",
+    "Irradiance"
+   ],
+   "outputs": [
+    "Cascaded H-Bridge",
+    "AC Load"
+   ]
+  },
+  "ieee": {
+   "title": "Deep Reinforcement Learning for Power Converter Control: A Comprehensive Review of Applications and Challenges",
+   "ref": "IEEE Open Journal of Power Electronics, vol. 6, pp. 1769-1802, 2025. DOI 10.1109/OJPEL.2025.3619673"
+  }
+ },
+ {
+  "slug": "bidirectional-ev-charger-with-vehicle-to-home-mode",
+  "code": "ISE-PWR-007",
+  "title": "Bidirectional EV Charger with Vehicle-to-Home Mode",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A bidirectional converter charges a battery and also returns power to home loads during outages, controlled by a mode selector.",
+  "existing": "One-way chargers cannot back up the home from the vehicle battery.",
+  "proposed": "A bidirectional converter charges a battery and also returns power to home loads during outages, controlled by a mode selector. The STM32 reads Battery Voltage/Current, Grid Voltage, processes the data on board and drives Bidirectional Bridge, Contactor, with CAN / UART for connectivity.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "EVs",
+   "Home backup"
+  ],
+  "hardware": [
+   "STM32",
+   "Bidirectional bridge",
+   "Battery pack"
+  ],
+  "software": [
+   "MATLAB",
+   "STM32CubeIDE"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "STM32",
+   "inputs": [
+    "Battery Voltage/Current",
+    "Grid Voltage"
+   ],
+   "outputs": [
+    "Bidirectional Bridge",
+    "Contactor"
+   ],
+   "comms": [
+    "CAN / UART"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "supercapacitor-hybrid-energy-storage-with-bidirectional-converter",
+  "code": "ISE-PWR-008",
+  "title": "Supercapacitor Hybrid Energy Storage with Bidirectional Converter",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A battery-supercapacitor hybrid splits peaks and averages through a converter so the battery sees smoother current and lasts longer.",
+  "existing": "Batteries age quickly under sharp load peaks.",
+  "proposed": "A battery-supercapacitor hybrid splits peaks and averages through a converter so the battery sees smoother current and lasts longer. The STM32 reads Battery Current, Supercap Voltage, Load Current, processes the data on board and drives Bidirectional DC-DC, Load.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "E-bikes",
+   "Solar storage"
+  ],
+  "hardware": [
+   "STM32",
+   "Supercapacitor bank",
+   "Bidirectional DC-DC"
+  ],
+  "software": [
+   "MATLAB"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "STM32",
+   "inputs": [
+    "Battery Current",
+    "Supercap Voltage",
+    "Load Current"
+   ],
+   "outputs": [
+    "Bidirectional DC-DC",
+    "Load"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "boost-converter-with-fuzzy-mppt-for-partial-shading-solar-panel",
+  "code": "ISE-PWR-009",
+  "title": "Boost Converter with Fuzzy MPPT for Partial-Shading Solar Panel",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A boost converter with fuzzy-logic MPPT finds the global power peak when shading creates several peaks on the PV curve.",
+  "existing": "Simple MPPT locks onto a local peak and loses power.",
+  "proposed": "A boost converter with fuzzy-logic MPPT finds the global power peak when shading creates several peaks on the PV curve. The Arduino / STM32 reads PV Voltage, PV Current, processes the data on board and drives Boost MOSFET, Battery, LCD.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Off-grid solar"
+  ],
+  "hardware": [
+   "Arduino / STM32",
+   "INA219",
+   "Boost converter",
+   "Solar panel"
+  ],
+  "software": [
+   "Arduino IDE",
+   "MATLAB"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "Arduino / STM32",
+   "inputs": [
+    "PV Voltage",
+    "PV Current"
+   ],
+   "outputs": [
+    "Boost MOSFET",
+    "Battery",
+    "LCD"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "wireless-power-transfer-platform-for-autonomous-guided-vehicles",
+  "code": "ISE-PWR-010",
+  "title": "Wireless Power Transfer Platform for Autonomous Guided Vehicles",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A 48 V class mid-range LCC-S wireless charger supplies an AGV with constant voltage as the coil gap shifts.",
+  "existing": "Contact chargers wear out and interrupt AGV operation.",
+  "proposed": "A 48 V class mid-range LCC-S wireless charger supplies an AGV with constant voltage as the coil gap shifts. The STM32 reads Coil Current, Battery Voltage, processes the data on board and drives Inverter, LCC-S Coils.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Includes a verified IEEE base paper reference"
+  ],
+  "applications": [
+   "AGVs",
+   "Warehouses"
+  ],
+  "hardware": [
+   "STM32",
+   "Litz coils",
+   "MOSFET bridge"
+  ],
+  "software": [
+   "MATLAB",
+   "LTspice"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "STM32",
+   "inputs": [
+    "Coil Current",
+    "Battery Voltage"
+   ],
+   "outputs": [
+    "Inverter",
+    "LCC-S Coils"
+   ]
+  },
+  "ieee": {
+   "title": "Load Invariant CC and CV Modes for Static/Dynamic Wireless Charging System With Half-Bridge Multi-Leg Converter Topology",
+   "ref": "IEEE Access, vol. 13, pp. 9654-9665, 2025. DOI 10.1109/ACCESS.2025.3526654"
+  }
+ },
+ {
+  "slug": "smart-dc-microgrid-controller-with-droop-control",
+  "code": "ISE-PWR-011",
+  "title": "Smart DC Microgrid Controller with Droop Control",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A small DC microgrid with solar, battery and load uses droop control and shares current between converters.",
+  "existing": "Uncoordinated converters fight each other and cause instability.",
+  "proposed": "A small DC microgrid with solar, battery and load uses droop control and shares current between converters. The STM32 / ESP32 reads Bus Voltage, Source Currents, processes the data on board and drives Converter PWM, Load Switch, with Wi-Fi Dashboard for connectivity.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Microgrids",
+   "Rural power"
+  ],
+  "hardware": [
+   "STM32 / ESP32",
+   "Buck-boost modules",
+   "Battery"
+  ],
+  "software": [
+   "MATLAB",
+   "Arduino IDE"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "STM32 / ESP32",
+   "inputs": [
+    "Bus Voltage",
+    "Source Currents"
+   ],
+   "outputs": [
+    "Converter PWM",
+    "Load Switch"
+   ],
+   "comms": [
+    "Wi-Fi Dashboard"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "inductive-heating-induction-cooktop-driver",
+  "code": "ISE-PWR-012",
+  "title": "Inductive Heating Induction Cooktop Driver",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "A half-bridge resonant driver heats ferromagnetic cookware with power control and pan detection.",
+  "existing": "Gas and resistive hobs are slow and inefficient.",
+  "proposed": "A half-bridge resonant driver heats ferromagnetic cookware with power control and pan detection. The STM32 reads Coil Current, Pan Detect, Temperature, processes the data on board and drives Half-Bridge IGBT, Work Coil.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Domestic appliances"
+  ],
+  "hardware": [
+   "STM32",
+   "IGBTs",
+   "Work coil",
+   "Resonant caps"
+  ],
+  "software": [
+   "LTspice",
+   "STM32CubeIDE"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "STM32",
+   "inputs": [
+    "Coil Current",
+    "Pan Detect",
+    "Temperature"
+   ],
+   "outputs": [
+    "Half-Bridge IGBT",
+    "Work Coil"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
   "slug": "solar-mppt-charge-controller-with-deep-learning-tracking",
-  "code": "ISE-ECE-001",
+  "code": "ISE-PWR-013",
   "title": "Solar MPPT Charge Controller with Deep-Learning Tracking",
-  "domain": "ECE",
+  "domain": "Power Electronics",
   "year": "2025-26",
   "featured": true,
   "highValue": true,
@@ -4440,8 +5024,8 @@
   "proposed": "A neural-network MPPT predicts the maximum-power operating point under partial shading and drives a buck-boost converter. The STM32 / Arduino reads PV Voltage, PV Current, Irradiance (LDR), processes the data on board and drives Buck-Boost MOSFET, Battery Charge, LCD, with UART Dashboard for connectivity.",
   "advantages": [
    "Measured efficiency and power quality",
-   "Applicable to real energy systems",
-   "Backed by simulation and hardware results",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
    "Includes a verified IEEE base paper reference"
   ],
   "applications": [
@@ -4458,7 +5042,7 @@
    "Arduino IDE"
   ],
   "diagram": {
-   "power": "Power Source (DC / AC)",
+   "power": "Power Source (DC / AC Mains)",
    "controller": "STM32 / Arduino",
    "inputs": [
     "PV Voltage",
@@ -4481,9 +5065,9 @@
  },
  {
   "slug": "dynamic-wireless-ev-charging-with-lcc-s-compensation",
-  "code": "ISE-ECE-002",
+  "code": "ISE-PWR-014",
   "title": "Dynamic Wireless EV Charging with LCC-S Compensation",
-  "domain": "ECE",
+  "domain": "Power Electronics",
   "year": "2025-26",
   "featured": false,
   "highValue": true,
@@ -4492,8 +5076,8 @@
   "proposed": "A load-invariant CC/CV wireless charger prototype maintains output as the load and coupling change. The STM32 / DSP reads Coil Current, Battery Voltage, processes the data on board and drives Half-Bridge Inverter, LCC-S Coil.",
   "advantages": [
    "Measured efficiency and power quality",
-   "Applicable to real energy systems",
-   "Backed by simulation and hardware results",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
    "Includes a verified IEEE base paper reference"
   ],
   "applications": [
@@ -4510,7 +5094,7 @@
    "LTspice"
   ],
   "diagram": {
-   "power": "Power Source (DC / AC)",
+   "power": "Power Source (DC / AC Mains)",
    "controller": "STM32 / DSP",
    "inputs": [
     "Coil Current",
@@ -4528,9 +5112,9 @@
  },
  {
   "slug": "bidirectional-wireless-power-transfer-with-constant-voltage",
-  "code": "ISE-ECE-003",
+  "code": "ISE-PWR-015",
   "title": "Bidirectional Wireless Power Transfer with Constant Voltage",
-  "domain": "ECE",
+  "domain": "Power Electronics",
   "year": "2025-26",
   "featured": false,
   "highValue": true,
@@ -4539,8 +5123,8 @@
   "proposed": "A bidirectional LCC-S converter regulates voltage in both directions for vehicle-to-grid style experiments. The STM32 reads Voltage, Current, processes the data on board and drives Bidirectional Bridge, LCC-S Tanks.",
   "advantages": [
    "Measured efficiency and power quality",
-   "Applicable to real energy systems",
-   "Backed by simulation and hardware results",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
    "Includes a verified IEEE base paper reference"
   ],
   "applications": [
@@ -4556,7 +5140,7 @@
    "LTspice"
   ],
   "diagram": {
-   "power": "Power Source (DC / AC)",
+   "power": "Power Source (DC / AC Mains)",
    "controller": "STM32",
    "inputs": [
     "Voltage",
@@ -4574,9 +5158,9 @@
  },
  {
   "slug": "single-phase-grid-tied-inverter-with-rl-current-control",
-  "code": "ISE-ECE-004",
+  "code": "ISE-PWR-016",
   "title": "Single-Phase Grid-Tied Inverter with RL Current Control",
-  "domain": "ECE",
+  "domain": "Power Electronics",
   "year": "2025-26",
   "featured": false,
   "highValue": true,
@@ -4585,8 +5169,8 @@
   "proposed": "A full-bridge inverter uses a learned current controller and compares THD to a PI controller. The STM32 / DSP reads Grid Voltage, Inductor Current, processes the data on board and drives Full-Bridge PWM, LCL Filter.",
   "advantages": [
    "Measured efficiency and power quality",
-   "Applicable to real energy systems",
-   "Backed by simulation and hardware results",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
    "Includes a verified IEEE base paper reference"
   ],
   "applications": [
@@ -4603,7 +5187,7 @@
    "STM32CubeIDE"
   ],
   "diagram": {
-   "power": "Power Source (DC / AC)",
+   "power": "Power Source (DC / AC Mains)",
    "controller": "STM32 / DSP",
    "inputs": [
     "Grid Voltage",
@@ -4621,9 +5205,9 @@
  },
  {
   "slug": "sensorless-bldc-motor-drive-with-back-emf-observer",
-  "code": "ISE-ECE-005",
+  "code": "ISE-PWR-017",
   "title": "Sensorless BLDC Motor Drive with Back-EMF Observer",
-  "domain": "ECE",
+  "domain": "Power Electronics",
   "year": "2025-26",
   "featured": false,
   "highValue": true,
@@ -4632,8 +5216,8 @@
   "proposed": "A sensorless BLDC drive estimates rotor position from back-EMF for e-bike and drone motors. The STM32 reads Phase Voltage Sense, Current Shunt, processes the data on board and drives 3-Phase Inverter, BLDC Motor, with UART Tuning for connectivity.",
   "advantages": [
    "Measured efficiency and power quality",
-   "Applicable to real energy systems",
-   "Backed by simulation and hardware results",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
    "Includes a verified IEEE base paper reference"
   ],
   "applications": [
@@ -4650,7 +5234,7 @@
    "MATLAB"
   ],
   "diagram": {
-   "power": "Power Source (DC / AC)",
+   "power": "Power Source (DC / AC Mains)",
    "controller": "STM32",
    "inputs": [
     "Phase Voltage Sense",
@@ -4671,9 +5255,9 @@
  },
  {
   "slug": "smart-battery-management-system-with-soc-and-soh-estimation",
-  "code": "ISE-ECE-006",
+  "code": "ISE-PWR-018",
   "title": "Smart Battery Management System with SoC and SoH Estimation",
-  "domain": "ECE",
+  "domain": "Power Electronics",
   "year": "2025-26",
   "featured": false,
   "highValue": true,
@@ -4682,8 +5266,8 @@
   "proposed": "A BMS estimates state of charge and health with Kalman and ML models and protects the pack. The STM32 reads Cell Voltages, Current, Temperature, processes the data on board and drives Protection MOSFET, Display, with CAN / UART for connectivity.",
   "advantages": [
    "Measured efficiency and power quality",
-   "Applicable to real energy systems",
-   "Backed by simulation and hardware results",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
    "Base paper and documentation shared on enquiry"
   ],
   "applications": [
@@ -4700,7 +5284,7 @@
    "STM32CubeIDE"
   ],
   "diagram": {
-   "power": "Power Source (DC / AC)",
+   "power": "Power Source (DC / AC Mains)",
    "controller": "STM32",
    "inputs": [
     "Cell Voltages",
@@ -4722,9 +5306,9 @@
  },
  {
   "slug": "active-power-filter-for-harmonic-compensation",
-  "code": "ISE-ECE-007",
+  "code": "ISE-PWR-019",
   "title": "Active Power Filter for Harmonic Compensation",
-  "domain": "ECE",
+  "domain": "Power Electronics",
   "year": "2025-26",
   "featured": false,
   "highValue": true,
@@ -4733,8 +5317,8 @@
   "proposed": "A shunt active filter injects compensating current to remove harmonics from nonlinear loads. The DSP / STM32 reads Load Current, Grid Voltage, processes the data on board and drives Inverter Compensation Current.",
   "advantages": [
    "Measured efficiency and power quality",
-   "Applicable to real energy systems",
-   "Backed by simulation and hardware results",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
    "Base paper and documentation shared on enquiry"
   ],
   "applications": [
@@ -4749,7 +5333,7 @@
    "Simulink"
   ],
   "diagram": {
-   "power": "Power Source (DC / AC)",
+   "power": "Power Source (DC / AC Mains)",
    "controller": "DSP / STM32",
    "inputs": [
     "Load Current",
@@ -4766,7 +5350,7 @@
  },
  {
   "slug": "smart-grid-demand-response-controller",
-  "code": "ISE-ECE-008",
+  "code": "ISE-ECE-001",
   "title": "Smart Grid Demand Response Controller",
   "domain": "ECE",
   "year": "2025-26",
@@ -4815,9 +5399,9 @@
  },
  {
   "slug": "ultra-fast-dc-dc-converter-for-led-driver-with-dimming",
-  "code": "ISE-ECE-009",
+  "code": "ISE-PWR-020",
   "title": "Ultra-Fast DC-DC Converter for LED Driver with Dimming",
-  "domain": "ECE",
+  "domain": "Power Electronics",
   "year": "2025-26",
   "featured": false,
   "highValue": false,
@@ -4826,8 +5410,8 @@
   "proposed": "A constant-current buck driver offers flicker-free dimming with measured efficiency. The STM32 reads LED Current Sense, processes the data on board and drives Buck Stage, LED Array.",
   "advantages": [
    "Measured efficiency and power quality",
-   "Applicable to real energy systems",
-   "Backed by simulation and hardware results",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
    "Base paper and documentation shared on enquiry"
   ],
   "applications": [
@@ -4842,7 +5426,7 @@
    "LTspice"
   ],
   "diagram": {
-   "power": "Power Source (DC / AC)",
+   "power": "Power Source (DC / AC Mains)",
    "controller": "STM32",
    "inputs": [
     "LED Current Sense"
@@ -4859,9 +5443,9 @@
  },
  {
   "slug": "wireless-power-transfer-for-biomedical-implant-charging",
-  "code": "ISE-ECE-010",
+  "code": "ISE-PWR-021",
   "title": "Wireless Power Transfer for Biomedical Implant Charging",
-  "domain": "ECE",
+  "domain": "Power Electronics",
   "year": "2025-26",
   "featured": false,
   "highValue": true,
@@ -4870,8 +5454,8 @@
   "proposed": "A small resonant link charges an implant-sized receiver with efficiency and heating measured. The STM32 reads Rectifier Output, Temperature, processes the data on board and drives Resonant Tx Coil.",
   "advantages": [
    "Measured efficiency and power quality",
-   "Applicable to real energy systems",
-   "Backed by simulation and hardware results",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
    "Base paper and documentation shared on enquiry"
   ],
   "applications": [
@@ -4886,7 +5470,7 @@
    "LTspice"
   ],
   "diagram": {
-   "power": "Power Source (DC / AC)",
+   "power": "Power Source (DC / AC Mains)",
    "controller": "STM32",
    "inputs": [
     "Rectifier Output",
@@ -4903,9 +5487,9 @@
  },
  {
   "slug": "bidirectional-dc-dc-converter-for-battery-storage",
-  "code": "ISE-ECE-011",
+  "code": "ISE-PWR-022",
   "title": "Bidirectional DC-DC Converter for Battery Storage",
-  "domain": "ECE",
+  "domain": "Power Electronics",
   "year": "2025-26",
   "featured": false,
   "highValue": true,
@@ -4914,8 +5498,8 @@
   "proposed": "A buck-boost converter moves energy between solar bus and battery with a measured efficiency map. The STM32 reads Bus Voltage, Battery Current, processes the data on board and drives Half-Bridge Stage.",
   "advantages": [
    "Measured efficiency and power quality",
-   "Applicable to real energy systems",
-   "Backed by simulation and hardware results",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
    "Base paper and documentation shared on enquiry"
   ],
   "applications": [
@@ -4930,7 +5514,7 @@
    "MATLAB"
   ],
   "diagram": {
-   "power": "Power Source (DC / AC)",
+   "power": "Power Source (DC / AC Mains)",
    "controller": "STM32",
    "inputs": [
     "Bus Voltage",
@@ -4947,9 +5531,9 @@
  },
  {
   "slug": "class-d-audio-amplifier-with-feedback-and-emi-filter",
-  "code": "ISE-ECE-012",
+  "code": "ISE-PWR-023",
   "title": "Class-D Audio Amplifier with Feedback and EMI Filter",
-  "domain": "ECE",
+  "domain": "Power Electronics",
   "year": "2025-26",
   "featured": false,
   "highValue": false,
@@ -4958,8 +5542,8 @@
   "proposed": "A Class-D amplifier is built with feedback and an output filter and tested for THD and efficiency. The Class-D Driver reads Audio Input, processes the data on board and drives Speaker Output.",
   "advantages": [
    "Measured efficiency and power quality",
-   "Applicable to real energy systems",
-   "Backed by simulation and hardware results",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
    "Base paper and documentation shared on enquiry"
   ],
   "applications": [
@@ -4973,7 +5557,7 @@
    "LTspice"
   ],
   "diagram": {
-   "power": "Power Source (DC / AC)",
+   "power": "Power Source (DC / AC Mains)",
    "controller": "Class-D Driver",
    "inputs": [
     "Audio Input"
@@ -4989,7 +5573,7 @@
  },
  {
   "slug": "smart-irrigation-controller-with-soil-sensors-and-weather-api",
-  "code": "ISE-ECE-013",
+  "code": "ISE-ECE-002",
   "title": "Smart Irrigation Controller with Soil Sensors and Weather API",
   "domain": "ECE",
   "year": "2025-26",
@@ -5036,7 +5620,7 @@
  },
  {
   "slug": "power-quality-analyser-with-harmonic-display",
-  "code": "ISE-ECE-014",
+  "code": "ISE-ECE-003",
   "title": "Power Quality Analyser with Harmonic Display",
   "domain": "ECE",
   "year": "2025-26",
@@ -5084,7 +5668,7 @@
  },
  {
   "slug": "smart-transformer-health-monitor",
-  "code": "ISE-ECE-015",
+  "code": "ISE-ECE-004",
   "title": "Smart Transformer Health Monitor",
   "domain": "ECE",
   "year": "2025-26",
@@ -5125,6 +5709,383 @@
    "comms": [
     "GSM",
     "Wi-Fi"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "li-fi-audio-and-data-link-using-led-and-photodiode",
+  "code": "ISE-ECE-005",
+  "title": "Li-Fi Audio and Data Link Using LED and Photodiode",
+  "domain": "ECE",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "Data and audio are sent as light-intensity changes from an LED and recovered by a photodiode receiver with an amplifier and filter.",
+  "existing": "Radio spectrum is crowded and unsuitable in some sensitive areas.",
+  "proposed": "Data and audio are sent as light-intensity changes from an LED and recovered by a photodiode receiver with an amplifier and filter. The Arduino / STM32 reads Audio / Serial Data, Photodiode Receiver, processes the data on board and drives LED Driver Transmitter, Speaker / Terminal.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Applicable to real energy systems",
+   "Backed by simulation and hardware results",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Hospitals",
+   "Aircraft",
+   "Secure links"
+  ],
+  "hardware": [
+   "Arduino / STM32",
+   "High-brightness LED",
+   "BPW34 photodiode",
+   "Op-amp"
+  ],
+  "software": [
+   "Arduino IDE",
+   "LTspice"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC)",
+   "controller": "Arduino / STM32",
+   "inputs": [
+    "Audio / Serial Data",
+    "Photodiode Receiver"
+   ],
+   "outputs": [
+    "LED Driver Transmitter",
+    "Speaker / Terminal"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "2-4-ghz-microstrip-patch-antenna-design-and-measurement",
+  "code": "ISE-ECE-006",
+  "title": "2.4 GHz Microstrip Patch Antenna Design and Measurement",
+  "domain": "ECE",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A patch antenna is designed in simulation, fabricated on FR-4 and measured for return loss and bandwidth with a NanoVNA.",
+  "existing": "Antenna design is rarely tested against real measurements.",
+  "proposed": "A patch antenna is designed in simulation, fabricated on FR-4 and measured for return loss and bandwidth with a NanoVNA. The NanoVNA / Simulation reads Antenna Geometry Parameters, processes the data on board and drives S11 Plot, Radiation Pattern.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Applicable to real energy systems",
+   "Backed by simulation and hardware results",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Wi-Fi",
+   "IoT radios"
+  ],
+  "hardware": [
+   "NanoVNA / Simulation",
+   "FR-4 board",
+   "SMA connector",
+   "NanoVNA"
+  ],
+  "software": [
+   "CST / openEMS",
+   "MATLAB"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC)",
+   "controller": "NanoVNA / Simulation",
+   "inputs": [
+    "Antenna Geometry Parameters"
+   ],
+   "outputs": [
+    "S11 Plot",
+    "Radiation Pattern"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "software-defined-radio-fm-receiver-and-spectrum-analyser",
+  "code": "ISE-ECE-007",
+  "title": "Software-Defined Radio FM Receiver and Spectrum Analyser",
+  "domain": "ECE",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "An RTL-SDR dongle feeds a software chain that demodulates FM stations and displays a live spectrum waterfall.",
+  "existing": "Fixed-function receivers cannot be reconfigured or inspected.",
+  "proposed": "An RTL-SDR dongle feeds a software chain that demodulates FM stations and displays a live spectrum waterfall. The RTL-SDR + PC reads RF Antenna, RTL-SDR, processes the data on board and drives Audio Output, Waterfall Display.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Applicable to real energy systems",
+   "Backed by simulation and hardware results",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Communication labs"
+  ],
+  "hardware": [
+   "RTL-SDR + PC",
+   "RTL-SDR dongle",
+   "Antenna"
+  ],
+  "software": [
+   "GNU Radio",
+   "Python"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC)",
+   "controller": "RTL-SDR + PC",
+   "inputs": [
+    "RF Antenna",
+    "RTL-SDR"
+   ],
+   "outputs": [
+    "Audio Output",
+    "Waterfall Display"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "low-noise-biopotential-amplifier-with-digital-filtering",
+  "code": "ISE-ECE-008",
+  "title": "Low-Noise Biopotential Amplifier with Digital Filtering",
+  "domain": "ECE",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A low-noise instrumentation front-end with notch and band-pass filtering captures ECG/EMG for display and logging.",
+  "existing": "Biosignals are millivolt-level and easily buried in mains noise.",
+  "proposed": "A low-noise instrumentation front-end with notch and band-pass filtering captures ECG/EMG for display and logging. The ESP32 / STM32 reads Electrodes, Instrumentation Amplifier, processes the data on board and drives Filtered Waveform, SD / Display, with BLE for connectivity.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Applicable to real energy systems",
+   "Backed by simulation and hardware results",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Biomedical"
+  ],
+  "hardware": [
+   "ESP32 / STM32",
+   "INA128",
+   "Electrodes"
+  ],
+  "software": [
+   "Arduino IDE",
+   "MATLAB"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC)",
+   "controller": "ESP32 / STM32",
+   "inputs": [
+    "Electrodes",
+    "Instrumentation Amplifier"
+   ],
+   "outputs": [
+    "Filtered Waveform",
+    "SD / Display"
+   ],
+   "comms": [
+    "BLE"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "ultrasonic-indoor-positioning-system-with-time-of-flight",
+  "code": "ISE-ECE-009",
+  "title": "Ultrasonic Indoor Positioning System with Time-of-Flight",
+  "domain": "ECE",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "Ultrasonic beacons and an RF sync pulse estimate a mobile tag position indoors within centimetres.",
+  "existing": "GPS does not work indoors.",
+  "proposed": "Ultrasonic beacons and an RF sync pulse estimate a mobile tag position indoors within centimetres. The ESP32 reads Ultrasonic Receivers, RF Sync, processes the data on board and drives Position Map, with Wi-Fi Dashboard for connectivity.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Applicable to real energy systems",
+   "Backed by simulation and hardware results",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Warehouses",
+   "Museums"
+  ],
+  "hardware": [
+   "ESP32",
+   "Ultrasonic transducers",
+   "ESP32 x4"
+  ],
+  "software": [
+   "Arduino IDE",
+   "Python"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC)",
+   "controller": "ESP32",
+   "inputs": [
+    "Ultrasonic Receivers",
+    "RF Sync"
+   ],
+   "outputs": [
+    "Position Map"
+   ],
+   "comms": [
+    "Wi-Fi Dashboard"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "active-noise-cancelling-headphone-prototype",
+  "code": "ISE-ECE-010",
+  "title": "Active Noise Cancelling Headphone Prototype",
+  "domain": "ECE",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A feed-forward analogue-digital controller generates an anti-noise signal to reduce low-frequency ambient noise.",
+  "existing": "Passive isolation does little against engine and fan noise.",
+  "proposed": "A feed-forward analogue-digital controller generates an anti-noise signal to reduce low-frequency ambient noise. The STM32 / DSP reads Reference Microphone, Error Microphone, processes the data on board and drives Speaker Anti-Noise.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Applicable to real energy systems",
+   "Backed by simulation and hardware results",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Headphones",
+   "Workplaces"
+  ],
+  "hardware": [
+   "STM32 / DSP",
+   "MEMS microphones",
+   "Audio codec"
+  ],
+  "software": [
+   "MATLAB",
+   "STM32CubeIDE"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC)",
+   "controller": "STM32 / DSP",
+   "inputs": [
+    "Reference Microphone",
+    "Error Microphone"
+   ],
+   "outputs": [
+    "Speaker Anti-Noise"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "rf-energy-harvesting-rectenna-for-powering-sensors",
+  "code": "ISE-ECE-011",
+  "title": "RF Energy Harvesting Rectenna for Powering Sensors",
+  "domain": "ECE",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "An antenna and multi-stage rectifier collect ambient RF power to charge a capacitor that runs a low-power sensor.",
+  "existing": "Battery replacement in remote sensors is costly.",
+  "proposed": "An antenna and multi-stage rectifier collect ambient RF power to charge a capacitor that runs a low-power sensor. The Low-Power MCU reads RF Antenna, Rectifier Multiplier, processes the data on board and drives Storage Capacitor, Sensor Node.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Applicable to real energy systems",
+   "Backed by simulation and hardware results",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Remote sensing"
+  ],
+  "hardware": [
+   "Low-Power MCU",
+   "Schottky diodes",
+   "Antenna"
+  ],
+  "software": [
+   "LTspice"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC)",
+   "controller": "Low-Power MCU",
+   "inputs": [
+    "RF Antenna",
+    "Rectifier Multiplier"
+   ],
+   "outputs": [
+    "Storage Capacitor",
+    "Sensor Node"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "programmable-active-filter-bench-with-digital-gain-control",
+  "code": "ISE-ECE-012",
+  "title": "Programmable Active Filter Bench with Digital Gain Control",
+  "domain": "ECE",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "A bench with switchable low-pass, high-pass and band-pass stages and digitally set gain for signal-processing labs.",
+  "existing": "Fixed filter boards limit experiments.",
+  "proposed": "A bench with switchable low-pass, high-pass and band-pass stages and digitally set gain for signal-processing labs. The Arduino reads Signal Input, Mode Switches, processes the data on board and drives Filtered Output, Display.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Applicable to real energy systems",
+   "Backed by simulation and hardware results",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Teaching labs"
+  ],
+  "hardware": [
+   "Arduino",
+   "Op-amps",
+   "Digital potentiometer"
+  ],
+  "software": [
+   "Arduino IDE",
+   "LTspice"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC)",
+   "controller": "Arduino",
+   "inputs": [
+    "Signal Input",
+    "Mode Switches"
+   ],
+   "outputs": [
+    "Filtered Output",
+    "Display"
    ]
   },
   "ieee": {

@@ -4,6 +4,7 @@ export const PHONE_DISPLAY = '+91 78455 76330';
 
 export const DOMAINS = [
   'ECE',
+  'Power Electronics',
   'Robotics',
   'PCB Design',
   'Edge AI',
