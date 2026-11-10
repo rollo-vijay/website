@@ -54,7 +54,7 @@ function render() {
   grid.innerHTML = list.length
     ? list.map((p) => `
       <article class="card tilt product-card reveal">
-        <div class="product-card__art"><img src="../${escapeHtml(p.image || `assets/img/products/${p.id}.svg`)}" alt="${escapeHtml(p.name)}" loading="lazy" width="600" height="420" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'product-card__fallback'}))"></div>
+        <div class="product-card__art">${p.image ? `<img src="${escapeHtml(p.image)}" referrerpolicy="no-referrer" alt="${escapeHtml(p.name)}" loading="lazy" width="600" height="420" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'product-card__fallback'}))">` : '<span class="product-card__fallback"></span>'}${p.imageSource ? `<a class="photo-credit" href="${escapeHtml(p.imageSource)}" target="_blank" rel="noopener">Photo: Wikimedia Commons</a>` : ''}</div>
         <span class="tag" style="align-self:flex-start">${escapeHtml(p.category)}</span>
         <h3>${escapeHtml(p.name)}</h3>
         ${p.note ? `<p class="note">${escapeHtml(p.note)}</p>` : ''}

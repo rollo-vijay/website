@@ -537,3 +537,8 @@ table { color: var(--ink-2); } th { color: #fff; }
 .tilt { transform-style: preserve-3d; will-change: transform; }
 .ad { box-shadow: 0 20px 40px -16px rgb(224 66 27 / .45), var(--depth), var(--edge); }
 .footer-logo { box-shadow: 0 4px 14px rgb(0 0 0 / .5); }
+
+.product-card__art { background: #fff; }
+.product-card__art img { object-fit: contain; padding: .35rem; }
+.photo-credit { position: absolute; right: .4rem; bottom: .3rem; font-size: .62rem; color: #444; background: rgb(255 255 255 / .85); padding: .05rem .35rem; border-radius: 4px; text-decoration: none; opacity: 0; transition: opacity .2s; }
+.product-card:hover .photo-credit { opacity: 1; }
