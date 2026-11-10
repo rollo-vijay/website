@@ -1,17 +1,25 @@
-import { escapeHtml } from './config.js';
-import { diagramSVG } from './diagram.js';
+import { escapeHtml, waLink } from './config.js';
 
 // `root` is the relative path back to the site root from the current page.
-export function projectCardHTML(p, root) {
-  const thumb = p.blockDiagramImage
-    ? `<img src="${root}${escapeHtml(p.blockDiagramImage)}" alt="" loading="lazy">`
-    : diagramSVG(p.diagram, { title: `Block diagram: ${p.title}` });
-  return `<a class="card tilt project-card reveal" href="${root}projects/${encodeURIComponent(p.slug)}/">
-    <div class="project-card__thumb">${thumb}</div>
-    <div class="project-card__meta"><span class="tag">${escapeHtml(p.domain)}</span><span>${escapeHtml(p.code)}</span></div>
-    <h3>${escapeHtml(p.title)}</h3>
-    <p>${escapeHtml(p.abstract)}</p>
-  </a>`;
+export function projectRowHTML(p, root) {
+  const url = `${root}projects/${encodeURIComponent(p.slug)}/`;
+  const enquiry = waLink(`Hi iShoweLectro, I'm interested in project ${p.code}: ${p.title}. Please share the abstract and details.`);
+  return `<article class="prow reveal">
+    <span class="prow__code">${escapeHtml(p.code)}</span>
+    <div>
+      <h3><a href="${url}">${escapeHtml(p.title)}</a></h3>
+      <p>${escapeHtml(p.abstract)}</p>
+      <div class="prow__tags">
+        <span class="tag tag--brand">${escapeHtml(p.domain)}</span>
+        ${p.year ? `<span class="tag">IEEE ${escapeHtml(p.year)}</span>` : ''}
+        <span class="tag">Block diagram</span>
+      </div>
+    </div>
+    <div class="prow__actions">
+      <a class="btn btn--primary btn--sm" href="${url}">View details</a>
+      <a class="btn btn--ghost btn--sm" href="${enquiry}" target="_blank" rel="noopener" aria-label="Enquire about ${escapeHtml(p.code)} on WhatsApp">Enquire</a>
+    </div>
+  </article>`;
 }
 
 export async function loadProjects(root) {

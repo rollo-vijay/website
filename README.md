@@ -19,22 +19,32 @@ Edit [`site/data/projects.json`](site/data/projects.json). Each project gets its
   "code": "ISE-IOT-001",
   "title": "Smart Helmet with Accident Detection and Alert",
   "domain": "Wireless & IoT",
+  "year": "2025-26",
   "featured": false,
   "abstract": "One or two sentences.",
-  "ieee": { "title": "IEEE base paper title", "ref": "Conference/journal, year, DOI" },
-  "features": ["..."],
-  "components": ["..."],
+  "existing": "Problem with the current approach.",
+  "proposed": "How this project solves it.",
+  "advantages": ["..."],
+  "applications": ["..."],
+  "hardware": ["ESP32", "MPU6050", "..."],
+  "software": ["Arduino IDE"],
   "diagram": {
-    "columns": [["Sensor A", "Sensor B"], ["ESP32"], ["GSM"]],
-    "edges": ["Sensor A>ESP32", "Sensor B>ESP32", "ESP32>GSM"]
+    "power": "Power Supply (5V)",
+    "controller": "ESP32",
+    "inputs": ["MPU6050 Accelerometer", "GPS Module"],
+    "outputs": ["GSM Module", "Buzzer"],
+    "comms": ["Mobile App"]
   },
+  "ieee": { "title": "IEEE base paper title", "ref": "Conference/journal, year, DOI" },
   "blockDiagramImage": "",
   "schematicImage": "assets/projects/smart-helmet-accident-detection/schematic.png"
 }
 ```
 
 - `domain` must be one of: ECE, Robotics, PCB Design, Edge AI, Wireless & IoT, Vision, Real-time Hardware, Hardware ML, Software.
-- `diagram` draws the block diagram automatically. Blocks are listed left-to-right in `columns`; `edges` are `"From>To"`.
+- `diagram` draws the block diagram in standard report style: controller in the centre, power supply on top, inputs on the left, outputs on the right, optional `comms` (cloud/app/database) below. All keys except `controller` are optional.
+- For software or signal-chain projects use `"diagram": { "flow": ["Dataset", "Preprocessing", "Model", "Result"] }` instead.
+- Empty sections (`existing`, `proposed`, `advantages`, …) are simply left out of the page.
 - To use your own drawings instead, put image files in `site/assets/projects/<slug>/` and set `blockDiagramImage` / `schematicImage`.
 - The build stops with a clear message if a slug is duplicated, a field is missing, or an image path is wrong.
 

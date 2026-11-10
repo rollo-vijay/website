@@ -1,5 +1,5 @@
 import { waLink } from './config.js';
-import { projectCardHTML, loadProjects } from './cards.js';
+import { projectRowHTML, loadProjects } from './cards.js';
 import { observeReveal } from './main.js';
 
 // Featured projects
@@ -8,7 +8,7 @@ if (grid) {
   loadProjects('./')
     .then((projects) => {
       const featured = projects.filter((p) => p.featured).slice(0, 6);
-      grid.innerHTML = featured.map((p) => projectCardHTML(p, './')).join('');
+      grid.innerHTML = featured.map((p) => projectRowHTML(p, './')).join('');
       observeReveal(grid);
     })
     .catch(() => {

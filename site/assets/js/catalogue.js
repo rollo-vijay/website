@@ -1,5 +1,5 @@
 import { DOMAINS, escapeHtml } from './config.js';
-import { projectCardHTML, loadProjects } from './cards.js';
+import { projectRowHTML, loadProjects } from './cards.js';
 import { observeReveal } from './main.js';
 
 const ROOT = '../';
@@ -26,7 +26,7 @@ function syncUrl() {
 function matches(p) {
   if (state.domain && p.domain !== state.domain) return false;
   if (!state.q) return true;
-  const hay = [p.title, p.code, p.domain, p.abstract, ...(p.components ?? []), ...(p.features ?? [])].join(' ').toLowerCase();
+  const hay = [p.title, p.code, p.domain, p.year, p.abstract, ...(p.hardware ?? []), ...(p.software ?? [])].join(' ').toLowerCase();
   return state.q.toLowerCase().split(/\s+/).filter(Boolean).every((w) => hay.includes(w));
 }
 
@@ -43,7 +43,7 @@ function render() {
   const list = projects.filter(matches);
   const visible = list.slice(0, state.shown);
   results.innerHTML = visible.length
-    ? visible.map((p) => projectCardHTML(p, ROOT)).join('')
+    ? visible.map((p) => projectRowHTML(p, ROOT)).join('')
     : '<p class="empty">No projects match. Try a different word, or <a href="../#contact">ask us for a custom project</a>.</p>';
   count.textContent = `${list.length} project${list.length === 1 ? '' : 's'}${state.domain ? ` in ${state.domain}` : ''}${state.q ? ` matching “${state.q}”` : ''}`;
   more.hidden = list.length <= state.shown;
