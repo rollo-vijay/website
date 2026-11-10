@@ -38,6 +38,7 @@ function seo(html) {
   if (!/twitter:card/.test(html)) add.push('<meta name="twitter:card" content="summary_large_image">');
   if (!/name="author"/.test(html)) add.push('<meta name="author" content="iShoweLectro">');
   if (!/geo\.region/.test(html)) add.push('<meta name="geo.region" content="IN-TN"><meta name="geo.placename" content="Chromepet, Chennai">');
+  if (!/fonts\.googleapis/.test(html)) add.push('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap">');
   // FAQPage structured data from the visible FAQ (keeps markup and data in sync)
   const faq = [...html.matchAll(/<details><summary>(.*?)<\/summary><p>(.*?)<\/p><\/details>/gs)];
   if (faq.length && !/FAQPage/.test(html)) {
@@ -147,7 +148,7 @@ function template(p, root) {
   <meta property="og:description" content="${esc(p.abstract)}">
   <meta property="og:image" content="${SITE_URL}assets/img/og-image.jpg">
   <meta property="og:url" content="${url}">
-  <meta name="theme-color" content="#4a0b0e">
+  <meta name="theme-color" content="#08070a">
   <link rel="icon" href="${root}assets/img/favicon.png" type="image/png">
   <link rel="apple-touch-icon" href="${root}assets/img/apple-touch-icon.png">
   <link rel="stylesheet" href="${root}assets/css/styles.css">
