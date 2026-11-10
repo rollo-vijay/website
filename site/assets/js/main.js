@@ -1,6 +1,7 @@
 // Shared behaviour for every page: mobile menu, active nav link, footer year,
 // scroll-reveal, the 3D tilt effect on cards and the photorealistic 3D backdrop.
 document.documentElement.classList.remove('no-js');
+import('./motion.js');
 
 // Mobile menu
 const toggle = document.querySelector('.nav-toggle');

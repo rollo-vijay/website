@@ -574,3 +574,23 @@ table { color: var(--ink-2); } th { color: var(--ink); }
 
 .seo-list { columns: 2 14rem; list-style: none; padding: 0; margin-top: 1rem; font-size: .88rem; color: var(--muted); }
 .site-header .btn, .site-header .btn:hover { color: #fff; }
+
+/* ---- motion layer (see assets/js/motion.js) ---- */
+.scroll-progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 300; transform-origin: 0 50%; transform: scaleX(0); background: linear-gradient(90deg, #ff8a2a, #e0421b, #a8261b); pointer-events: none; }
+.site-header { transition: box-shadow .25s ease, background .25s ease; }
+.site-header.is-scrolled { box-shadow: 0 8px 24px -12px rgb(16 24 40 / .25); }
+.motion .enter { opacity: 0; transform: translateY(22px); animation: enter .8s cubic-bezier(.2, .8, .2, 1) var(--d, 0ms) forwards; }
+@keyframes enter { to { opacity: 1; transform: none; } }
+.motion .reveal { transform: translateY(26px) scale(.985); transition: opacity .7s ease, transform .8s cubic-bezier(.2, .8, .2, 1); }
+.motion .reveal.is-visible { transform: none; }
+.motion .btn { transition: transform .25s cubic-bezier(.2, .8, .2, 1), background .15s, border-color .15s, box-shadow .2s; }
+.motion .btn:active { transform: scale(.97); }
+.motion .card, .motion .prow, .motion .trust article { transition: transform .35s cubic-bezier(.2, .8, .2, 1), box-shadow .3s, border-color .2s, opacity .7s ease; }
+.motion .card:hover, .motion .prow:hover, .motion .trust article:hover { transform: translateY(-4px); }
+.motion .domain-card__icon, .motion .trust .ico { transition: transform .35s cubic-bezier(.3, 1.6, .5, 1); }
+.motion .domain-card:hover .domain-card__icon, .motion .trust article:hover .ico { transform: scale(1.12) rotate(-4deg); }
+.motion .hero__ticks li::before { animation: pop .5s cubic-bezier(.3, 1.6, .5, 1) both; }
+@keyframes pop { from { transform: scale(0); } }
+.motion .wa-float { animation: pulse 2.6s ease-out infinite; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgb(18 140 74 / .5); } 70%, 100% { box-shadow: 0 0 0 16px rgb(18 140 74 / 0); } }
+@media (prefers-reduced-motion: reduce) { .scroll-progress { display: none; } .motion .enter, .motion .reveal { animation: none; opacity: 1; transform: none; } }
