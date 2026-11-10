@@ -24,9 +24,16 @@
     "description": "Final year project centre: IEEE-based ECE, robotics, PCB, Edge AI, IoT, vision, hardware ML and software projects, plus electronics components.",
     "telephone": "+91-7845576330",
     "url": "{{siteUrl}}",
+    "image": "{{siteUrl}}assets/img/og-image.jpg",
+    "areaServed": ["Chennai", "Tamil Nadu"],
+    "knowsAbout": ["IEEE final year projects", "Embedded systems", "IoT", "Robotics", "PCB design", "Power electronics", "Edge AI"],
+    "contactPoint": { "@type": "ContactPoint", "telephone": "+91-7845576330", "contactType": "customer service", "availableLanguage": ["English", "Tamil"] },
     "logo": "{{siteUrl}}assets/img/logo.webp",
     "address": { "@type": "PostalAddress", "addressLocality": "Chromepet, Chennai", "addressRegion": "Tamil Nadu", "addressCountry": "IN" }
   }
+  </script>
+  <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "WebSite", "name": "iShoweLectro", "url": "{{siteUrl}}", "potentialAction": { "@type": "SearchAction", "target": "{{siteUrl}}projects/?q={search_term_string}", "query-input": "required name=search_term_string" } }
   </script>
   <script type="module" src="{{root}}assets/js/main.js"></script>
   <script type="module" src="{{root}}assets/js/home.js"></script>
@@ -42,6 +49,7 @@
           <span class="eyebrow" style="color:#ffb38a">Final year project centre · Chennai</span>
           <h1 id="hero-title">IEEE final year projects, <span class="hl">built and working.</span></h1>
           <p class="hero__lead">Choose from 100+ projects based on 2025-26 IEEE papers, each with a block diagram and schematic, or bring your own requirement and we'll build it.</p>
+          <div class="hero__cta" style="display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.5rem"><a class="btn btn--accent" href="{{root}}projects/">Browse 100+ projects</a><a class="btn btn--ghost" href="#contact">Send your requirement</a></div>
           <form class="hero-search" action="{{root}}projects/" method="get" role="search">
             <label class="visually-hidden" for="hero-q">Search projects</label>
             <input id="hero-q" name="q" type="search" placeholder="Search: ESP32, drowsiness, LoRa, robot arm…" autocomplete="off">
@@ -76,7 +84,22 @@
       </div>
     </section>
 
-    <div class="scene-gap" data-station="1" aria-hidden="true"><span class="scene-label reveal"><i></i><b>Wi-Fi + Bluetooth LE module</b><small>ESP32-S3 class, 240 MHz dual core</small></span></div>
+
+
+    <!-- Why us -->
+    <section class="section" id="why" aria-labelledby="why-title">
+      <div class="container">
+        <div class="section-head"><div><span class="eyebrow">Why iShoweLectro</span><h2 id="why-title">Engineering-grade projects, documented properly</h2><p>Every project is built the way a product is: a base paper, a design, a tested prototype and documentation you can defend in your viva.</p></div></div>
+        <div class="trust">
+          <article><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v16H4z"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></span><h3>IEEE-based, current</h3><p>Projects follow 2025-26 IEEE papers, with the base paper listed on every project page.</p></article>
+          <article><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><path d="M10 6.5h4a3 3 0 0 1 3 3V14"/></svg></span><h3>Block diagram &amp; schematic</h3><p>Design documents are agreed before the build starts, so there are no surprises at review.</p></article>
+          <article><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.4 2.4-2.4-.6-.6-2.4Z"/></svg></span><h3>Hardware + firmware + software</h3><p>One team handles the circuit, the code and the application, so the project works end to end.</p></article>
+          <article><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></span><h3>Parts under one roof</h3><p>1,700+ components in our shop, with secure UPI and online payment at checkout.</p></article>
+          <article><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><h3>Support until your viva</h3><p>Demo walkthrough, report and PPT help, and mock viva practice are part of the service.</p></article>
+          <article><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><h3>Local, reachable team</h3><p>Visit us in Chromepet, Chennai, or reach an engineer on call or WhatsApp.</p></article>
+        </div>
+      </div>
+    </section>
 
     <!-- Domains -->
     <section class="section" id="domains" aria-labelledby="domains-title">
@@ -100,7 +123,6 @@
       </div>
     </section>
 
-    <div class="scene-gap" data-station="2" aria-hidden="true"><span class="scene-label reveal"><i></i><b>64-pin ARM microcontroller</b><small>Cortex-M4 in a QFP package</small></span></div>
 
     <!-- Featured projects -->
     <section class="section section--alt" id="featured" aria-labelledby="featured-title">
@@ -113,7 +135,6 @@
       </div>
     </section>
 
-    <div class="scene-gap" data-station="3" aria-hidden="true"><span class="scene-label reveal"><i></i><b>Power stage</b><small>Electrolytic bulk capacitors and a screw terminal</small></span></div>
 
     <!-- Services -->
     <section class="section" id="services" aria-labelledby="services-title">
@@ -152,7 +173,6 @@
       </div>
     </section>
 
-    <div class="scene-gap" data-station="4" aria-hidden="true"><span class="scene-label reveal"><i></i><b>Designed to be built</b><small>Every board starts as a schematic and a block diagram</small></span></div>
 
     <!-- Student help ad -->
     <section class="section" style="padding-block:2rem">
@@ -170,7 +190,7 @@
     <section class="section section--alt" style="padding-block:2.5rem">
       <div class="container">
         <div class="cta-band">
-          <div><h2>Need components for your project?</h2><p>Arduino, ESP32, sensors, motor drivers and modules. Order on WhatsApp or pay online.</p></div>
+          <div><h2>Need components for your project?</h2><p>Arduino, ESP32, sensors, motor drivers and modules. Order online with UPI or card, or confirm on WhatsApp.</p></div>
           <a class="btn btn--ghost" href="{{root}}shop/">Visit components shop</a>
         </div>
       </div>
@@ -190,7 +210,6 @@
       </div>
     </section>
 
-    <div class="scene-gap" data-station="5" aria-hidden="true"><span class="scene-label reveal"><i></i><b>Linear regulators</b><small>Clean 5 V and 3.3 V rails for every project</small></span></div>
 
     <!-- Contact -->
     <section class="section section--alt" id="contact" aria-labelledby="contact-title">

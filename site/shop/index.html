@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Electronics Shop | iShoweLectro</title>
-  <meta name="description" content="Arduino, ESP32, sensors, motors, drivers and modules for your project. Order on WhatsApp or pay online. Chromepet, Chennai.">
+  <title>Buy Electronic Components Online - Arduino, ESP32, Sensors | iShoweLectro Chennai</title>
+  <meta name="description" content="Buy 1,700+ electronic components: Arduino, ESP32, ESP32-S3, sensors, motor drivers, ICs, resistors and modules. UPI and online payment, pickup in Chromepet, Chennai.">
   <link rel="canonical" href="{{siteUrl}}shop/">
   <meta property="og:title" content="Electronics Shop | iShoweLectro">
   <meta property="og:image" content="{{siteUrl}}assets/img/og-image.jpg">
@@ -22,7 +22,7 @@
       <div class="container">
         <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="{{root}}">Home</a> / Shop</nav>
         <h1>Electronics shop</h1>
-        <p>Browse 1,700+ parts. Open a part, check its details, tick the verification box and then add it to your cart. Send the order on WhatsApp, or tap <strong>Pay online</strong> where it is shown. Stock, final price and delivery or pickup are confirmed on WhatsApp.</p>
+        <p>Browse 1,700+ parts. Open a part, check its details, tick the verification box and add it to your cart. Pay online or on pickup, and confirm on WhatsApp. Stock, final price and delivery or pickup are confirmed by our team.</p>
       </div>
     </section>
     <section class="section" style="padding-top:2rem">
@@ -78,8 +78,17 @@
     <div class="drawer__body" id="cart-lines"></div>
     <footer>
       <div class="total"><span>Total</span><span id="cart-total">₹0</span></div>
-      <div class="field"><label for="cart-name">Your name</label><input id="cart-name" autocomplete="name"></div>
-      <button class="btn btn--whatsapp btn--block" id="cart-order" type="button">Order on WhatsApp</button>
+      <div class="field"><label for="cart-name">Your name</label><input id="cart-name" autocomplete="name" required></div>
+      <div class="field"><label for="cart-phone">Mobile number</label><input id="cart-phone" type="tel" inputmode="tel" autocomplete="tel" required></div>
+      <fieldset class="pay" id="pay-methods">
+        <legend>Payment method</legend>
+        <label class="pay__opt" id="pay-upi-wrap" hidden><input type="radio" name="pay" value="upi"><span><strong>UPI</strong> <small>GPay, PhonePe, Paytm, BHIM</small></span></label>
+        <label class="pay__opt" id="pay-rzp-wrap" hidden><input type="radio" name="pay" value="razorpay"><span><strong>Card / Netbanking / Wallet</strong> <small>Secure payment by Razorpay</small></span></label>
+        <label class="pay__opt"><input type="radio" name="pay" value="cod" checked><span><strong>Pay on pickup or delivery</strong> <small>Cash or UPI when you collect; confirmed on WhatsApp</small></span></label>
+      </fieldset>
+      <p class="form-note" id="pay-note" hidden></p>
+      <p class="form-error" id="cart-error" role="alert" hidden></p>
+      <button class="btn btn--primary btn--block" id="cart-order" type="button">Place order</button>
       <button class="btn btn--ghost btn--sm" id="cart-clear" type="button">Clear cart</button>
     </footer>
   </aside>

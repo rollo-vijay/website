@@ -26,8 +26,28 @@ cpSync(SRC, OUT, { recursive: true, filter: (p) => !p.includes(`${sep}_partials`
 const header = readFileSync(join(SRC, '_partials', 'header.html'), 'utf8');
 const footer = readFileSync(join(SRC, '_partials', 'footer.html'), 'utf8');
 
+const ldTag = (o) => `<script type="application/ld+json">${JSON.stringify(o).replace(/</g, '\\u003c')}</script>`;
+const strip = (s) => s.replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/\s+/g, ' ').trim();
+
+// Generic SEO tags added to every page that lacks them.
+function seo(html) {
+  const noindex = /<title>Page not found/.test(html);
+  const add = [];
+  if (!/name="robots"/.test(html)) add.push(noindex ? '<meta name="robots" content="noindex">' : '<meta name="robots" content="index, follow, max-image-preview:large">');
+  if (!/og:site_name/.test(html)) add.push('<meta property="og:site_name" content="iShoweLectro"><meta property="og:locale" content="en_IN">');
+  if (!/twitter:card/.test(html)) add.push('<meta name="twitter:card" content="summary_large_image">');
+  if (!/name="author"/.test(html)) add.push('<meta name="author" content="iShoweLectro">');
+  if (!/geo\.region/.test(html)) add.push('<meta name="geo.region" content="IN-TN"><meta name="geo.placename" content="Chromepet, Chennai">');
+  // FAQPage structured data from the visible FAQ (keeps markup and data in sync)
+  const faq = [...html.matchAll(/<details><summary>(.*?)<\/summary><p>(.*?)<\/p><\/details>/gs)];
+  if (faq.length && !/FAQPage/.test(html)) {
+    add.push(ldTag({ '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faq.map((m) => ({ '@type': 'Question', name: strip(m[1]), acceptedAnswer: { '@type': 'Answer', text: strip(m[2]) } })) }));
+  }
+  return add.length ? html.replace('</head>', `  ${add.join('\n  ')}\n</head>`) : html;
+}
+
 function finalize(html, root) {
-  return html
+  return seo(html)
     .replace('<!-- @header -->', header)
     .replace('<!-- @footer -->', footer)
     .replaceAll('{{root}}', root)
@@ -110,15 +130,17 @@ function template(p, root) {
     : `<p>The IEEE base paper for this project is shared on enquiry. <a href="${getDocs}" target="_blank" rel="noopener">Request it on WhatsApp</a>.</p>`);
 
   const related = projects.filter((x) => x.domain === p.domain && x.slug !== p.slug).slice(0, 4);
-  const jsonld = { '@context': 'https://schema.org', '@type': 'CreativeWork', name: p.title, description: p.abstract, identifier: p.code, about: p.domain, url, publisher: { '@type': 'Organization', name: 'iShoweLectro' } };
+  const jsonld = { '@context': 'https://schema.org', '@type': 'CreativeWork', name: p.title, description: p.abstract, identifier: p.code, about: p.domain, url, inLanguage: 'en-IN', publisher: { '@type': 'Organization', name: 'iShoweLectro', url: SITE_URL } };
+  const crumbs = { '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: [['Home', SITE_URL], ['Projects', `${SITE_URL}projects/`], [p.domain, `${SITE_URL}projects/?domain=${encodeURIComponent(p.domain)}`], [p.title, url]].map(([name, item], i) => ({ '@type': 'ListItem', position: i + 1, name, item })) };
+  const metaDesc = `${p.abstract}`.length > 158 ? `${p.abstract}`.slice(0, 155).replace(/\s+\S*$/, '') + '...' : p.abstract;
 
   return `<!doctype html>
 <html lang="en-IN" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>${esc(p.title)} | ${esc(p.code)} | iShoweLectro</title>
-  <meta name="description" content="${esc(p.abstract)}">
+  <title>${esc(p.title)} - ${esc(p.domain)} Final Year Project | iShoweLectro</title>
+  <meta name="description" content="${esc(metaDesc)}">
   <link rel="canonical" href="${url}">
   <meta property="og:type" content="article">
   <meta property="og:title" content="${esc(p.title)}">
@@ -130,6 +152,7 @@ function template(p, root) {
   <link rel="apple-touch-icon" href="${root}assets/img/apple-touch-icon.png">
   <link rel="stylesheet" href="${root}assets/css/styles.css">
   <script type="application/ld+json">${JSON.stringify(jsonld).replace(/</g, '\\u003c')}</script>
+  <script type="application/ld+json">${JSON.stringify(crumbs).replace(/</g, '\\u003c')}</script>
   <script type="module" src="${root}assets/js/main.js"></script>
 </head>
 <body data-page="projects">
@@ -186,10 +209,27 @@ for (const p of projects) {
   writeFileSync(join(dir, 'index.html'), finalize(template(p, '../../'), '../../'));
 }
 
+
+// ---------- 4b. shop: crawlable static list + Product structured data ----------
+{
+  const featured = JSON.parse(readFileSync(join(SRC, 'data', 'products.json'), 'utf8'));
+  const parts = JSON.parse(readFileSync(join(SRC, 'data', 'parts.json'), 'utf8'));
+  const file = join(OUT, 'shop', 'index.html');
+  let html = readFileSync(file, 'utf8');
+  const abs = (i) => (/^https?:/.test(i) ? i : SITE_URL + i);
+  const prod = (x, i) => ({ '@type': 'Product', name: x.name, category: x.category, description: x.note || x.description || x.name, ...(x.image ? { image: abs(x.image) } : {}), brand: { '@type': 'Brand', name: 'iShoweLectro' }, url: `${SITE_URL}shop/`, ...(x.price != null ? { offers: { '@type': 'Offer', priceCurrency: 'INR', price: x.price, availability: 'https://schema.org/InStock', seller: { '@type': 'Organization', name: 'iShoweLectro' } } } : {}) });
+  const ld = { '@context': 'https://schema.org', '@type': 'ItemList', name: 'iShoweLectro electronics shop', itemListElement: featured.map((x, i) => ({ '@type': 'ListItem', position: i + 1, item: prod(x) })) };
+  const cats = [...new Set(parts.map((x) => x.category))].sort();
+  const list = `<section class="section section--alt" aria-labelledby="catalogue-title"><div class="container"><h2 id="catalogue-title">Electronic components catalogue</h2><p class="muted">Browse ${parts.length + featured.length}+ components in ${cats.length + 0} categories: ${cats.map(esc).join(', ')}. Open any part in the shop above to check its details before adding it to your cart.</p><ul class="seo-list">${featured.map((x) => `<li>${esc(x.name)} (${esc(x.category)})</li>`).join('')}</ul></div></section>`;
+  html = html.replace('</head>', `  ${ldTag(ld)}\n</head>`).replace('</main>', `${list}\n  </main>`);
+  writeFileSync(file, html);
+}
+
 // ---------- 5. sitemap + robots ----------
-const urls = ['', 'projects/', 'shop/', ...projects.map((p) => `projects/${p.slug}/`)];
+const today = new Date().toISOString().slice(0, 10);
+const urls = [['', '1.0'], ['projects/', '0.9'], ['shop/', '0.9'], ...projects.map((p) => [`projects/${p.slug}/`, '0.7'])];
 writeFileSync(join(OUT, 'sitemap.xml'),
-  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u) => `  <url><loc>${SITE_URL}${u}</loc></url>`).join('\n')}\n</urlset>\n`);
+  `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map(([u, pr]) => `  <url><loc>${SITE_URL}${u}</loc><lastmod>${today}</lastmod><priority>${pr}</priority></url>`).join('\n')}\n</urlset>\n`);
 writeFileSync(join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\nSitemap: ${SITE_URL}sitemap.xml\n`);
 
 const leftovers = walk(OUT).filter((f) => f.endsWith('.html') && /\{\{(root|siteUrl)\}\}|<!-- @(header|footer) -->/.test(readFileSync(f, 'utf8')));

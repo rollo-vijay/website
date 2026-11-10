@@ -1,4 +1,4 @@
-import { escapeHtml, formatINR, waLink } from './config.js';
+import { escapeHtml, formatINR, waLink, UPI_ID, UPI_PAYEE, RAZORPAY_PAGE_URL } from './config.js';
 import { observeReveal } from './main.js';
 
 const ROOT = '../';
@@ -163,6 +163,7 @@ function renderCart() {
   $('cart-count').textContent = items.reduce((s, { qty }) => s + qty, 0);
   $('cart-total').textContent = formatINR(total) + (quoted ? ` + ${quoted} on quote` : '');
   $('cart-order').disabled = !items.length;
+  if (typeof refreshPayState === 'function' && products.length) refreshPayState();
   $('cart-lines').innerHTML = items.length
     ? items.map(({ p, qty }) => `
       <div class="cart-line">
@@ -194,24 +195,80 @@ backdrop.addEventListener('click', () => setDrawer(false));
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !drawer.hidden) setDrawer(false); });
 
 $('cart-clear').addEventListener('click', () => writeCart({}));
-$('cart-order').addEventListener('click', () => {
+// ---------- checkout ----------
+const payRadios = () => [...document.querySelectorAll('input[name="pay"]')];
+const method = () => payRadios().find((r) => r.checked)?.value ?? 'cod';
+let awaitingPayment = false;
+
+function setupPayments() {
+  $('pay-upi-wrap').hidden = !UPI_ID;
+  $('pay-rzp-wrap').hidden = !RAZORPAY_PAGE_URL;
+}
+function refreshPayState() {
   const items = cartItems();
-  if (!items.length) return;
-  const name = $('cart-name').value.trim();
+  const quoted = items.some(({ p }) => p.price == null);
+  const total = items.reduce((s, { p, qty }) => s + (p.price ?? 0) * qty, 0);
+  payRadios().forEach((r) => {
+    const online = r.value !== 'cod';
+    r.disabled = online && (quoted || total <= 0);
+    if (r.disabled && r.checked) payRadios().find((x) => x.value === 'cod').checked = true;
+  });
+  const note = $('pay-note');
+  const online = UPI_ID || RAZORPAY_PAGE_URL;
+  note.hidden = !(online && quoted);
+  if (online && quoted) note.textContent = 'Online payment is available once every item has a price. Your cart has items on quote, so we will confirm the price on WhatsApp first.';
+  awaitingPayment = false;
+  $('cart-order').textContent = method() === 'cod' ? 'Place order on WhatsApp' : 'Pay now';
+}
+document.addEventListener('change', (e) => { if (e.target.name === 'pay') { awaitingPayment = false; $('cart-order').textContent = method() === 'cod' ? 'Place order on WhatsApp' : 'Pay now'; } });
+
+function orderMessage(items, extra) {
   const total = items.reduce((s, { p, qty }) => s + (p.price ?? 0) * qty, 0);
   const quoted = items.filter(({ p }) => p.price == null).length;
-  const lines = [
+  return [
     'Hi iShoweLectro, I would like to order:',
     ...items.map(({ p, qty }, i) => `${i + 1}. ${p.name} × ${qty}${p.price == null ? ' (please quote price)' : ' = ' + formatINR(p.price * qty)}`),
     `Total (priced items): ${formatINR(total)}${quoted ? ` + ${quoted} item(s) to be quoted` : ''}`,
-    name && `Name: ${name}`,
+    `Name: ${$('cart-name').value.trim()}`,
+    `Mobile: ${$('cart-phone').value.trim()}`,
+    extra,
     'Please confirm availability and delivery/pickup.',
-  ].filter(Boolean);
-  window.open(waLink(lines.join('\n')), '_blank', 'noopener');
+  ].filter(Boolean).join('\n');
+}
+
+$('cart-order').addEventListener('click', () => {
+  const items = cartItems();
+  const err = $('cart-error');
+  const fail = (m) => { err.textContent = m; err.hidden = false; };
+  err.hidden = true;
+  if (!items.length) return;
+  if (!$('cart-name').value.trim()) return fail('Please enter your name.');
+  if (!/^\+?\d[\d\s-]{8,13}$/.test($('cart-phone').value.trim())) return fail('Please enter a valid mobile number.');
+  const m = method();
+  const total = items.reduce((s, { p, qty }) => s + (p.price ?? 0) * qty, 0);
+  if (m === 'cod') {
+    window.open(waLink(orderMessage(items, 'Payment: pay on pickup/delivery')), '_blank', 'noopener');
+    return;
+  }
+  if (!awaitingPayment) {
+    if (m === 'upi') {
+      const url = `upi://pay?pa=${encodeURIComponent(UPI_ID)}&pn=${encodeURIComponent(UPI_PAYEE)}&am=${total.toFixed(2)}&cu=INR&tn=${encodeURIComponent('Shop order ' + $('cart-name').value.trim())}`;
+      window.location.href = url;
+      $('pay-note').textContent = `Pay ${formatINR(total)} to UPI ID ${UPI_ID} in your UPI app (it opens automatically on mobile). On a computer, scan or enter the UPI ID in your phone. Then tap "Send order on WhatsApp" and attach the payment screenshot.`;
+    } else {
+      window.open(RAZORPAY_PAGE_URL, '_blank', 'noopener');
+      $('pay-note').textContent = `Enter ${formatINR(total)} on the Razorpay page and complete the payment. Then tap "Send order on WhatsApp" so we can match your payment.`;
+    }
+    $('pay-note').hidden = false;
+    awaitingPayment = true;
+    $('cart-order').textContent = 'Send order on WhatsApp';
+    return;
+  }
+  window.open(waLink(orderMessage(items, `Payment: ${m === 'upi' ? 'UPI' : 'Razorpay'} ${formatINR(total)} (screenshot attached)`)), '_blank', 'noopener');
 });
 
 // ---------- load ----------
 const getJson = (u) => fetch(u).then((r) => { if (!r.ok) throw new Error(); return r.json(); });
 Promise.all([getJson(`${ROOT}data/products.json`), getJson(`${ROOT}data/parts.json`).catch(() => [])])
-  .then(([featured, parts]) => { products = [...featured, ...parts]; renderChips(); render(); renderCart(); })
+  .then(([featured, parts]) => { products = [...featured, ...parts]; setupPayments(); renderChips(); render(); renderCart(); })
   .catch(() => { grid.innerHTML = '<p class="empty">Products could not be loaded. Please refresh the page.</p>'; });
