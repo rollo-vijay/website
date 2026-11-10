@@ -24,8 +24,29 @@ if (!reduce) {
   addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
   onScroll();
 
+  // 2a. masked word-by-word headline reveal
+  const h1 = document.querySelector('.hero h1');
+  if (h1) {
+    let n = 0;
+    const wrap = (node) => {
+      [...node.childNodes].forEach((c) => {
+        if (c.nodeType === 3) {
+          const frag = document.createDocumentFragment();
+          c.textContent.split(/(\s+)/).forEach((tok) => {
+            if (!tok.trim()) { frag.append(tok); return; }
+            const w = document.createElement('span'); w.className = 'w';
+            const i = document.createElement('i'); i.textContent = tok; i.style.setProperty('--i', n++);
+            w.append(i); frag.append(w);
+          });
+          c.replaceWith(frag);
+        } else if (c.nodeType === 1) wrap(c);
+      });
+    };
+    wrap(h1);
+  }
+
   // 2. hero entrance: stagger direct children
-  document.querySelectorAll('.hero__content > *').forEach((el, i) => {
+  document.querySelectorAll('.hero__content > *:not(h1)').forEach((el, i) => {
     el.classList.add('enter');
     el.style.setProperty('--d', `${120 + i * 90}ms`);
   });
