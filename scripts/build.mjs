@@ -139,7 +139,7 @@ function template(p, root) {
       <div class="container">
         <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="${root}">Home</a> / <a href="${root}projects/">Projects</a> / <a href="${root}projects/?domain=${encodeURIComponent(p.domain)}">${esc(p.domain)}</a> / ${esc(p.code)}</nav>
         <h1>${esc(p.title)}</h1>
-        <div class="meta"><span>${esc(p.code)}</span><span>${esc(p.domain)}</span>${p.year ? `<span>IEEE ${esc(p.year)}</span>` : ''}</div>
+        <div class="meta"><span>${esc(p.code)}</span><span>${esc(p.domain)}</span>${p.year ? `<span>IEEE-based ${esc(p.year)}</span>` : ''}${p.highValue ? '<span>★ High value</span>' : ''}</div>
       </div>
     </section>
     <section class="section" style="padding-top:1.5rem">
@@ -154,10 +154,13 @@ function template(p, root) {
             <dt>Code</dt><dd>${esc(p.code)}</dd>
             <dt>Domain</dt><dd>${esc(p.domain)}</dd>
             ${p.year ? `<dt>IEEE year</dt><dd>${esc(p.year)}</dd>` : ''}
+            ${p.highValue ? '<dt>Tier</dt><dd>High value</dd>' : ''}
           </dl>
           <a class="btn btn--whatsapp btn--block" href="${enquire}" target="_blank" rel="noopener">Enquire on WhatsApp</a>
           <a class="btn btn--ghost btn--block" href="${getDocs}" target="_blank" rel="noopener">Get abstract &amp; base paper</a>
           <a class="btn btn--ghost btn--block" href="tel:+917845576330">Call +91 78455 76330</a>
+          <hr>
+          <div class="ad ad--side"><span class="ad__tag">Student help</span><h3>Stuck on this project?</h3><p>We help with circuit, code, report and viva.</p><a class="btn btn--whatsapp btn--sm" href="${enquire}" target="_blank" rel="noopener">Ask an engineer</a></div>
           <hr>
           <p class="form-note">Need changes? Tell us your requirement and we'll adapt this project for you.</p>
           ${p.hardware?.length && !isSoftware ? `<a class="btn btn--primary btn--sm" href="${root}shop/">Buy components</a>` : ''}

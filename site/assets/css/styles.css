@@ -422,3 +422,24 @@ a { color: var(--brand-700); }
   .has-3d .hero::after { background: linear-gradient(180deg, rgb(7 3 4 / .8) 0%, rgb(7 3 4 / .62) 60%, rgb(7 3 4 / .35) 100%); }
   .scene-label, .scene-gap:nth-of-type(even) .scene-label { left: 1rem; right: 1rem; bottom: 1rem; }
 }
+
+/* ---- Student-help ads, high-value tags ---- */
+.tag--gold { background: #fff3cf; color: #7a5200; border-color: #f0d37a; }
+.tag--ok { background: #e6f6ea; color: #1d6a35; border-color: #b9e1c4; }
+.chip--gold[aria-pressed="true"] { background: #b37a00; border-color: #b37a00; }
+.ad { position: relative; display: grid; grid-template-columns: 1fr auto; gap: 1rem; align-items: center; margin: .9rem 0; padding: 1.1rem 1.3rem 1.1rem 1.3rem; border-radius: 10px; color: #fff; background: linear-gradient(120deg, #4a0b0e, #8a1c22 60%, #b3541c); box-shadow: 0 10px 28px rgba(74,11,14,.25); overflow: hidden; }
+.ad::after { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(135deg, rgba(255,255,255,.04) 0 10px, transparent 10px 20px); pointer-events: none; }
+.ad > * { position: relative; z-index: 1; }
+.ad h2, .ad h3 { color: #fff; font-size: 1.1rem; margin-bottom: .25rem; }
+.ad p { color: rgba(255,255,255,.88); font-size: .92rem; margin: 0; display: block; -webkit-line-clamp: unset; line-clamp: unset; overflow: visible; }
+.ad__tag { position: absolute !important; top: 0; left: 0; font-size: .66rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; background: #ffcf4d; color: #3d2a00; padding: .15rem .6rem; border-bottom-right-radius: 8px; }
+.ad > div:first-of-type { padding-top: .7rem; }
+.ad .btn--ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,.6); }
+.ad--big { padding: 1.6rem 1.8rem; }
+.ad--big h2 { font-size: 1.5rem; }
+.ad__list { list-style: none; display: flex; flex-wrap: wrap; gap: .4rem .9rem; margin-top: .7rem; padding: 0; font-size: .86rem; font-weight: 600; }
+.ad__list li::before { content: "✓ "; color: #ffcf4d; }
+.ad--big .prow__actions { flex-direction: column; }
+.ad--side { grid-template-columns: 1fr; margin: 0; }
+.ad--side h3 { margin-top: .6rem; }
+@media (max-width: 720px) { .ad { grid-template-columns: 1fr; } }
