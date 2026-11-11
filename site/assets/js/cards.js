@@ -13,8 +13,8 @@ export function projectRowHTML(p, root) {
         <span class="tag tag--brand">${escapeHtml(p.domain)}</span>
         ${p.highValue ? '<span class="tag tag--gold">High value</span>' : ''}
         ${p.year ? `<span class="tag">IEEE-based ${escapeHtml(p.year)}</span>` : ''}
-        ${p.ieee?.title ? '<span class="tag tag--ok">Base paper listed</span>' : ''}
-        <span class="tag">Block diagram</span>
+        ${p.level ? `<span class="tag">${escapeHtml(p.level)}</span>` : ''}
+        <a class="tag tag--ok" href="${escapeHtml(p.ieee || '#')}" target="_blank" rel="noopener">IEEE papers &nearr;</a>
       </div>
     </div>
     <div class="prow__actions">

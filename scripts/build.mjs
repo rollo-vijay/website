@@ -7,7 +7,6 @@
 import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { diagramSVG } from '../site/assets/js/diagram.js';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const SRC = join(ROOT, 'site');
@@ -81,8 +80,6 @@ for (const p of projects) {
   if (seen.has(p.slug)) problems.push(`${id}: duplicate slug`);
   seen.add(p.slug);
   if (p.domain && !DOMAINS.includes(p.domain)) problems.push(`${id}: domain "${p.domain}" must be one of: ${DOMAINS.join(', ')}`);
-  const d = p.diagram;
-  if (!p.blockDiagramImage && !(d && (d.controller || d.flow?.length))) problems.push(`${id}: needs "diagram" (controller/inputs/outputs or flow) or "blockDiagramImage"`);
   for (const k of ['blockDiagramImage', 'schematicImage']) {
     if (p[k] && !existsSync(join(SRC, p[k]))) problems.push(`${id}: ${k} file not found: site/${p[k]}`);
   }
@@ -92,6 +89,12 @@ if (problems.length) {
   process.exit(1);
 }
 
+// ---------- 3b. slim listing data (keeps the catalogue page light) ----------
+{
+  const slim = projects.map((p) => ({ slug: p.slug, code: p.code, title: p.title, domain: p.domain, year: p.year, featured: !!p.featured, highValue: !!p.highValue, level: p.difficulty, ieee: p.ieeeUrl || `https://ieeexplore.ieee.org/search/searchresult.jsp?newsearch=true&queryText=${encodeURIComponent(p.ieeeQuery || p.title)}&ranges=2023_2026_Year`, abstract: p.abstract.length > 170 ? p.abstract.slice(0, 167).replace(/\s+\S*$/, '') + '...' : p.abstract, hw: [...(p.hardware ?? []), ...(p.software ?? [])].join(' ').slice(0, 220) }));
+  writeFileSync(join(OUT, 'data', 'projects.json'), JSON.stringify(slim));
+}
+
 // ---------- 4. project pages ----------
 const list = (items) => `<ul class="checklist">${items.map((x) => `<li>${esc(x)}</li>`).join('')}</ul>`;
 const table = (caption, items) => `<table class="req-table"><caption>${caption}</caption><thead><tr><th scope="col">S.No</th><th scope="col">Item</th></tr></thead><tbody>${items.map((x, i) => `<tr><td>${i + 1}</td><td>${esc(x)}</td></tr>`).join('')}</tbody></table>`;
@@ -99,36 +102,24 @@ const table = (caption, items) => `<table class="req-table"><caption>${caption}<
 function template(p, root) {
   const url = `${SITE_URL}projects/${p.slug}/`;
   const enquire = wa(`Hi iShoweLectro, I'm interested in project ${p.code}: ${p.title}. Please share the details.`);
-  const getDocs = wa(`Hi iShoweLectro, please send the abstract and IEEE base paper for project ${p.code}: ${p.title}.`);
-  const isFlow = !p.blockDiagramImage && Array.isArray(p.diagram?.flow);
-
+  const getDocs = wa(`Hi iShoweLectro, please send the block diagram, schematic and abstract for project ${p.code}: ${p.title}.`);
+  
   const sections = [];
   const add = (id, title, html) => html && sections.push({ id, title, html });
 
   add('abstract', 'Abstract', `<p>${esc(p.abstract)}</p>`);
   add('existing', 'Existing System', p.existing && `<p>${esc(p.existing)}</p>`);
   add('proposed', 'Proposed System', p.proposed && `<p>${esc(p.proposed)}</p>`);
-  add('block-diagram', 'Block Diagram', `<figure class="diagram">${
-    p.blockDiagramImage
-      ? `<img src="${root}${esc(p.blockDiagramImage)}" alt="Block diagram of ${esc(p.title)}" loading="lazy">`
-      : diagramSVG(p.diagram, { title: `Block diagram of ${p.title}` })
-  }</figure>${
-    p.blockDiagramImage || isFlow ? '' : `<div class="diagram-legend" aria-hidden="true">
-      <span style="--c:#d08a00;--f:#fff6e0">Power supply</span><span style="--c:#2f6fd6;--f:#eef5ff">Input</span>
-      <span style="--c:#4a0b0e;--f:#7a1418">Controller</span><span style="--c:#2e9a4b;--f:#effaf1">Output</span><span style="--c:#7a4fd6;--f:#f4efff">Communication</span></div>`
-  }`);
-  const isSoftware = p.domain === 'Software';
-  if (!isSoftware || p.schematicImage) add('schematic', 'Circuit Schematic', p.schematicImage
-    ? `<figure class="diagram"><img src="${root}${esc(p.schematicImage)}" alt="Circuit schematic of ${esc(p.title)}" loading="lazy"></figure>`
-    : `<div class="placeholder-box"><p><strong>Full circuit schematic is shared on enquiry.</strong></p><p>Message us with code <strong>${esc(p.code)}</strong>.</p><p style="margin-top:.8rem"><a class="btn btn--whatsapp btn--sm" href="${getDocs}" target="_blank" rel="noopener">Request schematic</a></p></div>`);
   if (p.hardware?.length || p.software?.length) {
     add('requirements', 'Hardware &amp; Software Requirements', `<div class="two-col">${p.hardware?.length ? table('Hardware requirements', p.hardware) : ''}${p.software?.length ? table('Software requirements', p.software) : ''}</div>`);
   }
   add('advantages', 'Advantages', p.advantages?.length && list(p.advantages));
   add('applications', 'Applications', p.applications?.length && list(p.applications));
-  add('base-paper', 'IEEE Base Paper', p.ieee?.title
-    ? `<p><strong>${esc(p.ieee.title)}</strong>${p.ieee.ref ? `<br><span style="color:var(--muted)">${esc(p.ieee.ref)}</span>` : ''}</p>`
-    : `<p>The IEEE base paper for this project is shared on enquiry. <a href="${getDocs}" target="_blank" rel="noopener">Request it on WhatsApp</a>.</p>`);
+  const q = p.ieeeQuery || p.title;
+  const ieeeNew = p.ieeeUrl || `https://ieeexplore.ieee.org/search/searchresult.jsp?newsearch=true&queryText=${encodeURIComponent(q)}&ranges=2023_2026_Year`;
+  const ieeeAll = p.ieeeUrlAll || `https://ieeexplore.ieee.org/search/searchresult.jsp?newsearch=true&queryText=${encodeURIComponent(q)}`;
+  add('base-paper', 'IEEE Papers', `${p.ieee?.title ? `<p><strong>${esc(p.ieee.title)}</strong>${p.ieee.ref ? `<br><span style="color:var(--muted)">${esc(p.ieee.ref)}</span>` : ''}</p>` : ''}<p>Read recent IEEE research on this topic. Search term: <em>${esc(q)}</em>.</p><p style="display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.8rem"><a class="btn btn--primary btn--sm" href="${esc(ieeeNew)}" target="_blank" rel="noopener">IEEE papers 2023&ndash;26 &nearr;</a><a class="btn btn--ghost btn--sm" href="${esc(ieeeAll)}" target="_blank" rel="noopener">All years &nearr;</a></p><p class="form-note">Opens IEEE Xplore search results. Full text may need your college's IEEE access. Choose your base paper and we will confirm it with you before we build.</p>`);
+  add('docs', 'Block Diagram &amp; Schematic', `<div class="placeholder-box"><p><strong>Shared on request.</strong> Message us with code <strong>${esc(p.code)}</strong> and we send the block diagram and circuit schematic for this project.</p><p style="margin-top:.8rem"><a class="btn btn--whatsapp btn--sm" href="${getDocs}" target="_blank" rel="noopener">Request diagram &amp; schematic</a></p></div>`);
 
   const related = projects.filter((x) => x.domain === p.domain && x.slug !== p.slug).slice(0, 4);
   const jsonld = { '@context': 'https://schema.org', '@type': 'CreativeWork', name: p.title, description: p.abstract, identifier: p.code, about: p.domain, url, inLanguage: 'en-IN', publisher: { '@type': 'Organization', name: 'iShoweLectro', url: SITE_URL } };
@@ -178,16 +169,18 @@ function template(p, root) {
             <dt>Code</dt><dd>${esc(p.code)}</dd>
             <dt>Domain</dt><dd>${esc(p.domain)}</dd>
             ${p.year ? `<dt>IEEE year</dt><dd>${esc(p.year)}</dd>` : ''}
+            ${p.difficulty ? `<dt>Level</dt><dd>${esc(p.difficulty)}</dd>` : ''}
             ${p.highValue ? '<dt>Tier</dt><dd>High value</dd>' : ''}
+            <dt>IEEE papers</dt><dd><a href="${esc(ieeeNew)}" target="_blank" rel="noopener">Open on IEEE Xplore &nearr;</a></dd>
           </dl>
           <a class="btn btn--whatsapp btn--block" href="${enquire}" target="_blank" rel="noopener">Enquire on WhatsApp</a>
-          <a class="btn btn--ghost btn--block" href="${getDocs}" target="_blank" rel="noopener">Get abstract &amp; base paper</a>
+          <a class="btn btn--ghost btn--block" href="${getDocs}" target="_blank" rel="noopener">Get diagram &amp; schematic</a>
           <a class="btn btn--ghost btn--block" href="tel:+917845576330">Call +91 78455 76330</a>
           <hr>
           <div class="ad ad--side"><span class="ad__tag">Student help</span><h3>Stuck on this project?</h3><p>We help with circuit, code, report and viva.</p><a class="btn btn--whatsapp btn--sm" href="${enquire}" target="_blank" rel="noopener">Ask an engineer</a></div>
           <hr>
           <p class="form-note">Need changes? Tell us your requirement and we'll adapt this project for you.</p>
-          ${p.hardware?.length && !isSoftware ? `<a class="btn btn--primary btn--sm" href="${root}shop/">Buy components</a>` : ''}
+          ${p.hardware?.length && p.domain !== 'Software' ? `<a class="btn btn--primary btn--sm" href="${root}shop/">Buy components</a>` : ''}
         </aside>
       </div>
     </section>

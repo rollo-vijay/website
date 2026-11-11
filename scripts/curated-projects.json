@@ -1,0 +1,6623 @@
+[
+ {
+  "slug": "smart-helmet-with-crash-detection-and-gps-emergency-alert",
+  "code": "ISE-IOT-001",
+  "title": "Smart Helmet with Crash Detection and GPS Emergency Alert",
+  "domain": "Wireless & IoT",
+  "year": "2025-26",
+  "featured": true,
+  "highValue": false,
+  "abstract": "A helmet that confirms the rider is wearing it, detects a crash from impact and tilt, and texts the GPS location to emergency contacts after a short cancel window.",
+  "existing": "Accident victims wait long for help because nobody is informed, and riders often start the bike without a helmet.",
+  "proposed": "A helmet that confirms the rider is wearing it, detects a crash from impact and tilt, and texts the GPS location to emergency contacts after a short cancel window. The ESP32 reads MPU6050 Accelerometer, IR Helmet-Worn Sensor, NEO-6M GPS, processes the data on board and drives SIM800L GSM (SMS), Buzzer, Relay (Ignition Lock).",
+  "advantages": [
+   "Real-time remote monitoring",
+   "Low-cost, easily replicated hardware",
+   "Scales from one node to many",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Two-wheeler safety",
+   "Delivery fleets",
+   "Construction sites"
+  ],
+  "hardware": [
+   "ESP32",
+   "MPU6050",
+   "NEO-6M GPS",
+   "SIM800L GSM",
+   "Li-ion battery"
+  ],
+  "software": [
+   "Arduino IDE",
+   "Embedded C"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V / Li-ion)",
+   "controller": "ESP32",
+   "inputs": [
+    "MPU6050 Accelerometer",
+    "IR Helmet-Worn Sensor",
+    "NEO-6M GPS"
+   ],
+   "outputs": [
+    "SIM800L GSM (SMS)",
+    "Buzzer",
+    "Relay (Ignition Lock)"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "blockchain-secured-iot-sensor-logging-on-esp32",
+  "code": "ISE-IOT-002",
+  "title": "Blockchain-Secured IoT Sensor Logging on ESP32",
+  "domain": "Wireless & IoT",
+  "year": "2025-26",
+  "featured": true,
+  "highValue": true,
+  "abstract": "Sensor readings are hashed on the ESP32 and anchored to a lightweight ledger so any later tampering with the data is detected.",
+  "existing": "Plain cloud databases can be edited after the fact, so records used for audits cannot be fully trusted.",
+  "proposed": "Sensor readings are hashed on the ESP32 and anchored to a lightweight ledger so any later tampering with the data is detected. The ESP32 reads DHT22 Temp/Humidity, Gas Sensor, RTC Timestamp, processes the data on board and drives SHA-256 Hash Block, OLED Display, with Wi-Fi: Ledger Node, MQTT: Dashboard for connectivity.",
+  "advantages": [
+   "Real-time remote monitoring",
+   "Low-cost, easily replicated hardware",
+   "Scales from one node to many",
+   "Includes a verified IEEE base paper reference"
+  ],
+  "applications": [
+   "Cold-chain audit",
+   "Food safety logs",
+   "Environmental compliance"
+  ],
+  "hardware": [
+   "ESP32",
+   "DHT22",
+   "MQ-135",
+   "DS3231 RTC",
+   "OLED display"
+  ],
+  "software": [
+   "Arduino IDE",
+   "Node.js",
+   "Embedded C"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V / Li-ion)",
+   "controller": "ESP32",
+   "inputs": [
+    "DHT22 Temp/Humidity",
+    "Gas Sensor",
+    "RTC Timestamp"
+   ],
+   "outputs": [
+    "SHA-256 Hash Block",
+    "OLED Display"
+   ],
+   "comms": [
+    "Wi-Fi: Ledger Node",
+    "MQTT: Dashboard"
+   ]
+  },
+  "ieee": {
+   "title": "Lightweight Blockchain for Data Integrity and Traceability in IoT Networks",
+   "ref": "IEEE Access, 2025. IEEE Xplore document 10990139"
+  }
+ },
+ {
+  "slug": "lorawan-precision-agriculture-network-with-soil-analytics",
+  "code": "ISE-IOT-003",
+  "title": "LoRaWAN Precision Agriculture Network with Soil Analytics",
+  "domain": "Wireless & IoT",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "Soil-moisture, pH and weather nodes report over LoRa to a gateway and a dashboard recommends irrigation timing per field zone.",
+  "existing": "Farm wiring is expensive and Wi-Fi does not reach fields, so irrigation is decided by guesswork.",
+  "proposed": "Soil-moisture, pH and weather nodes report over LoRa to a gateway and a dashboard recommends irrigation timing per field zone. The ESP32 + LoRa SX1276 reads Capacitive Soil Moisture, Soil pH Sensor, BME280 Weather, processes the data on board and drives Solenoid Valve Relay, Solar Battery Charger, with LoRa: Gateway, MQTT: Web Dashboard for connectivity.",
+  "advantages": [
+   "Real-time remote monitoring",
+   "Low-cost, easily replicated hardware",
+   "Scales from one node to many",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Smart farming",
+   "Greenhouses",
+   "Water saving"
+  ],
+  "hardware": [
+   "ESP32 + LoRa SX1276",
+   "SX1276 LoRa",
+   "Capacitive soil probe",
+   "pH probe",
+   "6V solar panel",
+   "TP4056"
+  ],
+  "software": [
+   "Arduino IDE",
+   "ThingsBoard"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V / Li-ion)",
+   "controller": "ESP32 + LoRa SX1276",
+   "inputs": [
+    "Capacitive Soil Moisture",
+    "Soil pH Sensor",
+    "BME280 Weather"
+   ],
+   "outputs": [
+    "Solenoid Valve Relay",
+    "Solar Battery Charger"
+   ],
+   "comms": [
+    "LoRa: Gateway",
+    "MQTT: Web Dashboard"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "iot-smart-energy-meter-with-appliance-level-monitoring",
+  "code": "ISE-IOT-004",
+  "title": "IoT Smart Energy Meter with Appliance-Level Monitoring",
+  "domain": "Wireless & IoT",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A meter measures voltage and current, identifies which appliance is running from its load signature and shows cost per appliance in a mobile app.",
+  "existing": "Households see only one monthly bill and cannot tell which appliance wastes energy.",
+  "proposed": "A meter measures voltage and current, identifies which appliance is running from its load signature and shows cost per appliance in a mobile app. The ESP32 reads ZMPT101B Voltage Sensor, ACS712 Current Sensor, processes the data on board and drives Load Signature Classifier, LCD Display, Relay Cut-off, with Wi-Fi: Cloud Dashboard for connectivity.",
+  "advantages": [
+   "Real-time remote monitoring",
+   "Low-cost, easily replicated hardware",
+   "Scales from one node to many",
+   "Includes a verified IEEE base paper reference"
+  ],
+  "applications": [
+   "Home energy saving",
+   "Hostels",
+   "Small industries"
+  ],
+  "hardware": [
+   "ESP32",
+   "ZMPT101B",
+   "ACS712 30A",
+   "LCD 16x2",
+   "Relay"
+  ],
+  "software": [
+   "Arduino IDE",
+   "Blynk / Firebase"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V / Li-ion)",
+   "controller": "ESP32",
+   "inputs": [
+    "ZMPT101B Voltage Sensor",
+    "ACS712 Current Sensor"
+   ],
+   "outputs": [
+    "Load Signature Classifier",
+    "LCD Display",
+    "Relay Cut-off"
+   ],
+   "comms": [
+    "Wi-Fi: Cloud Dashboard"
+   ]
+  },
+  "ieee": {
+   "title": "Harnessing Temporal Awareness: Dual-CNN Model for Non-Intrusive Load Monitoring",
+   "ref": "IEEE Transactions on Green Communications and Networking (accepted 2025)"
+  }
+ },
+ {
+  "slug": "rfid-and-face-verified-smart-attendance-with-cloud-reports",
+  "code": "ISE-IOT-005",
+  "title": "RFID and Face-Verified Smart Attendance with Cloud Reports",
+  "domain": "Wireless & IoT",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "Students tap an RFID card and a camera confirms the face so proxy attendance is blocked, with reports pushed to a web dashboard.",
+  "existing": "Paper and RFID-only attendance are easy to fake and slow to compile.",
+  "proposed": "Students tap an RFID card and a camera confirms the face so proxy attendance is blocked, with reports pushed to a web dashboard. The ESP32-CAM reads RC522 RFID Reader, ESP32-CAM Face Capture, processes the data on board and drives Attendance Database, OLED Display, Buzzer, with Wi-Fi: Cloud Dashboard for connectivity.",
+  "advantages": [
+   "Real-time remote monitoring",
+   "Low-cost, easily replicated hardware",
+   "Scales from one node to many",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Colleges",
+   "Offices",
+   "Training centres"
+  ],
+  "hardware": [
+   "ESP32-CAM",
+   "RC522",
+   "ESP32-CAM",
+   "OLED display"
+  ],
+  "software": [
+   "Arduino IDE",
+   "Python",
+   "Firebase"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V / Li-ion)",
+   "controller": "ESP32-CAM",
+   "inputs": [
+    "RC522 RFID Reader",
+    "ESP32-CAM Face Capture"
+   ],
+   "outputs": [
+    "Attendance Database",
+    "OLED Display",
+    "Buzzer"
+   ],
+   "comms": [
+    "Wi-Fi: Cloud Dashboard"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "industrial-gas-leak-monitoring-with-lora-mesh-alerts",
+  "code": "ISE-IOT-006",
+  "title": "Industrial Gas Leak Monitoring with LoRa Mesh Alerts",
+  "domain": "Wireless & IoT",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "Gas sensor nodes form a LoRa mesh across a plant, trigger local alarms instantly and escalate to supervisors by SMS.",
+  "existing": "Single wired detectors miss leaks in large plants and a central failure silences every alarm.",
+  "proposed": "Gas sensor nodes form a LoRa mesh across a plant, trigger local alarms instantly and escalate to supervisors by SMS. The ESP32 + LoRa SX1276 reads MQ-2 / MQ-135 Gas Sensors, Temperature Sensor, processes the data on board and drives Siren and Beacon, Exhaust Fan Relay, SIM800L GSM, with LoRa Mesh, GSM: SMS Alert for connectivity.",
+  "advantages": [
+   "Real-time remote monitoring",
+   "Low-cost, easily replicated hardware",
+   "Scales from one node to many",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Chemical plants",
+   "Kitchens",
+   "Warehouses"
+  ],
+  "hardware": [
+   "ESP32 + LoRa SX1276",
+   "MQ-2",
+   "MQ-135",
+   "SX1276",
+   "Siren"
+  ],
+  "software": [
+   "Arduino IDE",
+   "Embedded C"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V / Li-ion)",
+   "controller": "ESP32 + LoRa SX1276",
+   "inputs": [
+    "MQ-2 / MQ-135 Gas Sensors",
+    "Temperature Sensor"
+   ],
+   "outputs": [
+    "Siren and Beacon",
+    "Exhaust Fan Relay",
+    "SIM800L GSM"
+   ],
+   "comms": [
+    "LoRa Mesh",
+    "GSM: SMS Alert"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "smart-waste-bin-network-with-route-optimisation",
+  "code": "ISE-IOT-007",
+  "title": "Smart Waste Bin Network with Route Optimisation",
+  "domain": "Wireless & IoT",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "Ultrasonic fill sensors and load cells report bin status so collection trucks follow a shortest route covering only full bins.",
+  "existing": "Fixed collection schedules waste fuel on empty bins and overflow others.",
+  "proposed": "Ultrasonic fill sensors and load cells report bin status so collection trucks follow a shortest route covering only full bins. The ESP32 reads HC-SR04 Fill Level, HX711 Load Cell, Lid Reed Switch, processes the data on board and drives Status LED, Cloud Route Planner, with LoRa / Wi-Fi: Gateway, MQTT: Dashboard for connectivity.",
+  "advantages": [
+   "Real-time remote monitoring",
+   "Low-cost, easily replicated hardware",
+   "Scales from one node to many",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Smart cities",
+   "Campuses",
+   "Municipal waste"
+  ],
+  "hardware": [
+   "ESP32",
+   "HC-SR04",
+   "HX711 + load cell",
+   "LoRa module"
+  ],
+  "software": [
+   "Arduino IDE",
+   "Python",
+   "OpenStreetMap API"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V / Li-ion)",
+   "controller": "ESP32",
+   "inputs": [
+    "HC-SR04 Fill Level",
+    "HX711 Load Cell",
+    "Lid Reed Switch"
+   ],
+   "outputs": [
+    "Status LED",
+    "Cloud Route Planner"
+   ],
+   "comms": [
+    "LoRa / Wi-Fi: Gateway",
+    "MQTT: Dashboard"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "ble-asset-and-patient-tracking-for-hospitals",
+  "code": "ISE-IOT-008",
+  "title": "BLE Asset and Patient Tracking for Hospitals",
+  "domain": "Wireless & IoT",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "BLE tags on equipment and wristbands are located by ceiling nodes so staff can find a ventilator or a patient in seconds.",
+  "existing": "Hospitals lose time hunting for mobile equipment and wandering patients.",
+  "proposed": "BLE tags on equipment and wristbands are located by ceiling nodes so staff can find a ventilator or a patient in seconds. The ESP32 reads BLE Tag RSSI, Door Reed Sensor, processes the data on board and drives Zone Location Map, Staff Alert Buzzer, with BLE Scanning, Wi-Fi: Server for connectivity.",
+  "advantages": [
+   "Real-time remote monitoring",
+   "Low-cost, easily replicated hardware",
+   "Scales from one node to many",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Hospitals",
+   "Warehouses",
+   "Elder care"
+  ],
+  "hardware": [
+   "ESP32",
+   "ESP32 nodes",
+   "BLE beacon tags"
+  ],
+  "software": [
+   "Arduino IDE",
+   "Python",
+   "MQTT"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V / Li-ion)",
+   "controller": "ESP32",
+   "inputs": [
+    "BLE Tag RSSI",
+    "Door Reed Sensor"
+   ],
+   "outputs": [
+    "Zone Location Map",
+    "Staff Alert Buzzer"
+   ],
+   "comms": [
+    "BLE Scanning",
+    "Wi-Fi: Server"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "cold-chain-vaccine-transport-monitor-with-tamper-evidence",
+  "code": "ISE-IOT-009",
+  "title": "Cold-Chain Vaccine Transport Monitor with Tamper Evidence",
+  "domain": "Wireless & IoT",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A tracker logs temperature, shock and door-open events with GPS and raises an alert as soon as the cold chain is broken.",
+  "existing": "A silent temperature excursion spoils vaccines and nobody knows until delivery.",
+  "proposed": "A tracker logs temperature, shock and door-open events with GPS and raises an alert as soon as the cold chain is broken. The ESP32 reads DS18B20 Temperature, MPU6050 Shock, Door Switch, processes the data on board and drives SIM800L GSM Alert, OLED Display, SD Card Log, with GSM / GPRS: Cloud for connectivity.",
+  "advantages": [
+   "Real-time remote monitoring",
+   "Low-cost, easily replicated hardware",
+   "Scales from one node to many",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Pharma logistics",
+   "Food transport",
+   "Blood banks"
+  ],
+  "hardware": [
+   "ESP32",
+   "DS18B20",
+   "SIM800L",
+   "SD card module",
+   "Li-ion battery"
+  ],
+  "software": [
+   "Arduino IDE",
+   "Firebase"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V / Li-ion)",
+   "controller": "ESP32",
+   "inputs": [
+    "DS18B20 Temperature",
+    "MPU6050 Shock",
+    "Door Switch",
+    "NEO-6M GPS"
+   ],
+   "outputs": [
+    "SIM800L GSM Alert",
+    "OLED Display",
+    "SD Card Log"
+   ],
+   "comms": [
+    "GSM / GPRS: Cloud"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "flood-early-warning-system-with-water-level-telemetry",
+  "code": "ISE-IOT-010",
+  "title": "Flood Early-Warning System with Water-Level Telemetry",
+  "domain": "Wireless & IoT",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "River-level sensors and rain gauges send readings by LoRa and the system warns villages by SMS and siren when thresholds are crossed.",
+  "existing": "Flood warnings arrive late because levels are read manually.",
+  "proposed": "River-level sensors and rain gauges send readings by LoRa and the system warns villages by SMS and siren when thresholds are crossed. The ESP32 + LoRa SX1276 reads Ultrasonic Water Level, Tipping-Bucket Rain Gauge, processes the data on board and drives SMS Alert, Siren, Cloud Dashboard, with LoRa Gateway, GSM: SMS for connectivity.",
+  "advantages": [
+   "Real-time remote monitoring",
+   "Low-cost, easily replicated hardware",
+   "Scales from one node to many",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Disaster management",
+   "Dams",
+   "Villages"
+  ],
+  "hardware": [
+   "ESP32 + LoRa SX1276",
+   "JSN-SR04T",
+   "Rain gauge",
+   "SX1276",
+   "Solar panel"
+  ],
+  "software": [
+   "Arduino IDE",
+   "ThingsBoard"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V / Li-ion)",
+   "controller": "ESP32 + LoRa SX1276",
+   "inputs": [
+    "Ultrasonic Water Level",
+    "Tipping-Bucket Rain Gauge"
+   ],
+   "outputs": [
+    "SMS Alert",
+    "Siren",
+    "Cloud Dashboard"
+   ],
+   "comms": [
+    "LoRa Gateway",
+    "GSM: SMS"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "smart-street-light-with-adaptive-dimming-and-fault-reporting",
+  "code": "ISE-IOT-011",
+  "title": "Smart Street Light with Adaptive Dimming and Fault Reporting",
+  "domain": "Wireless & IoT",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "Street lights dim by traffic and daylight and report lamp failures to a central dashboard.",
+  "existing": "Lights burn at full power all night and failures go unnoticed for days.",
+  "proposed": "Street lights dim by traffic and daylight and report lamp failures to a central dashboard. The ESP32 reads LDR Daylight, PIR Motion, Current Sensor (Lamp Health), processes the data on board and drives PWM LED Driver, Fault Report, with LoRa / Wi-Fi: Dashboard for connectivity.",
+  "advantages": [
+   "Real-time remote monitoring",
+   "Low-cost, easily replicated hardware",
+   "Scales from one node to many",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Smart cities",
+   "Campuses",
+   "Highways"
+  ],
+  "hardware": [
+   "ESP32",
+   "LDR",
+   "PIR",
+   "ACS712",
+   "MOSFET driver"
+  ],
+  "software": [
+   "Arduino IDE",
+   "MQTT"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V / Li-ion)",
+   "controller": "ESP32",
+   "inputs": [
+    "LDR Daylight",
+    "PIR Motion",
+    "Current Sensor (Lamp Health)"
+   ],
+   "outputs": [
+    "PWM LED Driver",
+    "Fault Report"
+   ],
+   "comms": [
+    "LoRa / Wi-Fi: Dashboard"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "wearable-fall-and-vital-sign-alert-band-for-elderly-care",
+  "code": "ISE-IOT-012",
+  "title": "Wearable Fall and Vital-Sign Alert Band for Elderly Care",
+  "domain": "Wireless & IoT",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A wrist band detects falls with an accelerometer, reads pulse and SpO2, and alerts caregivers through a phone app.",
+  "existing": "Elderly people living alone can lie injured for hours after a fall.",
+  "proposed": "A wrist band detects falls with an accelerometer, reads pulse and SpO2, and alerts caregivers through a phone app. The ESP32 reads MPU6050 Fall Sensor, MAX30102 Pulse / SpO2, processes the data on board and drives OLED Display, Vibration Motor, BLE Phone Alert, with BLE: Mobile App for connectivity.",
+  "advantages": [
+   "Real-time remote monitoring",
+   "Low-cost, easily replicated hardware",
+   "Scales from one node to many",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Elder care",
+   "Remote patient monitoring"
+  ],
+  "hardware": [
+   "ESP32",
+   "MAX30102",
+   "MPU6050",
+   "OLED",
+   "LiPo battery"
+  ],
+  "software": [
+   "Arduino IDE",
+   "MIT App Inventor"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V / Li-ion)",
+   "controller": "ESP32",
+   "inputs": [
+    "MPU6050 Fall Sensor",
+    "MAX30102 Pulse / SpO2"
+   ],
+   "outputs": [
+    "OLED Display",
+    "Vibration Motor",
+    "BLE Phone Alert"
+   ],
+   "comms": [
+    "BLE: Mobile App"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "smart-parking-system-with-slot-detection-and-reservation",
+  "code": "ISE-IOT-013",
+  "title": "Smart Parking System with Slot Detection and Reservation",
+  "domain": "Wireless & IoT",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "Ultrasonic sensors detect free slots and a web app lets drivers see and reserve a slot before arriving.",
+  "existing": "Drivers circle looking for parking, wasting fuel and time.",
+  "proposed": "Ultrasonic sensors detect free slots and a web app lets drivers see and reserve a slot before arriving. The ESP32 reads Ultrasonic Slot Sensors, IR Gate Sensor, processes the data on board and drives Servo Barrier, LED Slot Indicators, LCD Availability, with Wi-Fi: Web App for connectivity.",
+  "advantages": [
+   "Real-time remote monitoring",
+   "Low-cost, easily replicated hardware",
+   "Scales from one node to many",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Malls",
+   "Campuses",
+   "Airports"
+  ],
+  "hardware": [
+   "ESP32",
+   "HC-SR04 x4",
+   "Servo SG90",
+   "LCD"
+  ],
+  "software": [
+   "Arduino IDE",
+   "Firebase",
+   "HTML/JS"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V / Li-ion)",
+   "controller": "ESP32",
+   "inputs": [
+    "Ultrasonic Slot Sensors",
+    "IR Gate Sensor"
+   ],
+   "outputs": [
+    "Servo Barrier",
+    "LED Slot Indicators",
+    "LCD Availability"
+   ],
+   "comms": [
+    "Wi-Fi: Web App"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "home-automation-with-voice-app-and-energy-scheduling",
+  "code": "ISE-IOT-014",
+  "title": "Home Automation with Voice, App and Energy Scheduling",
+  "domain": "Wireless & IoT",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "Appliances are switched by voice, app or time-of-use schedules that favour off-peak tariffs and show monthly savings.",
+  "existing": "Basic remotes add convenience but do nothing to lower the bill.",
+  "proposed": "Appliances are switched by voice, app or time-of-use schedules that favour off-peak tariffs and show monthly savings. The ESP32 reads Voice Assistant Command, Mobile App Input, Current Sensor, processes the data on board and drives 4-Channel Relay Board, Status LEDs, with Wi-Fi: Cloud, MQTT for connectivity.",
+  "advantages": [
+   "Real-time remote monitoring",
+   "Low-cost, easily replicated hardware",
+   "Scales from one node to many",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Smart homes",
+   "Offices"
+  ],
+  "hardware": [
+   "ESP32",
+   "4-ch relay",
+   "ACS712",
+   "ESP32"
+  ],
+  "software": [
+   "Arduino IDE",
+   "Blynk / Alexa skill"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V / Li-ion)",
+   "controller": "ESP32",
+   "inputs": [
+    "Voice Assistant Command",
+    "Mobile App Input",
+    "Current Sensor"
+   ],
+   "outputs": [
+    "4-Channel Relay Board",
+    "Status LEDs"
+   ],
+   "comms": [
+    "Wi-Fi: Cloud",
+    "MQTT"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "anti-theft-vehicle-tracking-with-engine-immobilisation",
+  "code": "ISE-IOT-015",
+  "title": "Anti-Theft Vehicle Tracking with Engine Immobilisation",
+  "domain": "Wireless & IoT",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "A tracker reports live GPS, detects tow-away movement and can cut the ignition by SMS command.",
+  "existing": "Stolen vehicles are hard to find once the thief switches off the tracker.",
+  "proposed": "A tracker reports live GPS, detects tow-away movement and can cut the ignition by SMS command. The ESP32 reads NEO-6M GPS, MPU6050 Tow Detection, Ignition Sense, processes the data on board and drives SIM800L GSM, Relay (Ignition Cut), Buzzer, with GSM: SMS / GPRS for connectivity.",
+  "advantages": [
+   "Real-time remote monitoring",
+   "Low-cost, easily replicated hardware",
+   "Scales from one node to many",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Two-wheelers",
+   "Cars",
+   "Fleet management"
+  ],
+  "hardware": [
+   "ESP32",
+   "NEO-6M",
+   "SIM800L",
+   "Relay"
+  ],
+  "software": [
+   "Arduino IDE"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V / Li-ion)",
+   "controller": "ESP32",
+   "inputs": [
+    "NEO-6M GPS",
+    "MPU6050 Tow Detection",
+    "Ignition Sense"
+   ],
+   "outputs": [
+    "SIM800L GSM",
+    "Relay (Ignition Cut)",
+    "Buzzer"
+   ],
+   "comms": [
+    "GSM: SMS / GPRS"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "autonomous-mobile-robot-with-ros-2-slam-navigation",
+  "code": "ISE-ROB-001",
+  "title": "Autonomous Mobile Robot with ROS 2 SLAM Navigation",
+  "domain": "Robotics",
+  "year": "2025-26",
+  "featured": true,
+  "highValue": true,
+  "abstract": "A differential-drive robot builds a map with a 2D LiDAR, localises itself and navigates to goals while avoiding obstacles.",
+  "existing": "Line-following robots cannot handle changed layouts or moving obstacles.",
+  "proposed": "A differential-drive robot builds a map with a 2D LiDAR, localises itself and navigates to goals while avoiding obstacles. The Raspberry Pi 4 + Arduino/ESP32 reads RPLidar A1, Wheel Encoders, MPU6050 IMU, processes the data on board and drives Motor Driver L298N, DC Gear Motors, with ROS 2 Nav2 Stack, Wi-Fi: RViz Console for connectivity.",
+  "advantages": [
+   "Hands-free or autonomous operation",
+   "Modular so sensors and tools can be swapped",
+   "Demonstrable in a classroom or lab",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Warehouses",
+   "Hospitals",
+   "Service robots"
+  ],
+  "hardware": [
+   "Raspberry Pi 4 + Arduino/ESP32",
+   "RPLidar A1",
+   "Encoder motors",
+   "Raspberry Pi 4"
+  ],
+  "software": [
+   "ROS 2",
+   "Python",
+   "C++"
+  ],
+  "diagram": {
+   "power": "Battery Pack (7.4V / 12V)",
+   "controller": "Raspberry Pi 4 + Arduino/ESP32",
+   "inputs": [
+    "RPLidar A1",
+    "Wheel Encoders",
+    "MPU6050 IMU"
+   ],
+   "outputs": [
+    "Motor Driver L298N",
+    "DC Gear Motors"
+   ],
+   "comms": [
+    "ROS 2 Nav2 Stack",
+    "Wi-Fi: RViz Console"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "voice-controlled-robotic-arm-with-pick-and-place-learning",
+  "code": "ISE-ROB-002",
+  "title": "Voice-Controlled Robotic Arm with Pick-and-Place Learning",
+  "domain": "Robotics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "A 5-DOF arm obeys spoken commands and learns taught positions to repeat pick-and-place sequences.",
+  "existing": "Industrial arms need programming skill; hands-free teaching makes them usable for small shops.",
+  "proposed": "A 5-DOF arm obeys spoken commands and learns taught positions to repeat pick-and-place sequences. The ESP32 reads Voice Module / Mic, Servo Position Feedback, processes the data on board and drives 6 x Servo Motors, Gripper, with Wi-Fi: Mobile App for connectivity.",
+  "advantages": [
+   "Hands-free or autonomous operation",
+   "Modular so sensors and tools can be swapped",
+   "Demonstrable in a classroom or lab",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Small factories",
+   "Education",
+   "Assistive robotics"
+  ],
+  "hardware": [
+   "ESP32",
+   "5-DOF arm kit",
+   "MG996R servos",
+   "PCA9685"
+  ],
+  "software": [
+   "Arduino IDE",
+   "Python"
+  ],
+  "diagram": {
+   "power": "Battery Pack (7.4V / 12V)",
+   "controller": "ESP32",
+   "inputs": [
+    "Voice Module / Mic",
+    "Servo Position Feedback"
+   ],
+   "outputs": [
+    "6 x Servo Motors",
+    "Gripper"
+   ],
+   "comms": [
+    "Wi-Fi: Mobile App"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "obstacle-avoiding-quadcopter-with-onboard-flight-controller",
+  "code": "ISE-ROB-003",
+  "title": "Obstacle-Avoiding Quadcopter with Onboard Flight Controller",
+  "domain": "Robotics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A quadcopter holds position and avoids obstacles using IMU stabilisation and ultrasonic ranging.",
+  "existing": "Beginner drones crash into walls because they only stabilise attitude.",
+  "proposed": "A quadcopter holds position and avoids obstacles using IMU stabilisation and ultrasonic ranging. The STM32 / ESP32 Flight Controller reads MPU6050 IMU, Barometer BMP280, Ultrasonic Ranger, processes the data on board and drives 4 x ESC + BLDC Motors, with RF Remote / Wi-Fi for connectivity.",
+  "advantages": [
+   "Hands-free or autonomous operation",
+   "Modular so sensors and tools can be swapped",
+   "Demonstrable in a classroom or lab",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Inspection",
+   "Education"
+  ],
+  "hardware": [
+   "STM32 / ESP32 Flight Controller",
+   "F450 frame",
+   "BLDC 1000KV x4",
+   "ESC 30A x4",
+   "LiPo 3S"
+  ],
+  "software": [
+   "Arduino IDE",
+   "Betaflight"
+  ],
+  "diagram": {
+   "power": "Battery Pack (7.4V / 12V)",
+   "controller": "STM32 / ESP32 Flight Controller",
+   "inputs": [
+    "MPU6050 IMU",
+    "Barometer BMP280",
+    "Ultrasonic Ranger"
+   ],
+   "outputs": [
+    "4 x ESC + BLDC Motors"
+   ],
+   "comms": [
+    "RF Remote / Wi-Fi"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "fire-fighting-robot-with-flame-tracking-and-water-jet",
+  "code": "ISE-ROB-004",
+  "title": "Fire-Fighting Robot with Flame Tracking and Water Jet",
+  "domain": "Robotics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "A robot finds flames with a sensor array, drives toward them and sprays water with a servo-aimed nozzle.",
+  "existing": "Humans must enter hazardous rooms to put out small fires.",
+  "proposed": "A robot finds flames with a sensor array, drives toward them and sprays water with a servo-aimed nozzle. The Arduino Mega reads Flame Sensor Array, Ultrasonic Distance, MQ-2 Smoke, processes the data on board and drives Water Pump Relay, Nozzle Servo, Motor Driver, with Bluetooth Override for connectivity.",
+  "advantages": [
+   "Hands-free or autonomous operation",
+   "Modular so sensors and tools can be swapped",
+   "Demonstrable in a classroom or lab",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Factories",
+   "Warehouses",
+   "Server rooms"
+  ],
+  "hardware": [
+   "Arduino Mega",
+   "Flame sensors x3",
+   "Mini pump",
+   "Servo"
+  ],
+  "software": [
+   "Arduino IDE"
+  ],
+  "diagram": {
+   "power": "Battery Pack (7.4V / 12V)",
+   "controller": "Arduino Mega",
+   "inputs": [
+    "Flame Sensor Array",
+    "Ultrasonic Distance",
+    "MQ-2 Smoke"
+   ],
+   "outputs": [
+    "Water Pump Relay",
+    "Nozzle Servo",
+    "Motor Driver"
+   ],
+   "comms": [
+    "Bluetooth Override"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "self-balancing-two-wheel-robot-with-pid-and-lqr-tuning",
+  "code": "ISE-ROB-005",
+  "title": "Self-Balancing Two-Wheel Robot with PID and LQR Tuning",
+  "domain": "Robotics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "An inverted-pendulum robot stays upright using IMU fusion with PID and compares it against an LQR controller.",
+  "existing": "Balancing needs fast closed-loop control that students seldom implement on hardware.",
+  "proposed": "An inverted-pendulum robot stays upright using IMU fusion with PID and compares it against an LQR controller. The ESP32 / STM32 reads MPU6050 (Complementary Filter), Encoders, processes the data on board and drives Motor Driver TB6612, DC Motors, with Bluetooth Tuning App for connectivity.",
+  "advantages": [
+   "Hands-free or autonomous operation",
+   "Modular so sensors and tools can be swapped",
+   "Demonstrable in a classroom or lab",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Control education",
+   "Delivery robots"
+  ],
+  "hardware": [
+   "ESP32 / STM32",
+   "MPU6050",
+   "N20 encoder motors",
+   "TB6612FNG"
+  ],
+  "software": [
+   "Arduino IDE",
+   "MATLAB"
+  ],
+  "diagram": {
+   "power": "Battery Pack (7.4V / 12V)",
+   "controller": "ESP32 / STM32",
+   "inputs": [
+    "MPU6050 (Complementary Filter)",
+    "Encoders"
+   ],
+   "outputs": [
+    "Motor Driver TB6612",
+    "DC Motors"
+   ],
+   "comms": [
+    "Bluetooth Tuning App"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "gesture-controlled-robot-using-wearable-imu-glove",
+  "code": "ISE-ROB-006",
+  "title": "Gesture-Controlled Robot Using Wearable IMU Glove",
+  "domain": "Robotics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "Hand tilt and finger flex on a glove drive a wheeled robot or arm wirelessly.",
+  "existing": "Joysticks and remotes are unnatural for operators in hazardous or sterile areas.",
+  "proposed": "Hand tilt and finger flex on a glove drive a wheeled robot or arm wirelessly. The ESP32 reads MPU6050 Hand Tilt, Flex Sensors, processes the data on board and drives Motor Driver, Robot Chassis, with ESP-NOW Wireless for connectivity.",
+  "advantages": [
+   "Hands-free or autonomous operation",
+   "Modular so sensors and tools can be swapped",
+   "Demonstrable in a classroom or lab",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Hazardous handling",
+   "Assistive devices"
+  ],
+  "hardware": [
+   "ESP32",
+   "Flex sensors x5",
+   "MPU6050",
+   "L298N"
+  ],
+  "software": [
+   "Arduino IDE"
+  ],
+  "diagram": {
+   "power": "Battery Pack (7.4V / 12V)",
+   "controller": "ESP32",
+   "inputs": [
+    "MPU6050 Hand Tilt",
+    "Flex Sensors"
+   ],
+   "outputs": [
+    "Motor Driver",
+    "Robot Chassis"
+   ],
+   "comms": [
+    "ESP-NOW Wireless"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "agricultural-seeding-and-weeding-robot",
+  "code": "ISE-ROB-007",
+  "title": "Agricultural Seeding and Weeding Robot",
+  "domain": "Robotics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A solar-assisted rover plants seeds at set spacing and removes weeds detected by a camera.",
+  "existing": "Manual planting and weeding are slow and labour-intensive.",
+  "proposed": "A solar-assisted rover plants seeds at set spacing and removes weeds detected by a camera. The Raspberry Pi 4 + Arduino reads Camera (Weed Detection), Ultrasonic Row Guide, Soil Moisture, processes the data on board and drives Seed Dispenser Servo, Weed Cutter Motor, Drive Motors, with Wi-Fi Control for connectivity.",
+  "advantages": [
+   "Hands-free or autonomous operation",
+   "Modular so sensors and tools can be swapped",
+   "Demonstrable in a classroom or lab",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Smart farming",
+   "Organic farms"
+  ],
+  "hardware": [
+   "Raspberry Pi 4 + Arduino",
+   "Pi Camera",
+   "Solar panel",
+   "Seed dispenser"
+  ],
+  "software": [
+   "Python",
+   "OpenCV",
+   "Arduino IDE"
+  ],
+  "diagram": {
+   "power": "Battery Pack (7.4V / 12V)",
+   "controller": "Raspberry Pi 4 + Arduino",
+   "inputs": [
+    "Camera (Weed Detection)",
+    "Ultrasonic Row Guide",
+    "Soil Moisture"
+   ],
+   "outputs": [
+    "Seed Dispenser Servo",
+    "Weed Cutter Motor",
+    "Drive Motors"
+   ],
+   "comms": [
+    "Wi-Fi Control"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "line-follower-with-junction-mapping-and-maze-solving",
+  "code": "ISE-ROB-008",
+  "title": "Line Follower with Junction Mapping and Maze Solving",
+  "domain": "Robotics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "A PID line follower maps junctions, remembers the maze and runs the shortest path on the second attempt.",
+  "existing": "Basic line followers only follow, they never learn the track.",
+  "proposed": "A PID line follower maps junctions, remembers the maze and runs the shortest path on the second attempt. The Arduino / STM32 reads 8-Channel IR Array, Wheel Encoders, processes the data on board and drives Motor Driver, OLED Status.",
+  "advantages": [
+   "Hands-free or autonomous operation",
+   "Modular so sensors and tools can be swapped",
+   "Demonstrable in a classroom or lab",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Robotics contests",
+   "Warehouse AGVs"
+  ],
+  "hardware": [
+   "Arduino / STM32",
+   "QTR-8A array",
+   "N20 motors"
+  ],
+  "software": [
+   "Arduino IDE"
+  ],
+  "diagram": {
+   "power": "Battery Pack (7.4V / 12V)",
+   "controller": "Arduino / STM32",
+   "inputs": [
+    "8-Channel IR Array",
+    "Wheel Encoders"
+   ],
+   "outputs": [
+    "Motor Driver",
+    "OLED Status"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "robotic-wheelchair-with-eye-blink-and-joystick-control",
+  "code": "ISE-ROB-009",
+  "title": "Robotic Wheelchair with Eye-Blink and Joystick Control",
+  "domain": "Robotics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A wheelchair can be steered by a joystick or by eye-blink patterns for users with limited hand movement.",
+  "existing": "Severely disabled users cannot operate standard joysticks.",
+  "proposed": "A wheelchair can be steered by a joystick or by eye-blink patterns for users with limited hand movement. The ESP32 reads IR Eye-Blink Sensor, Joystick, Ultrasonic Obstacle, processes the data on board and drives Motor Driver 20A, Wheelchair Motors, Buzzer.",
+  "advantages": [
+   "Hands-free or autonomous operation",
+   "Modular so sensors and tools can be swapped",
+   "Demonstrable in a classroom or lab",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Assistive mobility"
+  ],
+  "hardware": [
+   "ESP32",
+   "Blink sensor",
+   "BTS7960 driver",
+   "Gear motors"
+  ],
+  "software": [
+   "Arduino IDE"
+  ],
+  "diagram": {
+   "power": "Battery Pack (7.4V / 12V)",
+   "controller": "ESP32",
+   "inputs": [
+    "IR Eye-Blink Sensor",
+    "Joystick",
+    "Ultrasonic Obstacle"
+   ],
+   "outputs": [
+    "Motor Driver 20A",
+    "Wheelchair Motors",
+    "Buzzer"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "robot-arm-inverse-kinematics-with-camera-guided-sorting",
+  "code": "ISE-ROB-010",
+  "title": "Robot Arm Inverse Kinematics with Camera-Guided Sorting",
+  "domain": "Robotics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "A 4-DOF arm computes inverse kinematics and sorts objects by colour found by a camera.",
+  "existing": "Fixed-position pick-and-place fails when objects are placed anywhere on the belt.",
+  "proposed": "A 4-DOF arm computes inverse kinematics and sorts objects by colour found by a camera. The Raspberry Pi 4 + Arduino reads Pi Camera, Conveyor IR Sensor, processes the data on board and drives Servos x5, Gripper, Conveyor Motor, with Serial Link Pi to Arduino for connectivity.",
+  "advantages": [
+   "Hands-free or autonomous operation",
+   "Modular so sensors and tools can be swapped",
+   "Demonstrable in a classroom or lab",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Sorting lines",
+   "Education"
+  ],
+  "hardware": [
+   "Raspberry Pi 4 + Arduino",
+   "Robot arm kit",
+   "Pi Camera",
+   "Conveyor belt"
+  ],
+  "software": [
+   "Python",
+   "OpenCV",
+   "Arduino IDE"
+  ],
+  "diagram": {
+   "power": "Battery Pack (7.4V / 12V)",
+   "controller": "Raspberry Pi 4 + Arduino",
+   "inputs": [
+    "Pi Camera",
+    "Conveyor IR Sensor"
+   ],
+   "outputs": [
+    "Servos x5",
+    "Gripper",
+    "Conveyor Motor"
+   ],
+   "comms": [
+    "Serial Link Pi to Arduino"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "underwater-rov-with-depth-hold-and-live-camera",
+  "code": "ISE-ROB-011",
+  "title": "Underwater ROV with Depth Hold and Live Camera",
+  "domain": "Robotics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A tethered ROV holds depth with a pressure sensor and streams video for inspection of tanks and hulls.",
+  "existing": "Divers are risky and costly for routine inspections.",
+  "proposed": "A tethered ROV holds depth with a pressure sensor and streams video for inspection of tanks and hulls. The Arduino Mega + Raspberry Pi reads Pressure Depth Sensor, IMU, Leak Sensor, processes the data on board and drives Thrusters x4 + ESC, LED Lights, with Ethernet Tether, Video Stream for connectivity.",
+  "advantages": [
+   "Hands-free or autonomous operation",
+   "Modular so sensors and tools can be swapped",
+   "Demonstrable in a classroom or lab",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Hull inspection",
+   "Aquaculture"
+  ],
+  "hardware": [
+   "Arduino Mega + Raspberry Pi",
+   "Bilge-pump thrusters",
+   "Waterproof camera",
+   "Pressure sensor"
+  ],
+  "software": [
+   "Arduino IDE",
+   "Python"
+  ],
+  "diagram": {
+   "power": "Battery Pack (7.4V / 12V)",
+   "controller": "Arduino Mega + Raspberry Pi",
+   "inputs": [
+    "Pressure Depth Sensor",
+    "IMU",
+    "Leak Sensor"
+   ],
+   "outputs": [
+    "Thrusters x4 + ESC",
+    "LED Lights"
+   ],
+   "comms": [
+    "Ethernet Tether",
+    "Video Stream"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "swarm-robots-with-leader-follower-coordination",
+  "code": "ISE-ROB-012",
+  "title": "Swarm Robots with Leader-Follower Coordination",
+  "domain": "Robotics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "Small robots follow a leader using IR beacons and ESP-NOW messages to keep formation.",
+  "existing": "Single robots cannot cover large areas quickly; swarm control is rarely demonstrated on hardware.",
+  "proposed": "Small robots follow a leader using IR beacons and ESP-NOW messages to keep formation. The ESP32 reads IR Beacon Receiver, Ultrasonic, processes the data on board and drives Motor Driver, Status LED, with ESP-NOW Mesh for connectivity.",
+  "advantages": [
+   "Hands-free or autonomous operation",
+   "Modular so sensors and tools can be swapped",
+   "Demonstrable in a classroom or lab",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Search missions",
+   "Research"
+  ],
+  "hardware": [
+   "ESP32",
+   "ESP32 x3",
+   "N20 motors"
+  ],
+  "software": [
+   "Arduino IDE"
+  ],
+  "diagram": {
+   "power": "Battery Pack (7.4V / 12V)",
+   "controller": "ESP32",
+   "inputs": [
+    "IR Beacon Receiver",
+    "Ultrasonic"
+   ],
+   "outputs": [
+    "Motor Driver",
+    "Status LED"
+   ],
+   "comms": [
+    "ESP-NOW Mesh"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "bomb-disposal-style-tracked-robot-with-camera-and-arm",
+  "code": "ISE-ROB-013",
+  "title": "Bomb-Disposal Style Tracked Robot with Camera and Arm",
+  "domain": "Robotics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "A tracked robot with a camera and gripper is driven from a safe distance over a long-range link.",
+  "existing": "Operators need distance from suspicious objects.",
+  "proposed": "A tracked robot with a camera and gripper is driven from a safe distance over a long-range link. The Raspberry Pi + Arduino reads Camera FPV, Metal Detector Coil, processes the data on board and drives Tank Treads Motors, Arm Servos, with Wi-Fi / RF Link for connectivity.",
+  "advantages": [
+   "Hands-free or autonomous operation",
+   "Modular so sensors and tools can be swapped",
+   "Demonstrable in a classroom or lab",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Security",
+   "Hazardous handling"
+  ],
+  "hardware": [
+   "Raspberry Pi + Arduino",
+   "Tracked chassis",
+   "Metal detector module"
+  ],
+  "software": [
+   "Arduino IDE",
+   "Python"
+  ],
+  "diagram": {
+   "power": "Battery Pack (7.4V / 12V)",
+   "controller": "Raspberry Pi + Arduino",
+   "inputs": [
+    "Camera FPV",
+    "Metal Detector Coil"
+   ],
+   "outputs": [
+    "Tank Treads Motors",
+    "Arm Servos"
+   ],
+   "comms": [
+    "Wi-Fi / RF Link"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "four-layer-esp32-iot-development-board-with-rf-layout",
+  "code": "ISE-PCB-001",
+  "title": "Four-Layer ESP32 IoT Development Board with RF Layout",
+  "domain": "PCB Design",
+  "year": "2025-26",
+  "featured": true,
+  "highValue": true,
+  "abstract": "A compact four-layer board with controlled-impedance antenna routing, USB-C power and on-board sensors, designed in KiCad and verified with DRC and signal checks.",
+  "existing": "Hobby breakout boards waste space and give poor RF performance and EMI.",
+  "proposed": "A compact four-layer board with controlled-impedance antenna routing, USB-C power and on-board sensors, designed in KiCad and verified with DRC and signal checks. The ESP32-S3 reads USB-C Power, BME280, Battery Gauge, processes the data on board and drives Status LEDs, Expansion Header, with Wi-Fi / BLE for connectivity.",
+  "advantages": [
+   "Production-ready design files",
+   "Verified with design-rule and signal checks",
+   "Lower noise and EMI than breadboard builds",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Product prototyping"
+  ],
+  "hardware": [
+   "ESP32-S3",
+   "4-layer PCB",
+   "USB-C",
+   "LDO + charger"
+  ],
+  "software": [
+   "KiCad",
+   "Altium"
+  ],
+  "diagram": {
+   "power": "Board Power Input",
+   "controller": "ESP32-S3",
+   "inputs": [
+    "USB-C Power",
+    "BME280",
+    "Battery Gauge"
+   ],
+   "outputs": [
+    "Status LEDs",
+    "Expansion Header"
+   ],
+   "comms": [
+    "Wi-Fi / BLE"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "gan-totem-pole-pfc-board-layout-for-ev-charger-study",
+  "code": "ISE-PCB-002",
+  "title": "GaN Totem-Pole PFC Board Layout for EV Charger Study",
+  "domain": "PCB Design",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A PCB for a high-frequency totem-pole power factor stage with minimised power loop inductance, Kelvin gate returns and thermal vias.",
+  "existing": "Fast GaN switching rings and fails on boards laid out like silicon designs.",
+  "proposed": "A PCB for a high-frequency totem-pole power factor stage with minimised power loop inductance, Kelvin gate returns and thermal vias. The DSP / STM32G4 Controller reads AC Line Sense, Current Shunt, processes the data on board and drives GaN Half-Bridge, Gate Driver.",
+  "advantages": [
+   "Production-ready design files",
+   "Verified with design-rule and signal checks",
+   "Lower noise and EMI than breadboard builds",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "EV chargers",
+   "Server power"
+  ],
+  "hardware": [
+   "DSP / STM32G4 Controller",
+   "GaN FETs",
+   "Isolated gate driver",
+   "4-layer 2 oz copper"
+  ],
+  "software": [
+   "KiCad",
+   "LTspice"
+  ],
+  "diagram": {
+   "power": "Board Power Input",
+   "controller": "DSP / STM32G4 Controller",
+   "inputs": [
+    "AC Line Sense",
+    "Current Shunt"
+   ],
+   "outputs": [
+    "GaN Half-Bridge",
+    "Gate Driver"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "emi-compliant-buck-converter-pcb-with-pre-compliance-test",
+  "code": "ISE-PCB-003",
+  "title": "EMI-Compliant Buck Converter PCB with Pre-Compliance Test",
+  "domain": "PCB Design",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A 12V to 5V buck module laid out for low EMI, then measured with a near-field probe and LISN-style tests.",
+  "existing": "Poor layout makes products fail EMC testing late and costs redesigns.",
+  "proposed": "A 12V to 5V buck module laid out for low EMI, then measured with a near-field probe and LISN-style tests. The Buck Controller IC reads 12V DC In, processes the data on board and drives 5V 3A Out.",
+  "advantages": [
+   "Production-ready design files",
+   "Verified with design-rule and signal checks",
+   "Lower noise and EMI than breadboard builds",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Industrial electronics",
+   "Automotive"
+  ],
+  "hardware": [
+   "Buck Controller IC",
+   "Buck controller IC",
+   "Ferrite beads",
+   "Shielded inductor"
+  ],
+  "software": [
+   "KiCad",
+   "LTspice"
+  ],
+  "diagram": {
+   "power": "Board Power Input",
+   "controller": "Buck Controller IC",
+   "inputs": [
+    "12V DC In"
+   ],
+   "outputs": [
+    "5V 3A Out"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "custom-arduino-compatible-board-with-usb-and-power-protection",
+  "code": "ISE-PCB-004",
+  "title": "Custom Arduino-Compatible Board with USB and Power Protection",
+  "domain": "PCB Design",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "A low-cost Arduino-class board with reverse-polarity, ESD and over-current protection, ready for batch fabrication.",
+  "existing": "Off-the-shelf clones lack protection and burn on wiring mistakes.",
+  "proposed": "A low-cost Arduino-class board with reverse-polarity, ESD and over-current protection, ready for batch fabrication. The ATmega328P / ATmega2560 reads USB-UART, DC Jack, processes the data on board and drives Header I/O, Power LED.",
+  "advantages": [
+   "Production-ready design files",
+   "Verified with design-rule and signal checks",
+   "Lower noise and EMI than breadboard builds",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Education",
+   "Small products"
+  ],
+  "hardware": [
+   "ATmega328P / ATmega2560",
+   "ATmega328P",
+   "CH340",
+   "TVS diodes"
+  ],
+  "software": [
+   "KiCad"
+  ],
+  "diagram": {
+   "power": "Board Power Input",
+   "controller": "ATmega328P / ATmega2560",
+   "inputs": [
+    "USB-UART",
+    "DC Jack"
+   ],
+   "outputs": [
+    "Header I/O",
+    "Power LED"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "bms-board-for-4s-li-ion-pack-with-cell-balancing",
+  "code": "ISE-PCB-005",
+  "title": "BMS Board for 4S Li-ion Pack with Cell Balancing",
+  "domain": "PCB Design",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A battery management board with per-cell monitoring, passive balancing and MOSFET protection.",
+  "existing": "Unprotected packs overheat and degrade from cell imbalance.",
+  "proposed": "A battery management board with per-cell monitoring, passive balancing and MOSFET protection. The STM32 / BQ76920 AFE reads Cell Voltage Sense, NTC Temperature, Shunt Current, processes the data on board and drives Charge/Discharge MOSFETs, Balance Resistors, with UART / CAN for connectivity.",
+  "advantages": [
+   "Production-ready design files",
+   "Verified with design-rule and signal checks",
+   "Lower noise and EMI than breadboard builds",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "E-bikes",
+   "Power banks",
+   "Solar storage"
+  ],
+  "hardware": [
+   "STM32 / BQ76920 AFE",
+   "BQ76920",
+   "MOSFETs",
+   "NTC"
+  ],
+  "software": [
+   "KiCad",
+   "STM32CubeIDE"
+  ],
+  "diagram": {
+   "power": "Board Power Input",
+   "controller": "STM32 / BQ76920 AFE",
+   "inputs": [
+    "Cell Voltage Sense",
+    "NTC Temperature",
+    "Shunt Current"
+   ],
+   "outputs": [
+    "Charge/Discharge MOSFETs",
+    "Balance Resistors"
+   ],
+   "comms": [
+    "UART / CAN"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "motor-driver-carrier-board-for-bldc-and-stepper-motors",
+  "code": "ISE-PCB-006",
+  "title": "Motor Driver Carrier Board for BLDC and Stepper Motors",
+  "domain": "PCB Design",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "A reusable carrier board with gate drivers, current sensing and thermal design for small BLDC and stepper motors.",
+  "existing": "Breadboarded drivers are noisy and unreliable at motor currents.",
+  "proposed": "A reusable carrier board with gate drivers, current sensing and thermal design for small BLDC and stepper motors. The STM32 reads Hall Sensors, Phase Current Shunts, processes the data on board and drives 3-Phase Bridge, Gate Drivers, with UART / CAN for connectivity.",
+  "advantages": [
+   "Production-ready design files",
+   "Verified with design-rule and signal checks",
+   "Lower noise and EMI than breadboard builds",
+   "Includes a verified IEEE base paper reference"
+  ],
+  "applications": [
+   "Robotics",
+   "Drones"
+  ],
+  "hardware": [
+   "STM32",
+   "DRV8305",
+   "MOSFETs",
+   "2-layer 2 oz PCB"
+  ],
+  "software": [
+   "KiCad",
+   "STM32CubeIDE"
+  ],
+  "diagram": {
+   "power": "Board Power Input",
+   "controller": "STM32",
+   "inputs": [
+    "Hall Sensors",
+    "Phase Current Shunts"
+   ],
+   "outputs": [
+    "3-Phase Bridge",
+    "Gate Drivers"
+   ],
+   "comms": [
+    "UART / CAN"
+   ]
+  },
+  "ieee": {
+   "title": "Sensorless Control Methods for BLDC Motor Drives: A Review",
+   "ref": "IEEE Transactions on Transportation Electrification, vol. 11, no. 1, pp. 135-152, 2025. DOI 10.1109/TTE.2024.3387371"
+  }
+ },
+ {
+  "slug": "lora-sensor-node-pcb-with-energy-harvesting-power-path",
+  "code": "ISE-PCB-007",
+  "title": "LoRa Sensor Node PCB with Energy-Harvesting Power Path",
+  "domain": "PCB Design",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "An ultra-low-power LoRa node PCB with solar harvesting, super-capacitor backup and a sleep current under 10 uA.",
+  "existing": "Battery-only nodes die in the field; harvesting layout is rarely designed for microamp losses.",
+  "proposed": "An ultra-low-power LoRa node PCB with solar harvesting, super-capacitor backup and a sleep current under 10 uA. The ESP32 / STM32L0 reads Solar Cell, Sensor Header, processes the data on board and drives LoRa Radio, Status LED, with LoRa for connectivity.",
+  "advantages": [
+   "Production-ready design files",
+   "Verified with design-rule and signal checks",
+   "Lower noise and EMI than breadboard builds",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Remote sensing",
+   "Agriculture"
+  ],
+  "hardware": [
+   "ESP32 / STM32L0",
+   "SX1262",
+   "BQ25570 harvester",
+   "Super-capacitor"
+  ],
+  "software": [
+   "KiCad"
+  ],
+  "diagram": {
+   "power": "Board Power Input",
+   "controller": "ESP32 / STM32L0",
+   "inputs": [
+    "Solar Cell",
+    "Sensor Header"
+   ],
+   "outputs": [
+    "LoRa Radio",
+    "Status LED"
+   ],
+   "comms": [
+    "LoRa"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "signal-integrity-study-of-high-speed-usb-ethernet-routing",
+  "code": "ISE-PCB-008",
+  "title": "Signal-Integrity Study of High-Speed USB/Ethernet Routing",
+  "domain": "PCB Design",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "Differential pairs are routed with controlled impedance and verified with field-solver and eye-diagram analysis.",
+  "existing": "Poorly routed differential pairs cause intermittent link failures.",
+  "proposed": "Differential pairs are routed with controlled impedance and verified with field-solver and eye-diagram analysis. The USB / Ethernet PHY reads Differential Pair, processes the data on board and drives Eye Diagram Report.",
+  "advantages": [
+   "Production-ready design files",
+   "Verified with design-rule and signal checks",
+   "Lower noise and EMI than breadboard builds",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Embedded products"
+  ],
+  "hardware": [
+   "USB / Ethernet PHY",
+   "4-layer stackup",
+   "USB connector"
+  ],
+  "software": [
+   "KiCad",
+   "Altium",
+   "HyperLynx"
+  ],
+  "diagram": {
+   "power": "Board Power Input",
+   "controller": "USB / Ethernet PHY",
+   "inputs": [
+    "Differential Pair"
+   ],
+   "outputs": [
+    "Eye Diagram Report"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "wireless-power-transmitter-coil-and-driver-board",
+  "code": "ISE-PCB-009",
+  "title": "Wireless Power Transmitter Coil and Driver Board",
+  "domain": "PCB Design",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "A flat spiral-coil transmitter with half-bridge driver and resonant capacitor tuned for efficient short-range charging.",
+  "existing": "Hand-wound coils have inconsistent inductance and poor efficiency.",
+  "proposed": "A flat spiral-coil transmitter with half-bridge driver and resonant capacitor tuned for efficient short-range charging. The STM32 / 555 Oscillator reads Coil Current Sense, processes the data on board and drives Half-Bridge Driver, Transmit Coil.",
+  "advantages": [
+   "Production-ready design files",
+   "Verified with design-rule and signal checks",
+   "Lower noise and EMI than breadboard builds",
+   "Includes a verified IEEE base paper reference"
+  ],
+  "applications": [
+   "Phone charging",
+   "Medical implants"
+  ],
+  "hardware": [
+   "STM32 / 555 Oscillator",
+   "Litz coil",
+   "Half-bridge",
+   "Resonant caps"
+  ],
+  "software": [
+   "KiCad",
+   "LTspice"
+  ],
+  "diagram": {
+   "power": "Board Power Input",
+   "controller": "STM32 / 555 Oscillator",
+   "inputs": [
+    "Coil Current Sense"
+   ],
+   "outputs": [
+    "Half-Bridge Driver",
+    "Transmit Coil"
+   ]
+  },
+  "ieee": {
+   "title": "Load Invariant CC and CV Modes for Static/Dynamic Wireless Charging System With Half-Bridge Multi-Leg Converter Topology",
+   "ref": "IEEE Access, vol. 13, pp. 9654-9665, 2025. DOI 10.1109/ACCESS.2025.3526654"
+  }
+ },
+ {
+  "slug": "compact-ecg-front-end-pcb-with-guarding-and-low-noise-layout",
+  "code": "ISE-PCB-010",
+  "title": "Compact ECG Front-End PCB with Guarding and Low-Noise Layout",
+  "domain": "PCB Design",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A small analogue front-end board with driven-right-leg circuit, guard rings and separated analogue/digital grounds.",
+  "existing": "Wearable ECG suffers from noise when analogue layout is careless.",
+  "proposed": "A small analogue front-end board with driven-right-leg circuit, guard rings and separated analogue/digital grounds. The ADS1292 / ESP32 reads ECG Electrodes, processes the data on board and drives SPI Data to MCU, with BLE for connectivity.",
+  "advantages": [
+   "Production-ready design files",
+   "Verified with design-rule and signal checks",
+   "Lower noise and EMI than breadboard builds",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Wearable health"
+  ],
+  "hardware": [
+   "ADS1292 / ESP32",
+   "ADS1292R",
+   "Shielded leads"
+  ],
+  "software": [
+   "KiCad"
+  ],
+  "diagram": {
+   "power": "Board Power Input",
+   "controller": "ADS1292 / ESP32",
+   "inputs": [
+    "ECG Electrodes"
+   ],
+   "outputs": [
+    "SPI Data to MCU"
+   ],
+   "comms": [
+    "BLE"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "solar-charge-controller-pcb-with-mppt-stage",
+  "code": "ISE-PCB-011",
+  "title": "Solar Charge Controller PCB with MPPT Stage",
+  "domain": "PCB Design",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "A buck MPPT charge controller board with measured efficiency curves across irradiance.",
+  "existing": "PWM controllers waste 20-30% of available solar energy.",
+  "proposed": "A buck MPPT charge controller board with measured efficiency curves across irradiance. The STM32 / ATmega reads PV Voltage, PV Current, Battery Voltage, processes the data on board and drives Buck Switch, Load Output, with UART Display for connectivity.",
+  "advantages": [
+   "Production-ready design files",
+   "Verified with design-rule and signal checks",
+   "Lower noise and EMI than breadboard builds",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Off-grid solar"
+  ],
+  "hardware": [
+   "STM32 / ATmega",
+   "MOSFET",
+   "Inductor",
+   "INA219"
+  ],
+  "software": [
+   "KiCad",
+   "Arduino IDE"
+  ],
+  "diagram": {
+   "power": "Board Power Input",
+   "controller": "STM32 / ATmega",
+   "inputs": [
+    "PV Voltage",
+    "PV Current",
+    "Battery Voltage"
+   ],
+   "outputs": [
+    "Buck Switch",
+    "Load Output"
+   ],
+   "comms": [
+    "UART Display"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "multi-rail-power-supply-module-with-sequencing-and-protection",
+  "code": "ISE-PCB-012",
+  "title": "Multi-Rail Power Supply Module with Sequencing and Protection",
+  "domain": "PCB Design",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "A bench-style module that outputs 3.3/5/12 V with soft-start, sequencing and over-current shutdown.",
+  "existing": "Multiple loose regulators give no sequencing or protection to sensitive boards.",
+  "proposed": "A bench-style module that outputs 3.3/5/12 V with soft-start, sequencing and over-current shutdown. The Buck/LDO ICs + Supervisor reads 12V Input, processes the data on board and drives 3.3V, 5V, 12V Rails.",
+  "advantages": [
+   "Production-ready design files",
+   "Verified with design-rule and signal checks",
+   "Lower noise and EMI than breadboard builds",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Labs",
+   "Product prototypes"
+  ],
+  "hardware": [
+   "Buck/LDO ICs + Supervisor",
+   "LM2596",
+   "LDO",
+   "Supervisor IC"
+  ],
+  "software": [
+   "KiCad",
+   "LTspice"
+  ],
+  "diagram": {
+   "power": "Board Power Input",
+   "controller": "Buck/LDO ICs + Supervisor",
+   "inputs": [
+    "12V Input"
+   ],
+   "outputs": [
+    "3.3V",
+    "5V",
+    "12V Rails"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "tinyml-motor-fault-detection-on-a-microcontroller",
+  "code": "ISE-EAI-001",
+  "title": "TinyML Motor Fault Detection on a Microcontroller",
+  "domain": "Edge AI",
+  "year": "2025-26",
+  "featured": true,
+  "highValue": true,
+  "abstract": "A vibration sensor feeds a tiny neural network on the MCU that classifies healthy, bearing-fault and imbalance states without the cloud.",
+  "existing": "Cloud-only monitoring is costly in bandwidth and too slow for sudden faults.",
+  "proposed": "A vibration sensor feeds a tiny neural network on the MCU that classifies healthy, bearing-fault and imbalance states without the cloud. The ESP32 / STM32 reads ADXL345 / MPU6050 Vibration, processes the data on board and drives Fault Class LED, OLED Display, Alert Relay, with Wi-Fi: Dashboard for connectivity.",
+  "advantages": [
+   "Runs on-device with no cloud dependency",
+   "Low latency and better privacy",
+   "Works at low power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Predictive maintenance",
+   "Pumps",
+   "Fans"
+  ],
+  "hardware": [
+   "ESP32 / STM32",
+   "MPU6050",
+   "Motor test rig"
+  ],
+  "software": [
+   "Edge Impulse",
+   "TensorFlow Lite Micro"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V)",
+   "controller": "ESP32 / STM32",
+   "inputs": [
+    "ADXL345 / MPU6050 Vibration"
+   ],
+   "outputs": [
+    "Fault Class LED",
+    "OLED Display",
+    "Alert Relay"
+   ],
+   "comms": [
+    "Wi-Fi: Dashboard"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "driver-drowsiness-detection-on-jetson-nano-raspberry-pi",
+  "code": "ISE-EAI-002",
+  "title": "Driver Drowsiness Detection on Jetson Nano / Raspberry Pi",
+  "domain": "Edge AI",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A lightweight CNN with eye and mouth aspect ratio checks warns a driver when drowsiness is detected, running entirely on the edge board.",
+  "existing": "Drowsy driving causes many road accidents and cloud-based monitors add latency.",
+  "proposed": "A lightweight CNN with eye and mouth aspect ratio checks warns a driver when drowsiness is detected, running entirely on the edge board. The Raspberry Pi 4 / Jetson Nano reads Pi Camera, IR Night Illuminator, processes the data on board and drives Buzzer Alert, Seat Vibration, Dashboard LED.",
+  "advantages": [
+   "Runs on-device with no cloud dependency",
+   "Low latency and better privacy",
+   "Works at low power",
+   "Includes a verified IEEE base paper reference"
+  ],
+  "applications": [
+   "Fleet safety",
+   "Long-haul trucks"
+  ],
+  "hardware": [
+   "Raspberry Pi 4 / Jetson Nano",
+   "Pi Camera",
+   "Buzzer"
+  ],
+  "software": [
+   "Python",
+   "OpenCV",
+   "TensorFlow Lite"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V)",
+   "controller": "Raspberry Pi 4 / Jetson Nano",
+   "inputs": [
+    "Pi Camera",
+    "IR Night Illuminator"
+   ],
+   "outputs": [
+    "Buzzer Alert",
+    "Seat Vibration",
+    "Dashboard LED"
+   ]
+  },
+  "ieee": {
+   "title": "Deep Learning-Based Drowsiness Detection System for Driver's Safety",
+   "ref": "IEEE Access, vol. 13, pp. 154080-154102, 2025. DOI 10.1109/ACCESS.2025.3604728"
+  }
+ },
+ {
+  "slug": "vision-transformer-drowsiness-monitor-with-vehicle-alerts",
+  "code": "ISE-EAI-003",
+  "title": "Vision-Transformer Drowsiness Monitor with Vehicle Alerts",
+  "domain": "Edge AI",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A compact transformer model tracks facial landmarks and triggers cabin alerts and a hazard-light request when drowsiness persists.",
+  "existing": "CNN-only systems struggle with varying poses and lighting.",
+  "proposed": "A compact transformer model tracks facial landmarks and triggers cabin alerts and a hazard-light request when drowsiness persists. The Jetson Nano reads Camera, IR Illuminator, processes the data on board and drives Alert Buzzer, Hazard Light Relay.",
+  "advantages": [
+   "Runs on-device with no cloud dependency",
+   "Low latency and better privacy",
+   "Works at low power",
+   "Includes a verified IEEE base paper reference"
+  ],
+  "applications": [
+   "Fleet safety"
+  ],
+  "hardware": [
+   "Jetson Nano",
+   "Jetson Nano",
+   "USB camera"
+  ],
+  "software": [
+   "Python",
+   "PyTorch",
+   "TensorRT"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V)",
+   "controller": "Jetson Nano",
+   "inputs": [
+    "Camera",
+    "IR Illuminator"
+   ],
+   "outputs": [
+    "Alert Buzzer",
+    "Hazard Light Relay"
+   ]
+  },
+  "ieee": {
+   "title": "A Real-Time Vision Transformers-Based System for Enhanced Driver Drowsiness Detection and Vehicle Safety",
+   "ref": "IEEE Access, 2025. IEEE Xplore document 10815964"
+  }
+ },
+ {
+  "slug": "edge-anomaly-detection-for-industrial-machines-with-autoencoder",
+  "code": "ISE-EAI-004",
+  "title": "Edge Anomaly Detection for Industrial Machines with Autoencoder",
+  "domain": "Edge AI",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "An autoencoder on an STM32 learns normal machine signals and flags deviations, with no labelled faults required.",
+  "existing": "Fault data is rare, so supervised models cannot be trained for new machines.",
+  "proposed": "An autoencoder on an STM32 learns normal machine signals and flags deviations, with no labelled faults required. The STM32 / ESP32 reads Current Sensor, Vibration Sensor, processes the data on board and drives Anomaly Score Display, Alarm Relay, with MQTT for connectivity.",
+  "advantages": [
+   "Runs on-device with no cloud dependency",
+   "Low latency and better privacy",
+   "Works at low power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Factories",
+   "HVAC"
+  ],
+  "hardware": [
+   "STM32 / ESP32",
+   "ACS712",
+   "MPU6050"
+  ],
+  "software": [
+   "TensorFlow Lite Micro",
+   "Python"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V)",
+   "controller": "STM32 / ESP32",
+   "inputs": [
+    "Current Sensor",
+    "Vibration Sensor"
+   ],
+   "outputs": [
+    "Anomaly Score Display",
+    "Alarm Relay"
+   ],
+   "comms": [
+    "MQTT"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "keyword-spotting-voice-control-on-a-coin-cell-mcu",
+  "code": "ISE-EAI-005",
+  "title": "Keyword Spotting Voice Control on a Coin-Cell MCU",
+  "domain": "Edge AI",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "A small neural network recognises a few spoken commands to control devices without any cloud connection.",
+  "existing": "Cloud voice assistants need internet and send private audio away.",
+  "proposed": "A small neural network recognises a few spoken commands to control devices without any cloud connection. The ESP32-S3 / nRF52 reads I2S MEMS Microphone, processes the data on board and drives Relay Outputs, LED.",
+  "advantages": [
+   "Runs on-device with no cloud dependency",
+   "Low latency and better privacy",
+   "Works at low power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Smart homes",
+   "Elderly aids"
+  ],
+  "hardware": [
+   "ESP32-S3 / nRF52",
+   "INMP441 mic"
+  ],
+  "software": [
+   "Edge Impulse",
+   "TensorFlow Lite Micro"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V)",
+   "controller": "ESP32-S3 / nRF52",
+   "inputs": [
+    "I2S MEMS Microphone"
+   ],
+   "outputs": [
+    "Relay Outputs",
+    "LED"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "hand-gesture-recognition-wearable-with-on-device-inference",
+  "code": "ISE-EAI-006",
+  "title": "Hand-Gesture Recognition Wearable with On-Device Inference",
+  "domain": "Edge AI",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "An IMU band classifies gestures on the device to control presentations, robots or appliances.",
+  "existing": "Camera gesture control fails in dark or crowded places.",
+  "proposed": "An IMU band classifies gestures on the device to control presentations, robots or appliances. The ESP32 reads MPU6050 IMU, processes the data on board and drives BLE HID Output, with BLE for connectivity.",
+  "advantages": [
+   "Runs on-device with no cloud dependency",
+   "Low latency and better privacy",
+   "Works at low power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Assistive control",
+   "HCI"
+  ],
+  "hardware": [
+   "ESP32",
+   "MPU6050",
+   "LiPo"
+  ],
+  "software": [
+   "Edge Impulse"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V)",
+   "controller": "ESP32",
+   "inputs": [
+    "MPU6050 IMU"
+   ],
+   "outputs": [
+    "BLE HID Output"
+   ],
+   "comms": [
+    "BLE"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "sign-language-glove-with-on-device-lstm-translation",
+  "code": "ISE-EAI-007",
+  "title": "Sign Language Glove with On-Device LSTM Translation",
+  "domain": "Edge AI",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "Flex and IMU sensors on a glove feed an on-device LSTM that speaks sign words through a speaker.",
+  "existing": "Deaf and hearing users face a communication barrier with few affordable translators.",
+  "proposed": "Flex and IMU sensors on a glove feed an on-device LSTM that speaks sign words through a speaker. The ESP32-S3 reads Flex Sensors x5, MPU6050 IMU, processes the data on board and drives Speaker (TTS), OLED Text, with BLE: Phone App for connectivity.",
+  "advantages": [
+   "Runs on-device with no cloud dependency",
+   "Low latency and better privacy",
+   "Works at low power",
+   "Includes a verified IEEE base paper reference"
+  ],
+  "applications": [
+   "Inclusive communication"
+  ],
+  "hardware": [
+   "ESP32-S3",
+   "Flex sensors",
+   "MPU6050",
+   "DFPlayer"
+  ],
+  "software": [
+   "TensorFlow Lite Micro",
+   "Python"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V)",
+   "controller": "ESP32-S3",
+   "inputs": [
+    "Flex Sensors x5",
+    "MPU6050 IMU"
+   ],
+   "outputs": [
+    "Speaker (TTS)",
+    "OLED Text"
+   ],
+   "comms": [
+    "BLE: Phone App"
+   ]
+  },
+  "ieee": {
+   "title": "A Real-Time Intelligent System Based on Machine-Learning Methods for Improving Communication in Sign Language",
+   "ref": "IEEE Access, vol. 13, pp. 22055-22073, 2025. DOI 10.1109/ACCESS.2025.3529025"
+  }
+ },
+ {
+  "slug": "smart-baby-monitor-with-cry-classification",
+  "code": "ISE-EAI-008",
+  "title": "Smart Baby Monitor with Cry Classification",
+  "domain": "Edge AI",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "An audio model on the device recognises crying versus noise and notifies parents with context such as likely hunger or discomfort.",
+  "existing": "Constant sound alerts cause false alarms for parents.",
+  "proposed": "An audio model on the device recognises crying versus noise and notifies parents with context such as likely hunger or discomfort. The ESP32-S3 reads INMP441 Microphone, Temperature Sensor, processes the data on board and drives Phone Notification, Night Light, with Wi-Fi / BLE for connectivity.",
+  "advantages": [
+   "Runs on-device with no cloud dependency",
+   "Low latency and better privacy",
+   "Works at low power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Home care"
+  ],
+  "hardware": [
+   "ESP32-S3",
+   "INMP441",
+   "DHT22"
+  ],
+  "software": [
+   "Edge Impulse"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V)",
+   "controller": "ESP32-S3",
+   "inputs": [
+    "INMP441 Microphone",
+    "Temperature Sensor"
+   ],
+   "outputs": [
+    "Phone Notification",
+    "Night Light"
+   ],
+   "comms": [
+    "Wi-Fi / BLE"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "predictive-maintenance-gateway-for-pumps-using-edge-ml",
+  "code": "ISE-EAI-009",
+  "title": "Predictive Maintenance Gateway for Pumps Using Edge ML",
+  "domain": "Edge AI",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A gateway fuses vibration, temperature and current and estimates remaining useful life of a pump.",
+  "existing": "Fixed service intervals replace healthy parts and still miss failures.",
+  "proposed": "A gateway fuses vibration, temperature and current and estimates remaining useful life of a pump. The Raspberry Pi 4 reads Vibration, Temperature, Current, processes the data on board and drives RUL Dashboard, Maintenance Alert, with MQTT, Wi-Fi for connectivity.",
+  "advantages": [
+   "Runs on-device with no cloud dependency",
+   "Low latency and better privacy",
+   "Works at low power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Industries",
+   "Water utilities"
+  ],
+  "hardware": [
+   "Raspberry Pi 4",
+   "Pi 4",
+   "ADXL345",
+   "ACS712"
+  ],
+  "software": [
+   "Python",
+   "scikit-learn",
+   "Grafana"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V)",
+   "controller": "Raspberry Pi 4",
+   "inputs": [
+    "Vibration",
+    "Temperature",
+    "Current"
+   ],
+   "outputs": [
+    "RUL Dashboard",
+    "Maintenance Alert"
+   ],
+   "comms": [
+    "MQTT",
+    "Wi-Fi"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "plant-disease-detection-on-a-handheld-edge-device",
+  "code": "ISE-EAI-010",
+  "title": "Plant Disease Detection on a Handheld Edge Device",
+  "domain": "Edge AI",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A phone-free handheld classifies leaf disease from a camera and shows a treatment hint.",
+  "existing": "Farmers lack immediate expert diagnosis and have weak connectivity.",
+  "proposed": "A phone-free handheld classifies leaf disease from a camera and shows a treatment hint. The Raspberry Pi 4 reads Pi Camera, processes the data on board and drives LCD Result, Treatment Message.",
+  "advantages": [
+   "Runs on-device with no cloud dependency",
+   "Low latency and better privacy",
+   "Works at low power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Agriculture"
+  ],
+  "hardware": [
+   "Raspberry Pi 4",
+   "Pi Camera",
+   "7-inch display"
+  ],
+  "software": [
+   "Python",
+   "TensorFlow Lite"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V)",
+   "controller": "Raspberry Pi 4",
+   "inputs": [
+    "Pi Camera"
+   ],
+   "outputs": [
+    "LCD Result",
+    "Treatment Message"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "smart-energy-disaggregation-meter-with-edge-nilm",
+  "code": "ISE-EAI-011",
+  "title": "Smart Energy Disaggregation Meter with Edge NILM",
+  "domain": "Edge AI",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A meter runs a lightweight NILM model to name each running appliance and its share of consumption without sub-meters.",
+  "existing": "Sub-metering every appliance is costly.",
+  "proposed": "A meter runs a lightweight NILM model to name each running appliance and its share of consumption without sub-meters. The Raspberry Pi / ESP32 reads Voltage/Current Sensors, processes the data on board and drives Appliance Breakdown Display, with Wi-Fi for connectivity.",
+  "advantages": [
+   "Runs on-device with no cloud dependency",
+   "Low latency and better privacy",
+   "Works at low power",
+   "Includes a verified IEEE base paper reference"
+  ],
+  "applications": [
+   "Smart homes"
+  ],
+  "hardware": [
+   "Raspberry Pi / ESP32",
+   "ZMPT101B",
+   "ACS712"
+  ],
+  "software": [
+   "Python",
+   "TensorFlow Lite"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V)",
+   "controller": "Raspberry Pi / ESP32",
+   "inputs": [
+    "Voltage/Current Sensors"
+   ],
+   "outputs": [
+    "Appliance Breakdown Display"
+   ],
+   "comms": [
+    "Wi-Fi"
+   ]
+  },
+  "ieee": {
+   "title": "Harnessing Temporal Awareness: Dual-CNN Model for Non-Intrusive Load Monitoring",
+   "ref": "IEEE Transactions on Green Communications and Networking (accepted 2025)"
+  }
+ },
+ {
+  "slug": "fall-detection-with-pose-estimation-at-the-edge",
+  "code": "ISE-EAI-012",
+  "title": "Fall Detection with Pose Estimation at the Edge",
+  "domain": "Edge AI",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A camera model estimates body pose and alerts caregivers when a fall is detected, keeping video local for privacy.",
+  "existing": "Wearables are forgotten and cloud cameras raise privacy concerns.",
+  "proposed": "A camera model estimates body pose and alerts caregivers when a fall is detected, keeping video local for privacy. The Jetson Nano / Pi 5 reads Camera, processes the data on board and drives Caregiver Alert, Buzzer, with Wi-Fi for connectivity.",
+  "advantages": [
+   "Runs on-device with no cloud dependency",
+   "Low latency and better privacy",
+   "Works at low power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Elder care"
+  ],
+  "hardware": [
+   "Jetson Nano / Pi 5",
+   "Camera",
+   "Jetson Nano"
+  ],
+  "software": [
+   "Python",
+   "MediaPipe",
+   "TensorRT"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V)",
+   "controller": "Jetson Nano / Pi 5",
+   "inputs": [
+    "Camera"
+   ],
+   "outputs": [
+    "Caregiver Alert",
+    "Buzzer"
+   ],
+   "comms": [
+    "Wi-Fi"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "wake-word-controlled-robot-with-offline-speech",
+  "code": "ISE-EAI-013",
+  "title": "Wake-Word Controlled Robot with Offline Speech",
+  "domain": "Edge AI",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "A robot responds to offline voice commands for movement, fetching and status queries.",
+  "existing": "Cloud speech needs internet.",
+  "proposed": "A robot responds to offline voice commands for movement, fetching and status queries. The Raspberry Pi reads USB Microphone, processes the data on board and drives Motor Driver, Speaker.",
+  "advantages": [
+   "Runs on-device with no cloud dependency",
+   "Low latency and better privacy",
+   "Works at low power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Service robots"
+  ],
+  "hardware": [
+   "Raspberry Pi",
+   "Pi 4",
+   "USB mic"
+  ],
+  "software": [
+   "Python",
+   "Vosk"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V)",
+   "controller": "Raspberry Pi",
+   "inputs": [
+    "USB Microphone"
+   ],
+   "outputs": [
+    "Motor Driver",
+    "Speaker"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "smart-water-quality-classifier-on-microcontroller",
+  "code": "ISE-EAI-014",
+  "title": "Smart Water Quality Classifier on Microcontroller",
+  "domain": "Edge AI",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "Turbidity, TDS, pH and temperature feed a small model that classifies water as safe or unsafe on the spot.",
+  "existing": "Lab tests are slow, so contaminated water is used unknowingly.",
+  "proposed": "Turbidity, TDS, pH and temperature feed a small model that classifies water as safe or unsafe on the spot. The ESP32 reads pH, TDS, Turbidity, processes the data on board and drives Safe/Unsafe Display, Buzzer, with Wi-Fi for connectivity.",
+  "advantages": [
+   "Runs on-device with no cloud dependency",
+   "Low latency and better privacy",
+   "Works at low power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Rural water",
+   "Aquaculture"
+  ],
+  "hardware": [
+   "ESP32",
+   "pH probe",
+   "TDS sensor",
+   "Turbidity sensor"
+  ],
+  "software": [
+   "Arduino IDE",
+   "Edge Impulse"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V)",
+   "controller": "ESP32",
+   "inputs": [
+    "pH",
+    "TDS",
+    "Turbidity",
+    "Temperature"
+   ],
+   "outputs": [
+    "Safe/Unsafe Display",
+    "Buzzer"
+   ],
+   "comms": [
+    "Wi-Fi"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "fpga-cnn-accelerator-for-handwritten-digit-recognition",
+  "code": "ISE-HML-001",
+  "title": "FPGA CNN Accelerator for Handwritten Digit Recognition",
+  "domain": "Hardware ML",
+  "year": "2025-26",
+  "featured": true,
+  "highValue": true,
+  "abstract": "A pipelined convolution, pooling and classification engine in Verilog classifies digits from live input on an FPGA.",
+  "existing": "CPU inference is slow and power-hungry for always-on vision.",
+  "proposed": "A pipelined convolution, pooling and classification engine in Verilog classifies digits from live input on an FPGA. The FPGA (Basys 3 / PYNQ) reads Image Input (UART/Camera), processes the data on board and drives Class Output (LEDs/Display).",
+  "advantages": [
+   "Parallel hardware gives high throughput",
+   "Low power per inference",
+   "Reusable accelerator blocks",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Edge vision"
+  ],
+  "hardware": [
+   "FPGA (Basys 3 / PYNQ)",
+   "Basys 3 / PYNQ-Z2"
+  ],
+  "software": [
+   "Vivado",
+   "Verilog",
+   "Python"
+  ],
+  "diagram": {
+   "power": "Board Power (USB / 5V)",
+   "controller": "FPGA (Basys 3 / PYNQ)",
+   "inputs": [
+    "Image Input (UART/Camera)"
+   ],
+   "outputs": [
+    "Class Output (LEDs/Display)"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "quantised-transformer-block-on-fpga-for-time-series-sensing",
+  "code": "ISE-HML-002",
+  "title": "Quantised Transformer Block on FPGA for Time-Series Sensing",
+  "domain": "Hardware ML",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A small transformer block is quantised and mapped to FPGA logic to classify sensor sequences at low latency.",
+  "existing": "GPU transformers are impractical for tiny always-on sensors.",
+  "proposed": "A small transformer block is quantised and mapped to FPGA logic to classify sensor sequences at low latency. The FPGA (PYNQ-Z2) reads Sensor Sequence Stream, processes the data on board and drives Class Result, Latency Counter.",
+  "advantages": [
+   "Parallel hardware gives high throughput",
+   "Low power per inference",
+   "Reusable accelerator blocks",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Wearables",
+   "Industrial sensing"
+  ],
+  "hardware": [
+   "FPGA (PYNQ-Z2)",
+   "PYNQ-Z2"
+  ],
+  "software": [
+   "Vivado HLS",
+   "Python"
+  ],
+  "diagram": {
+   "power": "Board Power (USB / 5V)",
+   "controller": "FPGA (PYNQ-Z2)",
+   "inputs": [
+    "Sensor Sequence Stream"
+   ],
+   "outputs": [
+    "Class Result",
+    "Latency Counter"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "risc-v-soft-core-on-fpga-with-custom-ml-instruction",
+  "code": "ISE-HML-003",
+  "title": "RISC-V Soft Core on FPGA with Custom ML Instruction",
+  "domain": "Hardware ML",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A RISC-V core on an FPGA gets a custom multiply-accumulate instruction that speeds up neural inference.",
+  "existing": "General cores waste cycles on repetitive MAC operations.",
+  "proposed": "A RISC-V core on an FPGA gets a custom multiply-accumulate instruction that speeds up neural inference. The FPGA (Artix-7) reads Program Memory, Sensor Input, processes the data on board and drives UART Output, LEDs.",
+  "advantages": [
+   "Parallel hardware gives high throughput",
+   "Low power per inference",
+   "Reusable accelerator blocks",
+   "Includes a verified IEEE base paper reference"
+  ],
+  "applications": [
+   "Edge SoCs"
+  ],
+  "hardware": [
+   "FPGA (Artix-7)",
+   "Arty A7"
+  ],
+  "software": [
+   "Vivado",
+   "Verilog",
+   "RISC-V GCC"
+  ],
+  "diagram": {
+   "power": "Board Power (USB / 5V)",
+   "controller": "FPGA (Artix-7)",
+   "inputs": [
+    "Program Memory",
+    "Sensor Input"
+   ],
+   "outputs": [
+    "UART Output",
+    "LEDs"
+   ]
+  },
+  "ieee": {
+   "title": "Design and Implementation of a High-Performance RISC-V SoC for FPGAs with Linux Support",
+   "ref": "2025 IEEE 18th International Symposium on Embedded Multicore/Many-core Systems-on-Chip (MCSoC), pp. 187-194"
+  }
+ },
+ {
+  "slug": "low-power-risc-v-core-with-clock-gating-on-fpga",
+  "code": "ISE-HML-004",
+  "title": "Low-Power RISC-V Core with Clock Gating on FPGA",
+  "domain": "Hardware ML",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A pipelined RISC-V processor applies fine-grained clock gating and the power savings are measured.",
+  "existing": "Idle logic wastes dynamic power in battery devices.",
+  "proposed": "A pipelined RISC-V processor applies fine-grained clock gating and the power savings are measured. The FPGA (Artix-7 / Zybo) reads Instruction Memory, processes the data on board and drives Power Report, UART.",
+  "advantages": [
+   "Parallel hardware gives high throughput",
+   "Low power per inference",
+   "Reusable accelerator blocks",
+   "Includes a verified IEEE base paper reference"
+  ],
+  "applications": [
+   "IoT SoCs"
+  ],
+  "hardware": [
+   "FPGA (Artix-7 / Zybo)",
+   "Zybo Z7 / Arty A7"
+  ],
+  "software": [
+   "Vivado",
+   "Verilog"
+  ],
+  "diagram": {
+   "power": "Board Power (USB / 5V)",
+   "controller": "FPGA (Artix-7 / Zybo)",
+   "inputs": [
+    "Instruction Memory"
+   ],
+   "outputs": [
+    "Power Report",
+    "UART"
+   ]
+  },
+  "ieee": {
+   "title": "Low Power Implementation of RISC V Processor with Fine Grained Clock Gating/Power Gating",
+   "ref": "2025 9th CSITSS, IEEE, Nov. 2025"
+  }
+ },
+ {
+  "slug": "fpga-based-real-time-fft-and-spectrum-classifier",
+  "code": "ISE-HML-005",
+  "title": "FPGA-Based Real-Time FFT and Spectrum Classifier",
+  "domain": "Hardware ML",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "A streaming FFT feeds a lightweight classifier on an FPGA for vibration or audio fault detection.",
+  "existing": "Software FFT on small MCUs limits bandwidth.",
+  "proposed": "A streaming FFT feeds a lightweight classifier on an FPGA for vibration or audio fault detection. The FPGA (Basys 3) reads ADC Sensor Stream, processes the data on board and drives Class Output, VGA Spectrum.",
+  "advantages": [
+   "Parallel hardware gives high throughput",
+   "Low power per inference",
+   "Reusable accelerator blocks",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Condition monitoring"
+  ],
+  "hardware": [
+   "FPGA (Basys 3)",
+   "Basys 3",
+   "ADC module"
+  ],
+  "software": [
+   "Vivado",
+   "Verilog"
+  ],
+  "diagram": {
+   "power": "Board Power (USB / 5V)",
+   "controller": "FPGA (Basys 3)",
+   "inputs": [
+    "ADC Sensor Stream"
+   ],
+   "outputs": [
+    "Class Output",
+    "VGA Spectrum"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "systolic-array-matrix-multiplier-in-verilog",
+  "code": "ISE-HML-006",
+  "title": "Systolic-Array Matrix Multiplier in Verilog",
+  "domain": "Hardware ML",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A parameterised systolic array performs matrix multiplication for neural inference with throughput benchmarks.",
+  "existing": "Naive loops cannot match hardware parallelism.",
+  "proposed": "A parameterised systolic array performs matrix multiplication for neural inference with throughput benchmarks. The FPGA (PYNQ / Basys 3) reads Matrix Data, processes the data on board and drives Result Matrix.",
+  "advantages": [
+   "Parallel hardware gives high throughput",
+   "Low power per inference",
+   "Reusable accelerator blocks",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "AI accelerators"
+  ],
+  "hardware": [
+   "FPGA (PYNQ / Basys 3)",
+   "PYNQ-Z2"
+  ],
+  "software": [
+   "Vivado",
+   "Verilog"
+  ],
+  "diagram": {
+   "power": "Board Power (USB / 5V)",
+   "controller": "FPGA (PYNQ / Basys 3)",
+   "inputs": [
+    "Matrix Data"
+   ],
+   "outputs": [
+    "Result Matrix"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "edge-tpu-object-detector-for-low-power-smart-camera",
+  "code": "ISE-HML-007",
+  "title": "Edge TPU Object Detector for Low-Power Smart Camera",
+  "domain": "Hardware ML",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A Coral Edge TPU runs quantised detection with a Raspberry Pi to count people or vehicles at a few watts.",
+  "existing": "CPU-only detection saturates the Pi and drains batteries.",
+  "proposed": "A Coral Edge TPU runs quantised detection with a Raspberry Pi to count people or vehicles at a few watts. The Raspberry Pi + Coral Edge TPU reads Pi Camera, processes the data on board and drives Count Display, MQTT Event, with Wi-Fi for connectivity.",
+  "advantages": [
+   "Parallel hardware gives high throughput",
+   "Low power per inference",
+   "Reusable accelerator blocks",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Smart retail",
+   "Traffic counting"
+  ],
+  "hardware": [
+   "Raspberry Pi + Coral Edge TPU",
+   "Coral USB Accelerator"
+  ],
+  "software": [
+   "Python",
+   "TensorFlow Lite"
+  ],
+  "diagram": {
+   "power": "Board Power (USB / 5V)",
+   "controller": "Raspberry Pi + Coral Edge TPU",
+   "inputs": [
+    "Pi Camera"
+   ],
+   "outputs": [
+    "Count Display",
+    "MQTT Event"
+   ],
+   "comms": [
+    "Wi-Fi"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "binary-neural-network-accelerator-on-fpga",
+  "code": "ISE-HML-008",
+  "title": "Binary Neural Network Accelerator on FPGA",
+  "domain": "Hardware ML",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A binarised network replaces multipliers with XNOR operations for extreme efficiency.",
+  "existing": "Full-precision models do not fit small FPGAs.",
+  "proposed": "A binarised network replaces multipliers with XNOR operations for extreme efficiency. The FPGA (Basys 3) reads Input Image, processes the data on board and drives Class Output.",
+  "advantages": [
+   "Parallel hardware gives high throughput",
+   "Low power per inference",
+   "Reusable accelerator blocks",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Tiny vision"
+  ],
+  "hardware": [
+   "FPGA (Basys 3)",
+   "Basys 3"
+  ],
+  "software": [
+   "Vivado",
+   "Verilog"
+  ],
+  "diagram": {
+   "power": "Board Power (USB / 5V)",
+   "controller": "FPGA (Basys 3)",
+   "inputs": [
+    "Input Image"
+   ],
+   "outputs": [
+    "Class Output"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "asic-style-neuron-core-design-with-openlane-flow",
+  "code": "ISE-HML-009",
+  "title": "ASIC-Style Neuron Core Design with OpenLane Flow",
+  "domain": "Hardware ML",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A MAC neuron core is designed in Verilog and taken through an open-source RTL-to-layout flow with area and power reports.",
+  "existing": "Few students experience a full digital implementation flow.",
+  "proposed": "A MAC neuron core is designed in Verilog and taken through an open-source RTL-to-layout flow with area and power reports. The Open-Source EDA Flow reads RTL Design, processes the data on board and drives GDS Layout Report.",
+  "advantages": [
+   "Parallel hardware gives high throughput",
+   "Low power per inference",
+   "Reusable accelerator blocks",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "VLSI learning"
+  ],
+  "hardware": [
+   "Open-Source EDA Flow",
+   "PC with Linux"
+  ],
+  "software": [
+   "OpenLane",
+   "Verilog",
+   "Magic"
+  ],
+  "diagram": {
+   "power": "Board Power (USB / 5V)",
+   "controller": "Open-Source EDA Flow",
+   "inputs": [
+    "RTL Design"
+   ],
+   "outputs": [
+    "GDS Layout Report"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "hardware-gesture-classifier-for-imu-on-microcontroller-fpga",
+  "code": "ISE-HML-010",
+  "title": "Hardware Gesture Classifier for IMU on Microcontroller + FPGA",
+  "domain": "Hardware ML",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "Classifier inference is offloaded to an FPGA while an MCU handles sensing, reducing latency and power.",
+  "existing": "MCU-only inference blocks sensing.",
+  "proposed": "Classifier inference is offloaded to an FPGA while an MCU handles sensing, reducing latency and power. The STM32 + FPGA reads IMU Stream, processes the data on board and drives Gesture Output, with SPI MCU-FPGA for connectivity.",
+  "advantages": [
+   "Parallel hardware gives high throughput",
+   "Low power per inference",
+   "Reusable accelerator blocks",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Wearables"
+  ],
+  "hardware": [
+   "STM32 + FPGA",
+   "STM32",
+   "Basys 3"
+  ],
+  "software": [
+   "Vivado",
+   "STM32CubeIDE"
+  ],
+  "diagram": {
+   "power": "Board Power (USB / 5V)",
+   "controller": "STM32 + FPGA",
+   "inputs": [
+    "IMU Stream"
+   ],
+   "outputs": [
+    "Gesture Output"
+   ],
+   "comms": [
+    "SPI MCU-FPGA"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "real-time-vehicle-counting-and-speed-estimation",
+  "code": "ISE-VIS-001",
+  "title": "Real-Time Vehicle Counting and Speed Estimation",
+  "domain": "Vision",
+  "year": "2025-26",
+  "featured": true,
+  "highValue": true,
+  "abstract": "A camera pipeline detects, tracks and counts vehicles and estimates their speed for traffic analytics.",
+  "existing": "Manual surveys and loop sensors are expensive and give sparse data.",
+  "proposed": "A camera pipeline detects, tracks and counts vehicles and estimates their speed for traffic analytics. The Jetson Nano / Raspberry Pi 5 reads Camera, processes the data on board and drives Count + Speed Dashboard, with Wi-Fi for connectivity.",
+  "advantages": [
+   "Automates a manual, error-prone task",
+   "Works in real time on low-cost hardware",
+   "Produces logs for analysis",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Smart cities",
+   "Toll planning"
+  ],
+  "hardware": [
+   "Jetson Nano / Raspberry Pi 5",
+   "Camera",
+   "Jetson Nano"
+  ],
+  "software": [
+   "Python",
+   "YOLO",
+   "OpenCV"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V)",
+   "controller": "Jetson Nano / Raspberry Pi 5",
+   "inputs": [
+    "Camera"
+   ],
+   "outputs": [
+    "Count + Speed Dashboard"
+   ],
+   "comms": [
+    "Wi-Fi"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "helmet-and-number-plate-violation-detection",
+  "code": "ISE-VIS-002",
+  "title": "Helmet and Number-Plate Violation Detection",
+  "domain": "Vision",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "The system detects riders without helmets and reads number plates to log violations automatically.",
+  "existing": "Manual enforcement misses most violations.",
+  "proposed": "The system detects riders without helmets and reads number plates to log violations automatically. The Jetson Nano / PC reads CCTV Camera, processes the data on board and drives Violation Log, Challan Report, with Wi-Fi for connectivity.",
+  "advantages": [
+   "Automates a manual, error-prone task",
+   "Works in real time on low-cost hardware",
+   "Produces logs for analysis",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Traffic police"
+  ],
+  "hardware": [
+   "Jetson Nano / PC",
+   "Camera",
+   "Jetson Nano"
+  ],
+  "software": [
+   "Python",
+   "YOLO",
+   "EasyOCR"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V)",
+   "controller": "Jetson Nano / PC",
+   "inputs": [
+    "CCTV Camera"
+   ],
+   "outputs": [
+    "Violation Log",
+    "Challan Report"
+   ],
+   "comms": [
+    "Wi-Fi"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "face-mask-free-attendance-with-liveness-check",
+  "code": "ISE-VIS-003",
+  "title": "Face-Mask-Free Attendance with Liveness Check",
+  "domain": "Vision",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "A camera recognises faces with blink-based liveness to stop photo spoofing, and marks attendance.",
+  "existing": "Photo and video spoofs defeat simple recognition.",
+  "proposed": "A camera recognises faces with blink-based liveness to stop photo spoofing, and marks attendance. The Raspberry Pi 4 reads Camera, processes the data on board and drives Attendance Log, Door Relay, with Wi-Fi for connectivity.",
+  "advantages": [
+   "Automates a manual, error-prone task",
+   "Works in real time on low-cost hardware",
+   "Produces logs for analysis",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Colleges",
+   "Offices"
+  ],
+  "hardware": [
+   "Raspberry Pi 4",
+   "Pi Camera",
+   "Relay"
+  ],
+  "software": [
+   "Python",
+   "OpenCV",
+   "dlib"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V)",
+   "controller": "Raspberry Pi 4",
+   "inputs": [
+    "Camera"
+   ],
+   "outputs": [
+    "Attendance Log",
+    "Door Relay"
+   ],
+   "comms": [
+    "Wi-Fi"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "pothole-detection-from-dashcam-with-gps-map",
+  "code": "ISE-VIS-004",
+  "title": "Pothole Detection from Dashcam with GPS Map",
+  "domain": "Vision",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A dashcam model finds potholes and stores GPS locations on a map for municipal repair.",
+  "existing": "Road damage is reported late or not at all.",
+  "proposed": "A dashcam model finds potholes and stores GPS locations on a map for municipal repair. The Jetson Nano / Raspberry Pi reads Dashcam, GPS Module, processes the data on board and drives Pothole Map, Alert, with Wi-Fi for connectivity.",
+  "advantages": [
+   "Automates a manual, error-prone task",
+   "Works in real time on low-cost hardware",
+   "Produces logs for analysis",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Municipalities"
+  ],
+  "hardware": [
+   "Jetson Nano / Raspberry Pi",
+   "Camera",
+   "NEO-6M GPS"
+  ],
+  "software": [
+   "Python",
+   "YOLO"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V)",
+   "controller": "Jetson Nano / Raspberry Pi",
+   "inputs": [
+    "Dashcam",
+    "GPS Module"
+   ],
+   "outputs": [
+    "Pothole Map",
+    "Alert"
+   ],
+   "comms": [
+    "Wi-Fi"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "crop-disease-and-pest-detection-with-drone-imagery",
+  "code": "ISE-VIS-005",
+  "title": "Crop Disease and Pest Detection with Drone Imagery",
+  "domain": "Vision",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "Drone images are analysed to find stressed plants and pest hotspots for targeted spraying.",
+  "existing": "Walking whole fields is slow and misses early signs.",
+  "proposed": "Drone images are analysed to find stressed plants and pest hotspots for targeted spraying. The Raspberry Pi / Laptop reads Drone Camera, processes the data on board and drives Disease Heatmap.",
+  "advantages": [
+   "Automates a manual, error-prone task",
+   "Works in real time on low-cost hardware",
+   "Produces logs for analysis",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Agriculture"
+  ],
+  "hardware": [
+   "Raspberry Pi / Laptop",
+   "Drone",
+   "Camera"
+  ],
+  "software": [
+   "Python",
+   "YOLO"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V)",
+   "controller": "Raspberry Pi / Laptop",
+   "inputs": [
+    "Drone Camera"
+   ],
+   "outputs": [
+    "Disease Heatmap"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "search-and-rescue-person-detection-from-aerial-video",
+  "code": "ISE-VIS-006",
+  "title": "Search-and-Rescue Person Detection from Aerial Video",
+  "domain": "Vision",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A low-latency detector finds people in drone video for fast rescue missions, running on board an edge computer.",
+  "existing": "Manual video review delays rescue.",
+  "proposed": "A low-latency detector finds people in drone video for fast rescue missions, running on board an edge computer. The Jetson Orin Nano reads Drone Camera, processes the data on board and drives Detection Overlay, GPS Tag, with Wi-Fi Link for connectivity.",
+  "advantages": [
+   "Automates a manual, error-prone task",
+   "Works in real time on low-cost hardware",
+   "Produces logs for analysis",
+   "Includes a verified IEEE base paper reference"
+  ],
+  "applications": [
+   "Disaster response"
+  ],
+  "hardware": [
+   "Jetson Orin Nano",
+   "Jetson",
+   "Camera gimbal"
+  ],
+  "software": [
+   "Python",
+   "YOLO",
+   "TensorRT"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V)",
+   "controller": "Jetson Orin Nano",
+   "inputs": [
+    "Drone Camera"
+   ],
+   "outputs": [
+    "Detection Overlay",
+    "GPS Tag"
+   ],
+   "comms": [
+    "Wi-Fi Link"
+   ]
+  },
+  "ieee": {
+   "title": "Towards Low-Latency Object Detection on Board Reactive Search-and-Rescue Drones",
+   "ref": "IEEE International Symposium on Safety, Security, and Rescue Robotics (SSRR), Oct. 2025"
+  }
+ },
+ {
+  "slug": "automatic-product-defect-inspection-on-a-conveyor",
+  "code": "ISE-VIS-007",
+  "title": "Automatic Product Defect Inspection on a Conveyor",
+  "domain": "Vision",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A camera inspects products for scratches, missing parts or wrong colour and rejects defects.",
+  "existing": "Human inspection is tiring and inconsistent.",
+  "proposed": "A camera inspects products for scratches, missing parts or wrong colour and rejects defects. The Raspberry Pi + Arduino reads Camera, Conveyor IR Sensor, processes the data on board and drives Reject Actuator, Count Display.",
+  "advantages": [
+   "Automates a manual, error-prone task",
+   "Works in real time on low-cost hardware",
+   "Produces logs for analysis",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Manufacturing QC"
+  ],
+  "hardware": [
+   "Raspberry Pi + Arduino",
+   "Pi Camera",
+   "Conveyor",
+   "Servo"
+  ],
+  "software": [
+   "Python",
+   "OpenCV"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V)",
+   "controller": "Raspberry Pi + Arduino",
+   "inputs": [
+    "Camera",
+    "Conveyor IR Sensor"
+   ],
+   "outputs": [
+    "Reject Actuator",
+    "Count Display"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "smart-retail-shelf-monitoring-with-stock-alerts",
+  "code": "ISE-VIS-008",
+  "title": "Smart Retail Shelf Monitoring with Stock Alerts",
+  "domain": "Vision",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "Shelf cameras detect empty slots and alert staff, with simple analytics.",
+  "existing": "Out-of-stock shelves lose sales unnoticed.",
+  "proposed": "Shelf cameras detect empty slots and alert staff, with simple analytics. The Raspberry Pi 4 reads Camera, processes the data on board and drives Stock Alert, Dashboard, with Wi-Fi for connectivity.",
+  "advantages": [
+   "Automates a manual, error-prone task",
+   "Works in real time on low-cost hardware",
+   "Produces logs for analysis",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Retail"
+  ],
+  "hardware": [
+   "Raspberry Pi 4",
+   "Pi Camera"
+  ],
+  "software": [
+   "Python",
+   "YOLO"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V)",
+   "controller": "Raspberry Pi 4",
+   "inputs": [
+    "Camera"
+   ],
+   "outputs": [
+    "Stock Alert",
+    "Dashboard"
+   ],
+   "comms": [
+    "Wi-Fi"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "ocr-based-smart-parking-entry-with-plate-reading",
+  "code": "ISE-VIS-009",
+  "title": "OCR-Based Smart Parking Entry with Plate Reading",
+  "domain": "Vision",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "The gate reads number plates, logs time and calculates the fee automatically.",
+  "existing": "Paper tickets cause queues and revenue leakage.",
+  "proposed": "The gate reads number plates, logs time and calculates the fee automatically. The Raspberry Pi 4 reads Camera, IR Gate Sensor, processes the data on board and drives Servo Gate, LCD Fee Display, with Wi-Fi for connectivity.",
+  "advantages": [
+   "Automates a manual, error-prone task",
+   "Works in real time on low-cost hardware",
+   "Produces logs for analysis",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Parking",
+   "Gated communities"
+  ],
+  "hardware": [
+   "Raspberry Pi 4",
+   "Pi Camera",
+   "Servo"
+  ],
+  "software": [
+   "Python",
+   "OpenCV",
+   "Tesseract"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V)",
+   "controller": "Raspberry Pi 4",
+   "inputs": [
+    "Camera",
+    "IR Gate Sensor"
+   ],
+   "outputs": [
+    "Servo Gate",
+    "LCD Fee Display"
+   ],
+   "comms": [
+    "Wi-Fi"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "eye-tracking-cursor-for-hands-free-computer-control",
+  "code": "ISE-VIS-010",
+  "title": "Eye-Tracking Cursor for Hands-Free Computer Control",
+  "domain": "Vision",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "A webcam tracks gaze and blinks to move a cursor and click for users who cannot use a mouse.",
+  "existing": "Assistive devices are expensive.",
+  "proposed": "A webcam tracks gaze and blinks to move a cursor and click for users who cannot use a mouse. The PC / Raspberry Pi reads Webcam, processes the data on board and drives Cursor Control.",
+  "advantages": [
+   "Automates a manual, error-prone task",
+   "Works in real time on low-cost hardware",
+   "Produces logs for analysis",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Accessibility"
+  ],
+  "hardware": [
+   "PC / Raspberry Pi",
+   "Webcam"
+  ],
+  "software": [
+   "Python",
+   "MediaPipe"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V)",
+   "controller": "PC / Raspberry Pi",
+   "inputs": [
+    "Webcam"
+   ],
+   "outputs": [
+    "Cursor Control"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "sign-language-recognition-from-webcam-with-text-to-speech",
+  "code": "ISE-VIS-011",
+  "title": "Sign Language Recognition from Webcam with Text-to-Speech",
+  "domain": "Vision",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "Hand landmarks are classified into signs and spoken aloud.",
+  "existing": "Camera-based sign translation is rarely deployed for local languages.",
+  "proposed": "Hand landmarks are classified into signs and spoken aloud. The PC / Jetson reads Webcam, processes the data on board and drives Text + Speech.",
+  "advantages": [
+   "Automates a manual, error-prone task",
+   "Works in real time on low-cost hardware",
+   "Produces logs for analysis",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Accessibility"
+  ],
+  "hardware": [
+   "PC / Jetson",
+   "Webcam"
+  ],
+  "software": [
+   "Python",
+   "MediaPipe",
+   "TensorFlow"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V)",
+   "controller": "PC / Jetson",
+   "inputs": [
+    "Webcam"
+   ],
+   "outputs": [
+    "Text + Speech"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "fire-and-smoke-detection-from-cctv-with-early-alerts",
+  "code": "ISE-VIS-012",
+  "title": "Fire and Smoke Detection from CCTV with Early Alerts",
+  "domain": "Vision",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "A model detects fire and smoke in video and sends alerts before heat sensors trigger.",
+  "existing": "Smoke detectors act only after smoke reaches them.",
+  "proposed": "A model detects fire and smoke in video and sends alerts before heat sensors trigger. The Jetson Nano / Raspberry Pi reads CCTV Camera, processes the data on board and drives Alarm, SMS Alert, with Wi-Fi, GSM for connectivity.",
+  "advantages": [
+   "Automates a manual, error-prone task",
+   "Works in real time on low-cost hardware",
+   "Produces logs for analysis",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Warehouses",
+   "Forests"
+  ],
+  "hardware": [
+   "Jetson Nano / Raspberry Pi",
+   "Camera"
+  ],
+  "software": [
+   "Python",
+   "YOLO"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V)",
+   "controller": "Jetson Nano / Raspberry Pi",
+   "inputs": [
+    "CCTV Camera"
+   ],
+   "outputs": [
+    "Alarm",
+    "SMS Alert"
+   ],
+   "comms": [
+    "Wi-Fi",
+    "GSM"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "driver-distraction-detection-phone-use-looking-away",
+  "code": "ISE-VIS-013",
+  "title": "Driver Distraction Detection (Phone Use, Looking Away)",
+  "domain": "Vision",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "The system detects phone use and gaze away from the road and warns the driver.",
+  "existing": "Distraction is a major cause of accidents.",
+  "proposed": "The system detects phone use and gaze away from the road and warns the driver. The Raspberry Pi 4 reads In-Cabin Camera, processes the data on board and drives Voice Warning, Buzzer.",
+  "advantages": [
+   "Automates a manual, error-prone task",
+   "Works in real time on low-cost hardware",
+   "Produces logs for analysis",
+   "Includes a verified IEEE base paper reference"
+  ],
+  "applications": [
+   "Fleet safety"
+  ],
+  "hardware": [
+   "Raspberry Pi 4",
+   "Pi Camera"
+  ],
+  "software": [
+   "Python",
+   "OpenCV",
+   "TensorFlow Lite"
+  ],
+  "diagram": {
+   "power": "Power Supply (5V)",
+   "controller": "Raspberry Pi 4",
+   "inputs": [
+    "In-Cabin Camera"
+   ],
+   "outputs": [
+    "Voice Warning",
+    "Buzzer"
+   ]
+  },
+  "ieee": {
+   "title": "Enhanced Driver Drowsiness Detection Using Deep Learning: Comparative Analysis of CNN Architectures for Video-Based Monitoring Systems",
+   "ref": "2025 4th ICDCECE, IEEE. DOI 10.1109/icdcece65353.2025.11035146"
+  }
+ },
+ {
+  "slug": "wearable-ecg-monitor-with-real-time-heart-rate-analysis",
+  "code": "ISE-RTH-001",
+  "title": "Wearable ECG Monitor with Real-Time Heart-Rate Analysis",
+  "domain": "Real-time Hardware",
+  "year": "2025-26",
+  "featured": true,
+  "highValue": true,
+  "abstract": "An ECG front-end and filtering on the MCU compute heart rate and flag arrhythmia patterns in real time over BLE.",
+  "existing": "Clinic ECG is occasional, so intermittent events are missed.",
+  "proposed": "An ECG front-end and filtering on the MCU compute heart rate and flag arrhythmia patterns in real time over BLE. The ESP32 reads AD8232 ECG Front-End, processes the data on board and drives OLED Display, Buzzer Alert, with BLE: Mobile App for connectivity.",
+  "advantages": [
+   "Deterministic real-time behaviour",
+   "Accurate and repeatable measurements",
+   "Clear alerts and data logging",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Remote health",
+   "Sports"
+  ],
+  "hardware": [
+   "ESP32",
+   "AD8232",
+   "Electrodes",
+   "OLED"
+  ],
+  "software": [
+   "Arduino IDE",
+   "MIT App Inventor"
+  ],
+  "diagram": {
+   "power": "Power Supply (3.3V / Battery)",
+   "controller": "ESP32",
+   "inputs": [
+    "AD8232 ECG Front-End"
+   ],
+   "outputs": [
+    "OLED Display",
+    "Buzzer Alert"
+   ],
+   "comms": [
+    "BLE: Mobile App"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "real-time-data-logger-with-multi-channel-adc-and-sd-storage",
+  "code": "ISE-RTH-002",
+  "title": "Real-Time Data Logger with Multi-Channel ADC and SD Storage",
+  "domain": "Real-time Hardware",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A deterministic logger samples several sensors at fixed rates with RTC timestamps and writes to SD.",
+  "existing": "Software timing jitter corrupts measurements.",
+  "proposed": "A deterministic logger samples several sensors at fixed rates with RTC timestamps and writes to SD. The STM32 reads ADS1115 Multi-Channel ADC, DS3231 RTC, processes the data on board and drives SD Card, USB Output, LCD, with UART for connectivity.",
+  "advantages": [
+   "Deterministic real-time behaviour",
+   "Accurate and repeatable measurements",
+   "Clear alerts and data logging",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Labs",
+   "Field data"
+  ],
+  "hardware": [
+   "STM32",
+   "ADS1115",
+   "SD module"
+  ],
+  "software": [
+   "STM32CubeIDE",
+   "FreeRTOS"
+  ],
+  "diagram": {
+   "power": "Power Supply (3.3V / Battery)",
+   "controller": "STM32",
+   "inputs": [
+    "ADS1115 Multi-Channel ADC",
+    "DS3231 RTC"
+   ],
+   "outputs": [
+    "SD Card",
+    "USB Output",
+    "LCD"
+   ],
+   "comms": [
+    "UART"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "freertos-multi-sensor-weather-station",
+  "code": "ISE-RTH-003",
+  "title": "FreeRTOS Multi-Sensor Weather Station",
+  "domain": "Real-time Hardware",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "Tasks for sensing, display and uplink run under an RTOS with priorities and watchdog recovery.",
+  "existing": "Super-loop code misses deadlines when tasks grow.",
+  "proposed": "Tasks for sensing, display and uplink run under an RTOS with priorities and watchdog recovery. The STM32 / ESP32 reads BME280, Wind Sensor, Rain Gauge, processes the data on board and drives LCD, Cloud Upload, with Wi-Fi for connectivity.",
+  "advantages": [
+   "Deterministic real-time behaviour",
+   "Accurate and repeatable measurements",
+   "Clear alerts and data logging",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Agriculture",
+   "Meteorology"
+  ],
+  "hardware": [
+   "STM32 / ESP32",
+   "BME280",
+   "Anemometer"
+  ],
+  "software": [
+   "FreeRTOS",
+   "STM32CubeIDE"
+  ],
+  "diagram": {
+   "power": "Power Supply (3.3V / Battery)",
+   "controller": "STM32 / ESP32",
+   "inputs": [
+    "BME280",
+    "Wind Sensor",
+    "Rain Gauge"
+   ],
+   "outputs": [
+    "LCD",
+    "Cloud Upload"
+   ],
+   "comms": [
+    "Wi-Fi"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "can-bus-vehicle-data-logger-and-diagnostics-node",
+  "code": "ISE-RTH-004",
+  "title": "CAN-Bus Vehicle Data Logger and Diagnostics Node",
+  "domain": "Real-time Hardware",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A node reads CAN frames, decodes signals and logs them with timestamps for diagnostics.",
+  "existing": "Vehicle faults need real data, not guesses.",
+  "proposed": "A node reads CAN frames, decodes signals and logs them with timestamps for diagnostics. The STM32 + MCP2515 reads CAN Bus Frames, processes the data on board and drives SD Log, Display, with CAN, USB for connectivity.",
+  "advantages": [
+   "Deterministic real-time behaviour",
+   "Accurate and repeatable measurements",
+   "Clear alerts and data logging",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Automotive"
+  ],
+  "hardware": [
+   "STM32 + MCP2515",
+   "MCP2515",
+   "OBD-II cable"
+  ],
+  "software": [
+   "STM32CubeIDE"
+  ],
+  "diagram": {
+   "power": "Power Supply (3.3V / Battery)",
+   "controller": "STM32 + MCP2515",
+   "inputs": [
+    "CAN Bus Frames"
+   ],
+   "outputs": [
+    "SD Log",
+    "Display"
+   ],
+   "comms": [
+    "CAN",
+    "USB"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "smart-insulin-style-dosing-pump-simulator-with-safety-logic",
+  "code": "ISE-RTH-005",
+  "title": "Smart Insulin-Style Dosing Pump Simulator with Safety Logic",
+  "domain": "Real-time Hardware",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A bench pump controller delivers precise doses with occlusion detection and dual-check safety interlocks.",
+  "existing": "Dosing errors are dangerous and need verified safe logic.",
+  "proposed": "A bench pump controller delivers precise doses with occlusion detection and dual-check safety interlocks. The STM32 reads Pressure Sensor, Encoder, processes the data on board and drives Stepper Pump, Alarm.",
+  "advantages": [
+   "Deterministic real-time behaviour",
+   "Accurate and repeatable measurements",
+   "Clear alerts and data logging",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Medical devices"
+  ],
+  "hardware": [
+   "STM32",
+   "Stepper driver",
+   "Pressure sensor"
+  ],
+  "software": [
+   "STM32CubeIDE",
+   "FreeRTOS"
+  ],
+  "diagram": {
+   "power": "Power Supply (3.3V / Battery)",
+   "controller": "STM32",
+   "inputs": [
+    "Pressure Sensor",
+    "Encoder"
+   ],
+   "outputs": [
+    "Stepper Pump",
+    "Alarm"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "pulse-oximeter-with-motion-robust-signal-processing",
+  "code": "ISE-RTH-006",
+  "title": "Pulse Oximeter with Motion-Robust Signal Processing",
+  "domain": "Real-time Hardware",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "An SpO2 meter filters motion artefacts using accelerometer reference for steadier readings.",
+  "existing": "Movement ruins readings from basic oximeters.",
+  "proposed": "An SpO2 meter filters motion artefacts using accelerometer reference for steadier readings. The ESP32 reads MAX30102, MPU6050, processes the data on board and drives OLED, BLE, with BLE for connectivity.",
+  "advantages": [
+   "Deterministic real-time behaviour",
+   "Accurate and repeatable measurements",
+   "Clear alerts and data logging",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Home health"
+  ],
+  "hardware": [
+   "ESP32",
+   "MAX30102"
+  ],
+  "software": [
+   "Arduino IDE"
+  ],
+  "diagram": {
+   "power": "Power Supply (3.3V / Battery)",
+   "controller": "ESP32",
+   "inputs": [
+    "MAX30102",
+    "MPU6050"
+   ],
+   "outputs": [
+    "OLED",
+    "BLE"
+   ],
+   "comms": [
+    "BLE"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "digital-stethoscope-with-heart-sound-visualisation",
+  "code": "ISE-RTH-007",
+  "title": "Digital Stethoscope with Heart-Sound Visualisation",
+  "domain": "Real-time Hardware",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "A MEMS microphone stethoscope filters and displays heart sounds and stores recordings.",
+  "existing": "Acoustic stethoscopes give no record.",
+  "proposed": "A MEMS microphone stethoscope filters and displays heart sounds and stores recordings. The ESP32 / STM32 reads MEMS Mic, processes the data on board and drives Waveform Display, SD, with Wi-Fi for connectivity.",
+  "advantages": [
+   "Deterministic real-time behaviour",
+   "Accurate and repeatable measurements",
+   "Clear alerts and data logging",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Telemedicine"
+  ],
+  "hardware": [
+   "ESP32 / STM32",
+   "INMP441"
+  ],
+  "software": [
+   "Arduino IDE",
+   "Python"
+  ],
+  "diagram": {
+   "power": "Power Supply (3.3V / Battery)",
+   "controller": "ESP32 / STM32",
+   "inputs": [
+    "MEMS Mic"
+   ],
+   "outputs": [
+    "Waveform Display",
+    "SD"
+   ],
+   "comms": [
+    "Wi-Fi"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "gps-disciplined-precision-clock-and-frequency-counter",
+  "code": "ISE-RTH-008",
+  "title": "GPS-Disciplined Precision Clock and Frequency Counter",
+  "domain": "Real-time Hardware",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A GPS 1PPS signal disciplines an oscillator for a lab-grade clock and frequency counter.",
+  "existing": "Cheap oscillators drift.",
+  "proposed": "A GPS 1PPS signal disciplines an oscillator for a lab-grade clock and frequency counter. The STM32 reads GPS 1PPS, Oscillator, processes the data on board and drives OLED Time, Frequency Display.",
+  "advantages": [
+   "Deterministic real-time behaviour",
+   "Accurate and repeatable measurements",
+   "Clear alerts and data logging",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Labs",
+   "Timing"
+  ],
+  "hardware": [
+   "STM32",
+   "GPS module",
+   "TCXO"
+  ],
+  "software": [
+   "STM32CubeIDE"
+  ],
+  "diagram": {
+   "power": "Power Supply (3.3V / Battery)",
+   "controller": "STM32",
+   "inputs": [
+    "GPS 1PPS",
+    "Oscillator"
+   ],
+   "outputs": [
+    "OLED Time",
+    "Frequency Display"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "industrial-plc-style-controller-with-modbus-rtu",
+  "code": "ISE-RTH-009",
+  "title": "Industrial PLC-Style Controller with Modbus RTU",
+  "domain": "Real-time Hardware",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A rugged controller reads sensors, runs interlock logic and exposes registers over Modbus.",
+  "existing": "Commercial PLCs are costly for small automation.",
+  "proposed": "A rugged controller reads sensors, runs interlock logic and exposes registers over Modbus. The STM32 reads Isolated Digital Inputs, 4-20mA Inputs, processes the data on board and drives Relay Outputs, with Modbus RTU RS-485 for connectivity.",
+  "advantages": [
+   "Deterministic real-time behaviour",
+   "Accurate and repeatable measurements",
+   "Clear alerts and data logging",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Small factories"
+  ],
+  "hardware": [
+   "STM32",
+   "RS-485",
+   "Optocouplers"
+  ],
+  "software": [
+   "STM32CubeIDE",
+   "FreeRTOS"
+  ],
+  "diagram": {
+   "power": "Power Supply (3.3V / Battery)",
+   "controller": "STM32",
+   "inputs": [
+    "Isolated Digital Inputs",
+    "4-20mA Inputs"
+   ],
+   "outputs": [
+    "Relay Outputs"
+   ],
+   "comms": [
+    "Modbus RTU RS-485"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "anti-collision-alert-system-using-radar-sensor",
+  "code": "ISE-RTH-010",
+  "title": "Anti-Collision Alert System Using Radar Sensor",
+  "domain": "Real-time Hardware",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A radar module measures closing speed and distance to warn drivers of possible collisions.",
+  "existing": "Cheap vehicles lack forward-collision warning.",
+  "proposed": "A radar module measures closing speed and distance to warn drivers of possible collisions. The STM32 / Arduino reads mmWave Radar, processes the data on board and drives Buzzer, Display.",
+  "advantages": [
+   "Deterministic real-time behaviour",
+   "Accurate and repeatable measurements",
+   "Clear alerts and data logging",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Vehicles"
+  ],
+  "hardware": [
+   "STM32 / Arduino",
+   "mmWave radar"
+  ],
+  "software": [
+   "Arduino IDE"
+  ],
+  "diagram": {
+   "power": "Power Supply (3.3V / Battery)",
+   "controller": "STM32 / Arduino",
+   "inputs": [
+    "mmWave Radar"
+   ],
+   "outputs": [
+    "Buzzer",
+    "Display"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "smart-prepaid-energy-meter-with-tamper-detection",
+  "code": "ISE-RTH-011",
+  "title": "Smart Prepaid Energy Meter with Tamper Detection",
+  "domain": "Real-time Hardware",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A prepaid meter deducts credit in real time, cuts supply at zero and detects bypass and magnetic tampering.",
+  "existing": "Billing disputes and theft cost utilities heavily.",
+  "proposed": "A prepaid meter deducts credit in real time, cuts supply at zero and detects bypass and magnetic tampering. The ATmega / STM32 reads Voltage/Current Sensors, Hall Tamper Sensor, processes the data on board and drives Relay Cut-off, LCD, with GSM Recharge for connectivity.",
+  "advantages": [
+   "Deterministic real-time behaviour",
+   "Accurate and repeatable measurements",
+   "Clear alerts and data logging",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Utilities"
+  ],
+  "hardware": [
+   "ATmega / STM32",
+   "ADE7753",
+   "GSM"
+  ],
+  "software": [
+   "Arduino IDE"
+  ],
+  "diagram": {
+   "power": "Power Supply (3.3V / Battery)",
+   "controller": "ATmega / STM32",
+   "inputs": [
+    "Voltage/Current Sensors",
+    "Hall Tamper Sensor"
+   ],
+   "outputs": [
+    "Relay Cut-off",
+    "LCD"
+   ],
+   "comms": [
+    "GSM Recharge"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "portable-spirometer-for-lung-function-monitoring",
+  "code": "ISE-RTH-012",
+  "title": "Portable Spirometer for Lung Function Monitoring",
+  "domain": "Real-time Hardware",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A differential-pressure sensor measures airflow and calculates FEV1 and FVC.",
+  "existing": "Clinical spirometers are expensive.",
+  "proposed": "A differential-pressure sensor measures airflow and calculates FEV1 and FVC. The ESP32 reads MPX Pressure Sensor, processes the data on board and drives OLED, BLE, with BLE for connectivity.",
+  "advantages": [
+   "Deterministic real-time behaviour",
+   "Accurate and repeatable measurements",
+   "Clear alerts and data logging",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Clinics"
+  ],
+  "hardware": [
+   "ESP32",
+   "MPXV7002",
+   "Mouthpiece"
+  ],
+  "software": [
+   "Arduino IDE"
+  ],
+  "diagram": {
+   "power": "Power Supply (3.3V / Battery)",
+   "controller": "ESP32",
+   "inputs": [
+    "MPX Pressure Sensor"
+   ],
+   "outputs": [
+    "OLED",
+    "BLE"
+   ],
+   "comms": [
+    "BLE"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "smart-pill-dispenser-with-reminders-and-intake-logging",
+  "code": "ISE-RTH-013",
+  "title": "Smart Pill Dispenser with Reminders and Intake Logging",
+  "domain": "Real-time Hardware",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "A dispenser releases scheduled doses, confirms intake and notifies caregivers of missed doses.",
+  "existing": "Missed doses harm elderly patients.",
+  "proposed": "A dispenser releases scheduled doses, confirms intake and notifies caregivers of missed doses. The ESP32 reads RTC, Tray Sensor, processes the data on board and drives Servo Dispenser, Buzzer, App Notification, with Wi-Fi for connectivity.",
+  "advantages": [
+   "Deterministic real-time behaviour",
+   "Accurate and repeatable measurements",
+   "Clear alerts and data logging",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Elder care"
+  ],
+  "hardware": [
+   "ESP32",
+   "DS3231",
+   "Servo"
+  ],
+  "software": [
+   "Arduino IDE"
+  ],
+  "diagram": {
+   "power": "Power Supply (3.3V / Battery)",
+   "controller": "ESP32",
+   "inputs": [
+    "RTC",
+    "Tray Sensor"
+   ],
+   "outputs": [
+    "Servo Dispenser",
+    "Buzzer",
+    "App Notification"
+   ],
+   "comms": [
+    "Wi-Fi"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "gan-totem-pole-bridgeless-pfc-rectifier-for-ev-on-board-charger",
+  "code": "ISE-PWR-001",
+  "title": "GaN Totem-Pole Bridgeless PFC Rectifier for EV On-Board Charger",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": true,
+  "highValue": true,
+  "abstract": "A bridgeless totem-pole PFC stage using GaN switches reaches high efficiency and near-unity power factor, with measured THD and efficiency curves.",
+  "existing": "Diode-bridge PFC stages waste energy as heat and limit charger power density.",
+  "proposed": "A bridgeless totem-pole PFC stage using GaN switches reaches high efficiency and near-unity power factor, with measured THD and efficiency curves. The DSP / STM32G4 reads AC Line Voltage, Inductor Current, Bus Voltage, processes the data on board and drives GaN Half-Bridge, Gate Driver, DC Bus.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "EV chargers",
+   "Server power"
+  ],
+  "hardware": [
+   "DSP / STM32G4",
+   "GaN FETs",
+   "Isolated gate driver",
+   "PFC inductor"
+  ],
+  "software": [
+   "MATLAB",
+   "PLECS",
+   "STM32CubeIDE"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "DSP / STM32G4",
+   "inputs": [
+    "AC Line Voltage",
+    "Inductor Current",
+    "Bus Voltage"
+   ],
+   "outputs": [
+    "GaN Half-Bridge",
+    "Gate Driver",
+    "DC Bus"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "llc-resonant-dc-dc-converter-with-soft-switching",
+  "code": "ISE-PWR-002",
+  "title": "LLC Resonant DC-DC Converter with Soft Switching",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "An LLC half-bridge converter regulates output by frequency control and achieves zero-voltage switching, shown with efficiency across load.",
+  "existing": "Hard-switched converters lose efficiency and radiate EMI at high frequency.",
+  "proposed": "An LLC half-bridge converter regulates output by frequency control and achieves zero-voltage switching, shown with efficiency across load. The STM32 / Dedicated LLC Controller reads Output Voltage, Resonant Current, processes the data on board and drives Half-Bridge, Resonant Tank, Transformer.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Adapters",
+   "LED drivers",
+   "Telecom power"
+  ],
+  "hardware": [
+   "STM32 / Dedicated LLC Controller",
+   "MOSFETs",
+   "LLC transformer",
+   "Resonant capacitor"
+  ],
+  "software": [
+   "LTspice",
+   "MATLAB"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "STM32 / Dedicated LLC Controller",
+   "inputs": [
+    "Output Voltage",
+    "Resonant Current"
+   ],
+   "outputs": [
+    "Half-Bridge",
+    "Resonant Tank",
+    "Transformer"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "three-phase-inverter-with-svpwm-for-induction-motor-drive",
+  "code": "ISE-PWR-003",
+  "title": "Three-Phase Inverter with SVPWM for Induction Motor Drive",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A three-phase inverter uses space-vector PWM with V/f control to run an induction motor with adjustable speed and measured harmonics.",
+  "existing": "Direct-on-line starting wastes energy and stresses the motor.",
+  "proposed": "A three-phase inverter uses space-vector PWM with V/f control to run an induction motor with adjustable speed and measured harmonics. The STM32 / DSP reads DC Bus Voltage, Phase Current, Speed Reference, processes the data on board and drives 3-Phase IGBT/MOSFET Bridge, Induction Motor, with UART Monitor for connectivity.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Pumps",
+   "Fans",
+   "Conveyors"
+  ],
+  "hardware": [
+   "STM32 / DSP",
+   "3-phase bridge module",
+   "Gate driver",
+   "Induction motor"
+  ],
+  "software": [
+   "MATLAB",
+   "STM32CubeIDE"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "STM32 / DSP",
+   "inputs": [
+    "DC Bus Voltage",
+    "Phase Current",
+    "Speed Reference"
+   ],
+   "outputs": [
+    "3-Phase IGBT/MOSFET Bridge",
+    "Induction Motor"
+   ],
+   "comms": [
+    "UART Monitor"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "dual-active-bridge-bidirectional-isolated-dc-dc-converter",
+  "code": "ISE-PWR-004",
+  "title": "Dual Active Bridge Bidirectional Isolated DC-DC Converter",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A DAB converter transfers power in both directions through phase-shift control, suited to battery storage and V2G experiments.",
+  "existing": "Non-isolated converters cannot give galvanic isolation with bidirectional flow.",
+  "proposed": "A DAB converter transfers power in both directions through phase-shift control, suited to battery storage and V2G experiments. The STM32 / DSP reads Port Voltages, Phase-Shift Current, processes the data on board and drives Two H-Bridges, HF Transformer.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Battery storage",
+   "Microgrids"
+  ],
+  "hardware": [
+   "STM32 / DSP",
+   "MOSFET bridges",
+   "HF transformer"
+  ],
+  "software": [
+   "MATLAB",
+   "PLECS"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "STM32 / DSP",
+   "inputs": [
+    "Port Voltages",
+    "Phase-Shift Current"
+   ],
+   "outputs": [
+    "Two H-Bridges",
+    "HF Transformer"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "flyback-smps-with-primary-side-regulation-and-protection",
+  "code": "ISE-PWR-005",
+  "title": "Flyback SMPS with Primary-Side Regulation and Protection",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "An isolated flyback supply with feedback, over-current and thermal shutdown is built, tested and compared with simulation.",
+  "existing": "Cheap adapters lack protection and regulate poorly under load changes.",
+  "proposed": "An isolated flyback supply with feedback, over-current and thermal shutdown is built, tested and compared with simulation. The Flyback Controller IC reads Mains AC, Output Feedback, processes the data on board and drives Isolated DC Output, Protection Latch.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Chargers",
+   "Auxiliary supplies"
+  ],
+  "hardware": [
+   "Flyback Controller IC",
+   "Flyback controller",
+   "Transformer",
+   "Optocoupler"
+  ],
+  "software": [
+   "LTspice"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "Flyback Controller IC",
+   "inputs": [
+    "Mains AC",
+    "Output Feedback"
+   ],
+   "outputs": [
+    "Isolated DC Output",
+    "Protection Latch"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "cascaded-h-bridge-multilevel-inverter-with-deep-learning-mppt",
+  "code": "ISE-PWR-006",
+  "title": "Cascaded H-Bridge Multilevel Inverter with Deep-Learning MPPT",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A multilevel inverter fed by PV strings uses a neural MPPT and low-THD modulation to deliver cleaner AC from solar.",
+  "existing": "Two-level inverters create high harmonics and need large filters.",
+  "proposed": "A multilevel inverter fed by PV strings uses a neural MPPT and low-THD modulation to deliver cleaner AC from solar. The STM32 / DSP reads PV Voltage/Current, Irradiance, processes the data on board and drives Cascaded H-Bridge, AC Load.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Includes a verified IEEE base paper reference"
+  ],
+  "applications": [
+   "Solar systems"
+  ],
+  "hardware": [
+   "STM32 / DSP",
+   "MOSFET H-bridges x2",
+   "PV panel"
+  ],
+  "software": [
+   "MATLAB",
+   "Simulink"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "STM32 / DSP",
+   "inputs": [
+    "PV Voltage/Current",
+    "Irradiance"
+   ],
+   "outputs": [
+    "Cascaded H-Bridge",
+    "AC Load"
+   ]
+  },
+  "ieee": {
+   "title": "Deep Reinforcement Learning for Power Converter Control: A Comprehensive Review of Applications and Challenges",
+   "ref": "IEEE Open Journal of Power Electronics, vol. 6, pp. 1769-1802, 2025. DOI 10.1109/OJPEL.2025.3619673"
+  }
+ },
+ {
+  "slug": "bidirectional-ev-charger-with-vehicle-to-home-mode",
+  "code": "ISE-PWR-007",
+  "title": "Bidirectional EV Charger with Vehicle-to-Home Mode",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A bidirectional converter charges a battery and also returns power to home loads during outages, controlled by a mode selector.",
+  "existing": "One-way chargers cannot back up the home from the vehicle battery.",
+  "proposed": "A bidirectional converter charges a battery and also returns power to home loads during outages, controlled by a mode selector. The STM32 reads Battery Voltage/Current, Grid Voltage, processes the data on board and drives Bidirectional Bridge, Contactor, with CAN / UART for connectivity.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "EVs",
+   "Home backup"
+  ],
+  "hardware": [
+   "STM32",
+   "Bidirectional bridge",
+   "Battery pack"
+  ],
+  "software": [
+   "MATLAB",
+   "STM32CubeIDE"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "STM32",
+   "inputs": [
+    "Battery Voltage/Current",
+    "Grid Voltage"
+   ],
+   "outputs": [
+    "Bidirectional Bridge",
+    "Contactor"
+   ],
+   "comms": [
+    "CAN / UART"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "supercapacitor-hybrid-energy-storage-with-bidirectional-converter",
+  "code": "ISE-PWR-008",
+  "title": "Supercapacitor Hybrid Energy Storage with Bidirectional Converter",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A battery-supercapacitor hybrid splits peaks and averages through a converter so the battery sees smoother current and lasts longer.",
+  "existing": "Batteries age quickly under sharp load peaks.",
+  "proposed": "A battery-supercapacitor hybrid splits peaks and averages through a converter so the battery sees smoother current and lasts longer. The STM32 reads Battery Current, Supercap Voltage, Load Current, processes the data on board and drives Bidirectional DC-DC, Load.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "E-bikes",
+   "Solar storage"
+  ],
+  "hardware": [
+   "STM32",
+   "Supercapacitor bank",
+   "Bidirectional DC-DC"
+  ],
+  "software": [
+   "MATLAB"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "STM32",
+   "inputs": [
+    "Battery Current",
+    "Supercap Voltage",
+    "Load Current"
+   ],
+   "outputs": [
+    "Bidirectional DC-DC",
+    "Load"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "boost-converter-with-fuzzy-mppt-for-partial-shading-solar-panel",
+  "code": "ISE-PWR-009",
+  "title": "Boost Converter with Fuzzy MPPT for Partial-Shading Solar Panel",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A boost converter with fuzzy-logic MPPT finds the global power peak when shading creates several peaks on the PV curve.",
+  "existing": "Simple MPPT locks onto a local peak and loses power.",
+  "proposed": "A boost converter with fuzzy-logic MPPT finds the global power peak when shading creates several peaks on the PV curve. The Arduino / STM32 reads PV Voltage, PV Current, processes the data on board and drives Boost MOSFET, Battery, LCD.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Off-grid solar"
+  ],
+  "hardware": [
+   "Arduino / STM32",
+   "INA219",
+   "Boost converter",
+   "Solar panel"
+  ],
+  "software": [
+   "Arduino IDE",
+   "MATLAB"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "Arduino / STM32",
+   "inputs": [
+    "PV Voltage",
+    "PV Current"
+   ],
+   "outputs": [
+    "Boost MOSFET",
+    "Battery",
+    "LCD"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "wireless-power-transfer-platform-for-autonomous-guided-vehicles",
+  "code": "ISE-PWR-010",
+  "title": "Wireless Power Transfer Platform for Autonomous Guided Vehicles",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A 48 V class mid-range LCC-S wireless charger supplies an AGV with constant voltage as the coil gap shifts.",
+  "existing": "Contact chargers wear out and interrupt AGV operation.",
+  "proposed": "A 48 V class mid-range LCC-S wireless charger supplies an AGV with constant voltage as the coil gap shifts. The STM32 reads Coil Current, Battery Voltage, processes the data on board and drives Inverter, LCC-S Coils.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Includes a verified IEEE base paper reference"
+  ],
+  "applications": [
+   "AGVs",
+   "Warehouses"
+  ],
+  "hardware": [
+   "STM32",
+   "Litz coils",
+   "MOSFET bridge"
+  ],
+  "software": [
+   "MATLAB",
+   "LTspice"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "STM32",
+   "inputs": [
+    "Coil Current",
+    "Battery Voltage"
+   ],
+   "outputs": [
+    "Inverter",
+    "LCC-S Coils"
+   ]
+  },
+  "ieee": {
+   "title": "Load Invariant CC and CV Modes for Static/Dynamic Wireless Charging System With Half-Bridge Multi-Leg Converter Topology",
+   "ref": "IEEE Access, vol. 13, pp. 9654-9665, 2025. DOI 10.1109/ACCESS.2025.3526654"
+  }
+ },
+ {
+  "slug": "smart-dc-microgrid-controller-with-droop-control",
+  "code": "ISE-PWR-011",
+  "title": "Smart DC Microgrid Controller with Droop Control",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A small DC microgrid with solar, battery and load uses droop control and shares current between converters.",
+  "existing": "Uncoordinated converters fight each other and cause instability.",
+  "proposed": "A small DC microgrid with solar, battery and load uses droop control and shares current between converters. The STM32 / ESP32 reads Bus Voltage, Source Currents, processes the data on board and drives Converter PWM, Load Switch, with Wi-Fi Dashboard for connectivity.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Microgrids",
+   "Rural power"
+  ],
+  "hardware": [
+   "STM32 / ESP32",
+   "Buck-boost modules",
+   "Battery"
+  ],
+  "software": [
+   "MATLAB",
+   "Arduino IDE"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "STM32 / ESP32",
+   "inputs": [
+    "Bus Voltage",
+    "Source Currents"
+   ],
+   "outputs": [
+    "Converter PWM",
+    "Load Switch"
+   ],
+   "comms": [
+    "Wi-Fi Dashboard"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "inductive-heating-induction-cooktop-driver",
+  "code": "ISE-PWR-012",
+  "title": "Inductive Heating Induction Cooktop Driver",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "A half-bridge resonant driver heats ferromagnetic cookware with power control and pan detection.",
+  "existing": "Gas and resistive hobs are slow and inefficient.",
+  "proposed": "A half-bridge resonant driver heats ferromagnetic cookware with power control and pan detection. The STM32 reads Coil Current, Pan Detect, Temperature, processes the data on board and drives Half-Bridge IGBT, Work Coil.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Domestic appliances"
+  ],
+  "hardware": [
+   "STM32",
+   "IGBTs",
+   "Work coil",
+   "Resonant caps"
+  ],
+  "software": [
+   "LTspice",
+   "STM32CubeIDE"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "STM32",
+   "inputs": [
+    "Coil Current",
+    "Pan Detect",
+    "Temperature"
+   ],
+   "outputs": [
+    "Half-Bridge IGBT",
+    "Work Coil"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "solar-mppt-charge-controller-with-deep-learning-tracking",
+  "code": "ISE-PWR-013",
+  "title": "Solar MPPT Charge Controller with Deep-Learning Tracking",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": true,
+  "highValue": true,
+  "abstract": "A neural-network MPPT predicts the maximum-power operating point under partial shading and drives a buck-boost converter.",
+  "existing": "Perturb-and-observe oscillates and loses power under shading.",
+  "proposed": "A neural-network MPPT predicts the maximum-power operating point under partial shading and drives a buck-boost converter. The STM32 / Arduino reads PV Voltage, PV Current, Irradiance (LDR), processes the data on board and drives Buck-Boost MOSFET, Battery Charge, LCD, with UART Dashboard for connectivity.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Includes a verified IEEE base paper reference"
+  ],
+  "applications": [
+   "Solar systems"
+  ],
+  "hardware": [
+   "STM32 / Arduino",
+   "INA219",
+   "Buck-boost",
+   "Solar panel"
+  ],
+  "software": [
+   "MATLAB",
+   "Arduino IDE"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "STM32 / Arduino",
+   "inputs": [
+    "PV Voltage",
+    "PV Current",
+    "Irradiance (LDR)"
+   ],
+   "outputs": [
+    "Buck-Boost MOSFET",
+    "Battery Charge",
+    "LCD"
+   ],
+   "comms": [
+    "UART Dashboard"
+   ]
+  },
+  "ieee": {
+   "title": "Deep Reinforcement Learning for Power Converter Control: A Comprehensive Review of Applications and Challenges",
+   "ref": "IEEE Open Journal of Power Electronics, vol. 6, pp. 1769-1802, 2025. DOI 10.1109/OJPEL.2025.3619673"
+  }
+ },
+ {
+  "slug": "dynamic-wireless-ev-charging-with-lcc-s-compensation",
+  "code": "ISE-PWR-014",
+  "title": "Dynamic Wireless EV Charging with LCC-S Compensation",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A load-invariant CC/CV wireless charger prototype maintains output as the load and coupling change.",
+  "existing": "Plug-in charging limits convenience and battery size.",
+  "proposed": "A load-invariant CC/CV wireless charger prototype maintains output as the load and coupling change. The STM32 / DSP reads Coil Current, Battery Voltage, processes the data on board and drives Half-Bridge Inverter, LCC-S Coil.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Includes a verified IEEE base paper reference"
+  ],
+  "applications": [
+   "EV charging"
+  ],
+  "hardware": [
+   "STM32 / DSP",
+   "Litz coils",
+   "MOSFET bridge",
+   "Compensation capacitors"
+  ],
+  "software": [
+   "MATLAB",
+   "LTspice"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "STM32 / DSP",
+   "inputs": [
+    "Coil Current",
+    "Battery Voltage"
+   ],
+   "outputs": [
+    "Half-Bridge Inverter",
+    "LCC-S Coil"
+   ]
+  },
+  "ieee": {
+   "title": "Load Invariant CC and CV Modes for Static/Dynamic Wireless Charging System With Half-Bridge Multi-Leg Converter Topology",
+   "ref": "IEEE Access, vol. 13, pp. 9654-9665, 2025. DOI 10.1109/ACCESS.2025.3526654"
+  }
+ },
+ {
+  "slug": "bidirectional-wireless-power-transfer-with-constant-voltage",
+  "code": "ISE-PWR-015",
+  "title": "Bidirectional Wireless Power Transfer with Constant Voltage",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A bidirectional LCC-S converter regulates voltage in both directions for vehicle-to-grid style experiments.",
+  "existing": "One-way chargers cannot return energy.",
+  "proposed": "A bidirectional LCC-S converter regulates voltage in both directions for vehicle-to-grid style experiments. The STM32 reads Voltage, Current, processes the data on board and drives Bidirectional Bridge, LCC-S Tanks.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Includes a verified IEEE base paper reference"
+  ],
+  "applications": [
+   "V2G research"
+  ],
+  "hardware": [
+   "STM32",
+   "MOSFET bridge",
+   "Coils"
+  ],
+  "software": [
+   "MATLAB",
+   "LTspice"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "STM32",
+   "inputs": [
+    "Voltage",
+    "Current"
+   ],
+   "outputs": [
+    "Bidirectional Bridge",
+    "LCC-S Tanks"
+   ]
+  },
+  "ieee": {
+   "title": "A Bidirectional LCC-S Compensator on Wireless Power Transfer with Constant Voltage",
+   "ref": "2025 IEEE IEECON, IEEE. DOI 10.1109/ieecon64081.2025.10987579"
+  }
+ },
+ {
+  "slug": "single-phase-grid-tied-inverter-with-rl-current-control",
+  "code": "ISE-PWR-016",
+  "title": "Single-Phase Grid-Tied Inverter with RL Current Control",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A full-bridge inverter uses a learned current controller and compares THD to a PI controller.",
+  "existing": "PI controllers struggle with distortion and changing conditions.",
+  "proposed": "A full-bridge inverter uses a learned current controller and compares THD to a PI controller. The STM32 / DSP reads Grid Voltage, Inductor Current, processes the data on board and drives Full-Bridge PWM, LCL Filter.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Includes a verified IEEE base paper reference"
+  ],
+  "applications": [
+   "Solar inverters"
+  ],
+  "hardware": [
+   "STM32 / DSP",
+   "MOSFET bridge",
+   "LCL filter"
+  ],
+  "software": [
+   "MATLAB",
+   "Simulink",
+   "STM32CubeIDE"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "STM32 / DSP",
+   "inputs": [
+    "Grid Voltage",
+    "Inductor Current"
+   ],
+   "outputs": [
+    "Full-Bridge PWM",
+    "LCL Filter"
+   ]
+  },
+  "ieee": {
+   "title": "Exploring Reinforcement Learning Algorithms for Current Control of Single-Phase AC/DC Full-Bridge Converters",
+   "ref": "2025 14th International Conference on Renewable Energy Research and Applications (ICRERA), IEEE, pp. 1094-1099. DOI 10.1109/ICRERA66237.2025.11283920"
+  }
+ },
+ {
+  "slug": "sensorless-bldc-motor-drive-with-back-emf-observer",
+  "code": "ISE-PWR-017",
+  "title": "Sensorless BLDC Motor Drive with Back-EMF Observer",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A sensorless BLDC drive estimates rotor position from back-EMF for e-bike and drone motors.",
+  "existing": "Hall sensors add cost and failure points.",
+  "proposed": "A sensorless BLDC drive estimates rotor position from back-EMF for e-bike and drone motors. The STM32 reads Phase Voltage Sense, Current Shunt, processes the data on board and drives 3-Phase Inverter, BLDC Motor, with UART Tuning for connectivity.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Includes a verified IEEE base paper reference"
+  ],
+  "applications": [
+   "E-bikes",
+   "Drones"
+  ],
+  "hardware": [
+   "STM32",
+   "3-phase inverter",
+   "BLDC motor"
+  ],
+  "software": [
+   "STM32CubeIDE",
+   "MATLAB"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "STM32",
+   "inputs": [
+    "Phase Voltage Sense",
+    "Current Shunt"
+   ],
+   "outputs": [
+    "3-Phase Inverter",
+    "BLDC Motor"
+   ],
+   "comms": [
+    "UART Tuning"
+   ]
+  },
+  "ieee": {
+   "title": "Sensorless Control Methods for BLDC Motor Drives: A Review",
+   "ref": "IEEE Transactions on Transportation Electrification, vol. 11, no. 1, pp. 135-152, 2025. DOI 10.1109/TTE.2024.3387371"
+  }
+ },
+ {
+  "slug": "smart-battery-management-system-with-soc-and-soh-estimation",
+  "code": "ISE-PWR-018",
+  "title": "Smart Battery Management System with SoC and SoH Estimation",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A BMS estimates state of charge and health with Kalman and ML models and protects the pack.",
+  "existing": "Voltage-only estimates are inaccurate.",
+  "proposed": "A BMS estimates state of charge and health with Kalman and ML models and protects the pack. The STM32 reads Cell Voltages, Current, Temperature, processes the data on board and drives Protection MOSFET, Display, with CAN / UART for connectivity.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "EVs",
+   "Solar storage"
+  ],
+  "hardware": [
+   "STM32",
+   "BQ76920",
+   "INA226"
+  ],
+  "software": [
+   "MATLAB",
+   "STM32CubeIDE"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "STM32",
+   "inputs": [
+    "Cell Voltages",
+    "Current",
+    "Temperature"
+   ],
+   "outputs": [
+    "Protection MOSFET",
+    "Display"
+   ],
+   "comms": [
+    "CAN / UART"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "active-power-filter-for-harmonic-compensation",
+  "code": "ISE-PWR-019",
+  "title": "Active Power Filter for Harmonic Compensation",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A shunt active filter injects compensating current to remove harmonics from nonlinear loads.",
+  "existing": "Harmonics heat equipment and violate standards.",
+  "proposed": "A shunt active filter injects compensating current to remove harmonics from nonlinear loads. The DSP / STM32 reads Load Current, Grid Voltage, processes the data on board and drives Inverter Compensation Current.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Industrial plants"
+  ],
+  "hardware": [
+   "DSP / STM32",
+   "IGBT/MOSFET bridge"
+  ],
+  "software": [
+   "MATLAB",
+   "Simulink"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "DSP / STM32",
+   "inputs": [
+    "Load Current",
+    "Grid Voltage"
+   ],
+   "outputs": [
+    "Inverter Compensation Current"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "smart-grid-demand-response-controller",
+  "code": "ISE-ECE-001",
+  "title": "Smart Grid Demand Response Controller",
+  "domain": "ECE",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A controller shifts flexible loads to cheap hours using price signals and local generation.",
+  "existing": "Peak demand strains the grid.",
+  "proposed": "A controller shifts flexible loads to cheap hours using price signals and local generation. The ESP32 reads Price Signal, Load Current, processes the data on board and drives Relay Load Control, with MQTT, Wi-Fi for connectivity.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Applicable to real energy systems",
+   "Backed by simulation and hardware results",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Smart grid"
+  ],
+  "hardware": [
+   "ESP32",
+   "Relays",
+   "Energy meter"
+  ],
+  "software": [
+   "Arduino IDE",
+   "Node-RED"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC)",
+   "controller": "ESP32",
+   "inputs": [
+    "Price Signal",
+    "Load Current"
+   ],
+   "outputs": [
+    "Relay Load Control"
+   ],
+   "comms": [
+    "MQTT",
+    "Wi-Fi"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "ultra-fast-dc-dc-converter-for-led-driver-with-dimming",
+  "code": "ISE-PWR-020",
+  "title": "Ultra-Fast DC-DC Converter for LED Driver with Dimming",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "A constant-current buck driver offers flicker-free dimming with measured efficiency.",
+  "existing": "Cheap drivers flicker and waste energy.",
+  "proposed": "A constant-current buck driver offers flicker-free dimming with measured efficiency. The STM32 reads LED Current Sense, processes the data on board and drives Buck Stage, LED Array.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Lighting"
+  ],
+  "hardware": [
+   "STM32",
+   "Buck IC",
+   "LED strip"
+  ],
+  "software": [
+   "LTspice"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "STM32",
+   "inputs": [
+    "LED Current Sense"
+   ],
+   "outputs": [
+    "Buck Stage",
+    "LED Array"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "wireless-power-transfer-for-biomedical-implant-charging",
+  "code": "ISE-PWR-021",
+  "title": "Wireless Power Transfer for Biomedical Implant Charging",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A small resonant link charges an implant-sized receiver with efficiency and heating measured.",
+  "existing": "Battery replacement surgery is risky.",
+  "proposed": "A small resonant link charges an implant-sized receiver with efficiency and heating measured. The STM32 reads Rectifier Output, Temperature, processes the data on board and drives Resonant Tx Coil.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Implants"
+  ],
+  "hardware": [
+   "STM32",
+   "Coils",
+   "Rectifier"
+  ],
+  "software": [
+   "LTspice"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "STM32",
+   "inputs": [
+    "Rectifier Output",
+    "Temperature"
+   ],
+   "outputs": [
+    "Resonant Tx Coil"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "bidirectional-dc-dc-converter-for-battery-storage",
+  "code": "ISE-PWR-022",
+  "title": "Bidirectional DC-DC Converter for Battery Storage",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A buck-boost converter moves energy between solar bus and battery with a measured efficiency map.",
+  "existing": "Unidirectional converters need two stages.",
+  "proposed": "A buck-boost converter moves energy between solar bus and battery with a measured efficiency map. The STM32 reads Bus Voltage, Battery Current, processes the data on board and drives Half-Bridge Stage.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Microgrids"
+  ],
+  "hardware": [
+   "STM32",
+   "MOSFETs",
+   "Inductor"
+  ],
+  "software": [
+   "MATLAB"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "STM32",
+   "inputs": [
+    "Bus Voltage",
+    "Battery Current"
+   ],
+   "outputs": [
+    "Half-Bridge Stage"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "class-d-audio-amplifier-with-feedback-and-emi-filter",
+  "code": "ISE-PWR-023",
+  "title": "Class-D Audio Amplifier with Feedback and EMI Filter",
+  "domain": "Power Electronics",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "A Class-D amplifier is built with feedback and an output filter and tested for THD and efficiency.",
+  "existing": "Linear amplifiers waste power as heat.",
+  "proposed": "A Class-D amplifier is built with feedback and an output filter and tested for THD and efficiency. The Class-D Driver reads Audio Input, processes the data on board and drives Speaker Output.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Simulation backed by hardware results",
+   "Applicable to EV, solar and industrial power",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Audio"
+  ],
+  "hardware": [
+   "Class-D Driver",
+   "Class-D driver IC"
+  ],
+  "software": [
+   "LTspice"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC Mains)",
+   "controller": "Class-D Driver",
+   "inputs": [
+    "Audio Input"
+   ],
+   "outputs": [
+    "Speaker Output"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "smart-irrigation-controller-with-soil-sensors-and-weather-api",
+  "code": "ISE-ECE-002",
+  "title": "Smart Irrigation Controller with Soil Sensors and Weather API",
+  "domain": "ECE",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "Soil probes and forecast data schedule irrigation to save water.",
+  "existing": "Timer-based irrigation wastes water.",
+  "proposed": "Soil probes and forecast data schedule irrigation to save water. The ESP32 reads Soil Moisture, Weather API, processes the data on board and drives Valve Relay, with Wi-Fi for connectivity.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Applicable to real energy systems",
+   "Backed by simulation and hardware results",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Farming"
+  ],
+  "hardware": [
+   "ESP32",
+   "Soil probe",
+   "Relay"
+  ],
+  "software": [
+   "Arduino IDE"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC)",
+   "controller": "ESP32",
+   "inputs": [
+    "Soil Moisture",
+    "Weather API"
+   ],
+   "outputs": [
+    "Valve Relay"
+   ],
+   "comms": [
+    "Wi-Fi"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "power-quality-analyser-with-harmonic-display",
+  "code": "ISE-ECE-003",
+  "title": "Power Quality Analyser with Harmonic Display",
+  "domain": "ECE",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "An analyser measures THD, power factor and sags with an FFT and shows results on a display.",
+  "existing": "Basic meters hide poor power quality.",
+  "proposed": "An analyser measures THD, power factor and sags with an FFT and shows results on a display. The STM32 reads Voltage, Current, processes the data on board and drives Display, Log, with USB for connectivity.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Applicable to real energy systems",
+   "Backed by simulation and hardware results",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Industries"
+  ],
+  "hardware": [
+   "STM32",
+   "ZMPT101B",
+   "CT sensor"
+  ],
+  "software": [
+   "STM32CubeIDE"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC)",
+   "controller": "STM32",
+   "inputs": [
+    "Voltage",
+    "Current"
+   ],
+   "outputs": [
+    "Display",
+    "Log"
+   ],
+   "comms": [
+    "USB"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "smart-transformer-health-monitor",
+  "code": "ISE-ECE-004",
+  "title": "Smart Transformer Health Monitor",
+  "domain": "ECE",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "Oil temperature, load current and vibration are monitored to warn of overload and ageing.",
+  "existing": "Transformer failures cause costly outages.",
+  "proposed": "Oil temperature, load current and vibration are monitored to warn of overload and ageing. The ESP32 reads Temperature, CT Current, Vibration, processes the data on board and drives Alert, Cloud, with GSM, Wi-Fi for connectivity.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Applicable to real energy systems",
+   "Backed by simulation and hardware results",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Utilities"
+  ],
+  "hardware": [
+   "ESP32",
+   "CT",
+   "DS18B20"
+  ],
+  "software": [
+   "Arduino IDE"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC)",
+   "controller": "ESP32",
+   "inputs": [
+    "Temperature",
+    "CT Current",
+    "Vibration"
+   ],
+   "outputs": [
+    "Alert",
+    "Cloud"
+   ],
+   "comms": [
+    "GSM",
+    "Wi-Fi"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "li-fi-audio-and-data-link-using-led-and-photodiode",
+  "code": "ISE-ECE-005",
+  "title": "Li-Fi Audio and Data Link Using LED and Photodiode",
+  "domain": "ECE",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "Data and audio are sent as light-intensity changes from an LED and recovered by a photodiode receiver with an amplifier and filter.",
+  "existing": "Radio spectrum is crowded and unsuitable in some sensitive areas.",
+  "proposed": "Data and audio are sent as light-intensity changes from an LED and recovered by a photodiode receiver with an amplifier and filter. The Arduino / STM32 reads Audio / Serial Data, Photodiode Receiver, processes the data on board and drives LED Driver Transmitter, Speaker / Terminal.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Applicable to real energy systems",
+   "Backed by simulation and hardware results",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Hospitals",
+   "Aircraft",
+   "Secure links"
+  ],
+  "hardware": [
+   "Arduino / STM32",
+   "High-brightness LED",
+   "BPW34 photodiode",
+   "Op-amp"
+  ],
+  "software": [
+   "Arduino IDE",
+   "LTspice"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC)",
+   "controller": "Arduino / STM32",
+   "inputs": [
+    "Audio / Serial Data",
+    "Photodiode Receiver"
+   ],
+   "outputs": [
+    "LED Driver Transmitter",
+    "Speaker / Terminal"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "2-4-ghz-microstrip-patch-antenna-design-and-measurement",
+  "code": "ISE-ECE-006",
+  "title": "2.4 GHz Microstrip Patch Antenna Design and Measurement",
+  "domain": "ECE",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A patch antenna is designed in simulation, fabricated on FR-4 and measured for return loss and bandwidth with a NanoVNA.",
+  "existing": "Antenna design is rarely tested against real measurements.",
+  "proposed": "A patch antenna is designed in simulation, fabricated on FR-4 and measured for return loss and bandwidth with a NanoVNA. The NanoVNA / Simulation reads Antenna Geometry Parameters, processes the data on board and drives S11 Plot, Radiation Pattern.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Applicable to real energy systems",
+   "Backed by simulation and hardware results",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Wi-Fi",
+   "IoT radios"
+  ],
+  "hardware": [
+   "NanoVNA / Simulation",
+   "FR-4 board",
+   "SMA connector",
+   "NanoVNA"
+  ],
+  "software": [
+   "CST / openEMS",
+   "MATLAB"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC)",
+   "controller": "NanoVNA / Simulation",
+   "inputs": [
+    "Antenna Geometry Parameters"
+   ],
+   "outputs": [
+    "S11 Plot",
+    "Radiation Pattern"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "software-defined-radio-fm-receiver-and-spectrum-analyser",
+  "code": "ISE-ECE-007",
+  "title": "Software-Defined Radio FM Receiver and Spectrum Analyser",
+  "domain": "ECE",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "An RTL-SDR dongle feeds a software chain that demodulates FM stations and displays a live spectrum waterfall.",
+  "existing": "Fixed-function receivers cannot be reconfigured or inspected.",
+  "proposed": "An RTL-SDR dongle feeds a software chain that demodulates FM stations and displays a live spectrum waterfall. The RTL-SDR + PC reads RF Antenna, RTL-SDR, processes the data on board and drives Audio Output, Waterfall Display.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Applicable to real energy systems",
+   "Backed by simulation and hardware results",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Communication labs"
+  ],
+  "hardware": [
+   "RTL-SDR + PC",
+   "RTL-SDR dongle",
+   "Antenna"
+  ],
+  "software": [
+   "GNU Radio",
+   "Python"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC)",
+   "controller": "RTL-SDR + PC",
+   "inputs": [
+    "RF Antenna",
+    "RTL-SDR"
+   ],
+   "outputs": [
+    "Audio Output",
+    "Waterfall Display"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "low-noise-biopotential-amplifier-with-digital-filtering",
+  "code": "ISE-ECE-008",
+  "title": "Low-Noise Biopotential Amplifier with Digital Filtering",
+  "domain": "ECE",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A low-noise instrumentation front-end with notch and band-pass filtering captures ECG/EMG for display and logging.",
+  "existing": "Biosignals are millivolt-level and easily buried in mains noise.",
+  "proposed": "A low-noise instrumentation front-end with notch and band-pass filtering captures ECG/EMG for display and logging. The ESP32 / STM32 reads Electrodes, Instrumentation Amplifier, processes the data on board and drives Filtered Waveform, SD / Display, with BLE for connectivity.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Applicable to real energy systems",
+   "Backed by simulation and hardware results",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Biomedical"
+  ],
+  "hardware": [
+   "ESP32 / STM32",
+   "INA128",
+   "Electrodes"
+  ],
+  "software": [
+   "Arduino IDE",
+   "MATLAB"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC)",
+   "controller": "ESP32 / STM32",
+   "inputs": [
+    "Electrodes",
+    "Instrumentation Amplifier"
+   ],
+   "outputs": [
+    "Filtered Waveform",
+    "SD / Display"
+   ],
+   "comms": [
+    "BLE"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "ultrasonic-indoor-positioning-system-with-time-of-flight",
+  "code": "ISE-ECE-009",
+  "title": "Ultrasonic Indoor Positioning System with Time-of-Flight",
+  "domain": "ECE",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "Ultrasonic beacons and an RF sync pulse estimate a mobile tag position indoors within centimetres.",
+  "existing": "GPS does not work indoors.",
+  "proposed": "Ultrasonic beacons and an RF sync pulse estimate a mobile tag position indoors within centimetres. The ESP32 reads Ultrasonic Receivers, RF Sync, processes the data on board and drives Position Map, with Wi-Fi Dashboard for connectivity.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Applicable to real energy systems",
+   "Backed by simulation and hardware results",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Warehouses",
+   "Museums"
+  ],
+  "hardware": [
+   "ESP32",
+   "Ultrasonic transducers",
+   "ESP32 x4"
+  ],
+  "software": [
+   "Arduino IDE",
+   "Python"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC)",
+   "controller": "ESP32",
+   "inputs": [
+    "Ultrasonic Receivers",
+    "RF Sync"
+   ],
+   "outputs": [
+    "Position Map"
+   ],
+   "comms": [
+    "Wi-Fi Dashboard"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "active-noise-cancelling-headphone-prototype",
+  "code": "ISE-ECE-010",
+  "title": "Active Noise Cancelling Headphone Prototype",
+  "domain": "ECE",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A feed-forward analogue-digital controller generates an anti-noise signal to reduce low-frequency ambient noise.",
+  "existing": "Passive isolation does little against engine and fan noise.",
+  "proposed": "A feed-forward analogue-digital controller generates an anti-noise signal to reduce low-frequency ambient noise. The STM32 / DSP reads Reference Microphone, Error Microphone, processes the data on board and drives Speaker Anti-Noise.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Applicable to real energy systems",
+   "Backed by simulation and hardware results",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Headphones",
+   "Workplaces"
+  ],
+  "hardware": [
+   "STM32 / DSP",
+   "MEMS microphones",
+   "Audio codec"
+  ],
+  "software": [
+   "MATLAB",
+   "STM32CubeIDE"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC)",
+   "controller": "STM32 / DSP",
+   "inputs": [
+    "Reference Microphone",
+    "Error Microphone"
+   ],
+   "outputs": [
+    "Speaker Anti-Noise"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "rf-energy-harvesting-rectenna-for-powering-sensors",
+  "code": "ISE-ECE-011",
+  "title": "RF Energy Harvesting Rectenna for Powering Sensors",
+  "domain": "ECE",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "An antenna and multi-stage rectifier collect ambient RF power to charge a capacitor that runs a low-power sensor.",
+  "existing": "Battery replacement in remote sensors is costly.",
+  "proposed": "An antenna and multi-stage rectifier collect ambient RF power to charge a capacitor that runs a low-power sensor. The Low-Power MCU reads RF Antenna, Rectifier Multiplier, processes the data on board and drives Storage Capacitor, Sensor Node.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Applicable to real energy systems",
+   "Backed by simulation and hardware results",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Remote sensing"
+  ],
+  "hardware": [
+   "Low-Power MCU",
+   "Schottky diodes",
+   "Antenna"
+  ],
+  "software": [
+   "LTspice"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC)",
+   "controller": "Low-Power MCU",
+   "inputs": [
+    "RF Antenna",
+    "Rectifier Multiplier"
+   ],
+   "outputs": [
+    "Storage Capacitor",
+    "Sensor Node"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "programmable-active-filter-bench-with-digital-gain-control",
+  "code": "ISE-ECE-012",
+  "title": "Programmable Active Filter Bench with Digital Gain Control",
+  "domain": "ECE",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "A bench with switchable low-pass, high-pass and band-pass stages and digitally set gain for signal-processing labs.",
+  "existing": "Fixed filter boards limit experiments.",
+  "proposed": "A bench with switchable low-pass, high-pass and band-pass stages and digitally set gain for signal-processing labs. The Arduino reads Signal Input, Mode Switches, processes the data on board and drives Filtered Output, Display.",
+  "advantages": [
+   "Measured efficiency and power quality",
+   "Applicable to real energy systems",
+   "Backed by simulation and hardware results",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Teaching labs"
+  ],
+  "hardware": [
+   "Arduino",
+   "Op-amps",
+   "Digital potentiometer"
+  ],
+  "software": [
+   "Arduino IDE",
+   "LTspice"
+  ],
+  "diagram": {
+   "power": "Power Source (DC / AC)",
+   "controller": "Arduino",
+   "inputs": [
+    "Signal Input",
+    "Mode Switches"
+   ],
+   "outputs": [
+    "Filtered Output",
+    "Display"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "rag-based-technical-question-answering-over-lab-manuals",
+  "code": "ISE-SW-001",
+  "title": "RAG-Based Technical Question Answering Over Lab Manuals",
+  "domain": "Software",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A retrieval-augmented assistant answers lab and datasheet questions with source citations from uploaded manuals.",
+  "existing": "Students search thick PDFs and still miss details.",
+  "proposed": "A retrieval-augmented assistant answers lab and datasheet questions with source citations from uploaded manuals. The pipeline runs as: Manuals / Datasheets (PDF) → Text Chunking + Embeddings → Vector Store (FAISS) → Retriever → LLM Answer + Citations → Web Chat UI.",
+  "advantages": [
+   "No special hardware needed",
+   "Easy to extend with new data",
+   "Explainable results and dashboards",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Education",
+   "Support desks"
+  ],
+  "hardware": [],
+  "software": [
+   "Python",
+   "LangChain",
+   "FAISS"
+  ],
+  "diagram": {
+   "flow": [
+    "Manuals / Datasheets (PDF)",
+    "Text Chunking + Embeddings",
+    "Vector Store (FAISS)",
+    "Retriever",
+    "LLM Answer + Citations",
+    "Web Chat UI"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "deep-learning-driver-drowsiness-detection-software-only",
+  "code": "ISE-SW-002",
+  "title": "Deep-Learning Driver Drowsiness Detection (Software Only)",
+  "domain": "Software",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "CNN-SVM and transfer-learning models detect drowsy faces from webcam video and are compared for accuracy and speed.",
+  "existing": "Embedded builds need a validated model first.",
+  "proposed": "CNN-SVM and transfer-learning models detect drowsy faces from webcam video and are compared for accuracy and speed. The pipeline runs as: Webcam Video → Face + Landmarks → EAR/MAR Features → CNN / Transfer Model → Drowsy / Alert Decision → Alert Output.",
+  "advantages": [
+   "No special hardware needed",
+   "Easy to extend with new data",
+   "Explainable results and dashboards",
+   "Includes a verified IEEE base paper reference"
+  ],
+  "applications": [
+   "Road safety"
+  ],
+  "hardware": [],
+  "software": [
+   "Python",
+   "TensorFlow",
+   "OpenCV"
+  ],
+  "diagram": {
+   "flow": [
+    "Webcam Video",
+    "Face + Landmarks",
+    "EAR/MAR Features",
+    "CNN / Transfer Model",
+    "Drowsy / Alert Decision",
+    "Alert Output"
+   ]
+  },
+  "ieee": {
+   "title": "Deep Learning-Based Drowsiness Detection System for Driver's Safety",
+   "ref": "IEEE Access, vol. 13, pp. 154080-154102, 2025. DOI 10.1109/ACCESS.2025.3604728"
+  }
+ },
+ {
+  "slug": "smart-meter-data-analytics-and-load-forecasting-dashboard",
+  "code": "ISE-SW-003",
+  "title": "Smart-Meter Data Analytics and Load Forecasting Dashboard",
+  "domain": "Software",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "Meter data is cleaned, forecast with LSTM and displayed with anomaly flags on a dashboard.",
+  "existing": "Raw meter data gives no insight.",
+  "proposed": "Meter data is cleaned, forecast with LSTM and displayed with anomaly flags on a dashboard. The pipeline runs as: Smart-Meter Data → Cleaning → LSTM Forecast → Anomaly Detection → Dashboard → Forecast Charts.",
+  "advantages": [
+   "No special hardware needed",
+   "Easy to extend with new data",
+   "Explainable results and dashboards",
+   "Includes a verified IEEE base paper reference"
+  ],
+  "applications": [
+   "Utilities"
+  ],
+  "hardware": [],
+  "software": [
+   "Python",
+   "TensorFlow",
+   "Streamlit"
+  ],
+  "diagram": {
+   "flow": [
+    "Smart-Meter Data",
+    "Cleaning",
+    "LSTM Forecast",
+    "Anomaly Detection",
+    "Dashboard",
+    "Forecast Charts"
+   ]
+  },
+  "ieee": {
+   "title": "Harnessing Temporal Awareness: Dual-CNN Model for Non-Intrusive Load Monitoring",
+   "ref": "IEEE Transactions on Green Communications and Networking (accepted 2025)"
+  }
+ },
+ {
+  "slug": "intrusion-detection-for-iot-traffic-using-machine-learning",
+  "code": "ISE-SW-004",
+  "title": "Intrusion Detection for IoT Traffic Using Machine Learning",
+  "domain": "Software",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A model trained on IoT traffic flags attacks like DDoS and spoofing with a live monitoring dashboard.",
+  "existing": "Signature IDS misses new IoT attacks.",
+  "proposed": "A model trained on IoT traffic flags attacks like DDoS and spoofing with a live monitoring dashboard. The pipeline runs as: Packet Capture → Feature Extraction → ML Classifier → Alert Engine → Dashboard → Attack Alerts.",
+  "advantages": [
+   "No special hardware needed",
+   "Easy to extend with new data",
+   "Explainable results and dashboards",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Network security"
+  ],
+  "hardware": [],
+  "software": [
+   "Python",
+   "scikit-learn",
+   "Wireshark"
+  ],
+  "diagram": {
+   "flow": [
+    "Packet Capture",
+    "Feature Extraction",
+    "ML Classifier",
+    "Alert Engine",
+    "Dashboard",
+    "Attack Alerts"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "blockchain-based-certificate-verification-portal",
+  "code": "ISE-SW-005",
+  "title": "Blockchain-Based Certificate Verification Portal",
+  "domain": "Software",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "Certificates are hashed and stored on a ledger so anyone can verify authenticity from a QR code.",
+  "existing": "Fake certificates are easy to produce.",
+  "proposed": "Certificates are hashed and stored on a ledger so anyone can verify authenticity from a QR code. The pipeline runs as: Certificate Upload → SHA-256 Hash → Smart Contract Store → QR Code → Public Verify Page → Verification Result.",
+  "advantages": [
+   "No special hardware needed",
+   "Easy to extend with new data",
+   "Explainable results and dashboards",
+   "Includes a verified IEEE base paper reference"
+  ],
+  "applications": [
+   "Colleges",
+   "Employers"
+  ],
+  "hardware": [],
+  "software": [
+   "Solidity",
+   "Node.js",
+   "React"
+  ],
+  "diagram": {
+   "flow": [
+    "Certificate Upload",
+    "SHA-256 Hash",
+    "Smart Contract Store",
+    "QR Code",
+    "Public Verify Page",
+    "Verification Result"
+   ]
+  },
+  "ieee": {
+   "title": "Lightweight Blockchain for Data Integrity and Traceability in IoT Networks",
+   "ref": "IEEE Access, 2025. IEEE Xplore document 10990139"
+  }
+ },
+ {
+  "slug": "sign-language-to-text-translator-mobile-app",
+  "code": "ISE-SW-006",
+  "title": "Sign Language to Text Translator Mobile App",
+  "domain": "Software",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A phone app recognises signs from the camera and shows text and speech.",
+  "existing": "Interpreters are scarce.",
+  "proposed": "A phone app recognises signs from the camera and shows text and speech. The pipeline runs as: Camera Frames → Hand Landmarks → Gesture Model → Text + Speech → Translation Output.",
+  "advantages": [
+   "No special hardware needed",
+   "Easy to extend with new data",
+   "Explainable results and dashboards",
+   "Includes a verified IEEE base paper reference"
+  ],
+  "applications": [
+   "Accessibility"
+  ],
+  "hardware": [],
+  "software": [
+   "Flutter",
+   "TensorFlow Lite",
+   "MediaPipe"
+  ],
+  "diagram": {
+   "flow": [
+    "Camera Frames",
+    "Hand Landmarks",
+    "Gesture Model",
+    "Text + Speech",
+    "Translation Output"
+   ]
+  },
+  "ieee": {
+   "title": "A Real-Time Intelligent System Based on Machine-Learning Methods for Improving Communication in Sign Language",
+   "ref": "IEEE Access, vol. 13, pp. 22055-22073, 2025. DOI 10.1109/ACCESS.2025.3529025"
+  }
+ },
+ {
+  "slug": "solar-power-forecasting-with-deep-learning",
+  "code": "ISE-SW-007",
+  "title": "Solar Power Forecasting with Deep Learning",
+  "domain": "Software",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "Weather and generation history train a model that predicts solar output for scheduling.",
+  "existing": "Unpredictable solar output complicates grid planning.",
+  "proposed": "Weather and generation history train a model that predicts solar output for scheduling. The pipeline runs as: Weather + Generation Data → Feature Engineering → LSTM / GRU Model → Forecast Report → Forecast Charts.",
+  "advantages": [
+   "No special hardware needed",
+   "Easy to extend with new data",
+   "Explainable results and dashboards",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Energy planning"
+  ],
+  "hardware": [],
+  "software": [
+   "Python",
+   "TensorFlow"
+  ],
+  "diagram": {
+   "flow": [
+    "Weather + Generation Data",
+    "Feature Engineering",
+    "LSTM / GRU Model",
+    "Forecast Report",
+    "Forecast Charts"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "predictive-maintenance-web-app-with-vibration-datasets",
+  "code": "ISE-SW-008",
+  "title": "Predictive Maintenance Web App with Vibration Datasets",
+  "domain": "Software",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "Users upload vibration data and the app predicts faults and remaining life.",
+  "existing": "Small plants lack data science staff.",
+  "proposed": "Users upload vibration data and the app predicts faults and remaining life. The pipeline runs as: Vibration Dataset → Feature Extraction → Fault Classifier → RUL Estimator → Report Dashboard → Fault Report.",
+  "advantages": [
+   "No special hardware needed",
+   "Easy to extend with new data",
+   "Explainable results and dashboards",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Maintenance"
+  ],
+  "hardware": [],
+  "software": [
+   "Python",
+   "Flask",
+   "scikit-learn"
+  ],
+  "diagram": {
+   "flow": [
+    "Vibration Dataset",
+    "Feature Extraction",
+    "Fault Classifier",
+    "RUL Estimator",
+    "Report Dashboard",
+    "Fault Report"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "hospital-appointment-and-queue-management-system",
+  "code": "ISE-SW-009",
+  "title": "Hospital Appointment and Queue Management System",
+  "domain": "Software",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "A web system manages appointments, token queues and SMS reminders.",
+  "existing": "Long clinic queues waste time.",
+  "proposed": "A web system manages appointments, token queues and SMS reminders. The pipeline runs as: Patient Booking → Doctor Schedule → Token Queue → SMS Reminder → Live Queue Display.",
+  "advantages": [
+   "No special hardware needed",
+   "Easy to extend with new data",
+   "Explainable results and dashboards",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Clinics"
+  ],
+  "hardware": [],
+  "software": [
+   "Node.js",
+   "React",
+   "MongoDB"
+  ],
+  "diagram": {
+   "flow": [
+    "Patient Booking",
+    "Doctor Schedule",
+    "Token Queue",
+    "SMS Reminder",
+    "Live Queue Display"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "fake-news-and-misinformation-detector-using-nlp",
+  "code": "ISE-SW-010",
+  "title": "Fake News and Misinformation Detector Using NLP",
+  "domain": "Software",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "A transformer classifier flags suspicious news and highlights reasons.",
+  "existing": "Misinformation spreads faster than fact checks.",
+  "proposed": "A transformer classifier flags suspicious news and highlights reasons. The pipeline runs as: News Text → Preprocessing → Transformer Embeddings → Classifier → Credibility Score → Score + Explanation.",
+  "advantages": [
+   "No special hardware needed",
+   "Easy to extend with new data",
+   "Explainable results and dashboards",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Media",
+   "Education"
+  ],
+  "hardware": [],
+  "software": [
+   "Python",
+   "Hugging Face"
+  ],
+  "diagram": {
+   "flow": [
+    "News Text",
+    "Preprocessing",
+    "Transformer Embeddings",
+    "Classifier",
+    "Credibility Score",
+    "Score + Explanation"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "student-performance-prediction-and-early-warning-dashboard",
+  "code": "ISE-SW-011",
+  "title": "Student Performance Prediction and Early-Warning Dashboard",
+  "domain": "Software",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": false,
+  "abstract": "Marks and attendance train a model that flags at-risk students for mentors.",
+  "existing": "Problems are found only after exams.",
+  "proposed": "Marks and attendance train a model that flags at-risk students for mentors. The pipeline runs as: Marks + Attendance → Feature Engineering → Risk Model → Mentor Dashboard → At-Risk List.",
+  "advantages": [
+   "No special hardware needed",
+   "Easy to extend with new data",
+   "Explainable results and dashboards",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Colleges"
+  ],
+  "hardware": [],
+  "software": [
+   "Python",
+   "scikit-learn",
+   "Streamlit"
+  ],
+  "diagram": {
+   "flow": [
+    "Marks + Attendance",
+    "Feature Engineering",
+    "Risk Model",
+    "Mentor Dashboard",
+    "At-Risk List"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "chatbot-for-electronics-component-selection",
+  "code": "ISE-SW-012",
+  "title": "Chatbot for Electronics Component Selection",
+  "domain": "Software",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "A chatbot recommends components from requirements like voltage, current and package using a datasheet database.",
+  "existing": "Selecting parts is slow and error-prone.",
+  "proposed": "A chatbot recommends components from requirements like voltage, current and package using a datasheet database. The pipeline runs as: User Requirement → Parameter Extraction → Component Database Query → Ranked Suggestions → Recommendation List.",
+  "advantages": [
+   "No special hardware needed",
+   "Easy to extend with new data",
+   "Explainable results and dashboards",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Design teams"
+  ],
+  "hardware": [],
+  "software": [
+   "Python",
+   "LangChain"
+  ],
+  "diagram": {
+   "flow": [
+    "User Requirement",
+    "Parameter Extraction",
+    "Component Database Query",
+    "Ranked Suggestions",
+    "Recommendation List"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ },
+ {
+  "slug": "stock-style-time-series-forecast-of-electricity-prices",
+  "code": "ISE-SW-013",
+  "title": "Stock-Style Time-Series Forecast of Electricity Prices",
+  "domain": "Software",
+  "year": "2025-26",
+  "featured": false,
+  "highValue": true,
+  "abstract": "Price history is modelled with transformers and baselines to compare forecast accuracy.",
+  "existing": "Price volatility is hard to plan around.",
+  "proposed": "Price history is modelled with transformers and baselines to compare forecast accuracy. The pipeline runs as: Price Data → Feature Engineering → Transformer Model → Baseline Comparison → Report → Forecast Charts.",
+  "advantages": [
+   "No special hardware needed",
+   "Easy to extend with new data",
+   "Explainable results and dashboards",
+   "Base paper and documentation shared on enquiry"
+  ],
+  "applications": [
+   "Energy trading"
+  ],
+  "hardware": [],
+  "software": [
+   "Python",
+   "PyTorch"
+  ],
+  "diagram": {
+   "flow": [
+    "Price Data",
+    "Feature Engineering",
+    "Transformer Model",
+    "Baseline Comparison",
+    "Report",
+    "Forecast Charts"
+   ]
+  },
+  "ieee": {
+   "title": "",
+   "ref": ""
+  }
+ }
+]

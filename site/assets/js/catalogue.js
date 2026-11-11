@@ -3,7 +3,7 @@ import { projectRowHTML, adHTML, loadProjects } from './cards.js';
 import { observeReveal } from './main.js';
 
 const ROOT = '../';
-const PAGE_SIZE = 18;
+const PAGE_SIZE = 24;
 
 const qInput = document.getElementById('q');
 const chips = document.getElementById('domain-chips');
@@ -29,7 +29,7 @@ function matches(p) {
   if (state.domain && p.domain !== state.domain) return false;
   if (state.hv && !p.highValue) return false;
   if (!state.q) return true;
-  const hay = [p.title, p.code, p.domain, p.year, p.abstract, ...(p.hardware ?? []), ...(p.software ?? [])].join(' ').toLowerCase();
+  const hay = [p.title, p.code, p.domain, p.year, p.abstract, p.hw].join(' ').toLowerCase();
   return state.q.toLowerCase().split(/\s+/).filter(Boolean).every((w) => hay.includes(w));
 }
 
