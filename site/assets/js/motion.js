@@ -44,9 +44,9 @@ if (!reduce) {
     bar.style.transform = `scaleX(${max > 0 ? Math.min(1, y / max) : 0})`;
     header?.classList.toggle('is-scrolled', y > 8);
     root.style.setProperty('--board', hero ? String(Math.max(0, 1 - y / (innerHeight * 0.85))) : '0');
-    root.style.setProperty('--circuit', hero ? String(Math.min(1, y / (innerHeight * 0.6))) : '1');
+    root.style.setProperty('--circuit', '1');
     scrub();
-    if (hero && y < innerHeight) { hero.style.transform = `translate3d(0, ${y * 0.12}px, 0)`; hero.style.opacity = String(1 - y / (innerHeight * 1.1)); }
+    if (hero && y < innerHeight && innerWidth > 992) { hero.style.transform = `translate3d(0, ${y * 0.12}px, 0)`; hero.style.opacity = String(1 - y / (innerHeight * 1.1)); }
   };
   addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
   onScroll();
@@ -133,62 +133,30 @@ if (!reduce) {
     follow();
   }
 
-  // 8. animated circuit background: traces with travelling signal pulses
+  // 8. animated network background: drifting nodes that link up when close (domain-neutral)
   const cv = Object.assign(document.createElement('canvas'), { className: 'circuit' });
   cv.setAttribute('aria-hidden', 'true');
   document.body.prepend(cv);
   const ctx = cv.getContext('2d');
-  const G = 44;
-  let W, H, paths = [], base;
+  let W, H, nodes = [];
   const build = () => {
     const dpr = Math.min(devicePixelRatio || 1, 1.5);
     W = innerWidth; H = innerHeight;
     cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    paths = [];
-    const count = Math.round((W * H) / 42000);
-    for (let k = 0; k < count; k++) {
-      let x = Math.round(Math.random() * W / G) * G, y = Math.round(Math.random() * H / G) * G, horiz = Math.random() < 0.5;
-      const pts = [[x, y]]; let len = 0;
-      for (let j = 0, n = 3 + Math.floor(Math.random() * 4); j < n; j++) {
-        const d = (2 + Math.floor(Math.random() * 5)) * G * (Math.random() < 0.5 ? -1 : 1);
-        if (horiz) x += d; else y += d;
-        pts.push([x, y]); len += Math.abs(d); horiz = !horiz;
-      }
-      paths.push({ pts, len, t: Math.random(), v: 0.0012 + Math.random() * 0.0022, cool: Math.random() < 0.25 });
-    }
-    base = document.createElement('canvas'); base.width = cv.width; base.height = cv.height;
-    const b = base.getContext('2d'); b.setTransform(dpr, 0, 0, dpr, 0, 0);
-    b.lineWidth = 1; b.strokeStyle = 'rgba(255,150,80,.10)'; b.fillStyle = 'rgba(255,150,80,.22)';
-    paths.forEach(({ pts }) => {
-      b.beginPath(); pts.forEach(([px, py], i) => (i ? b.lineTo(px, py) : b.moveTo(px, py))); b.stroke();
-      [pts[0], pts[pts.length - 1]].forEach(([px, py]) => { b.beginPath(); b.arc(px, py, 2.4, 0, 6.3); b.fill(); });
-    });
+    const n = Math.min(90, Math.round((W * H) / 16000));
+    nodes = Array.from({ length: n }, () => ({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - 0.5) * 0.35, vy: (Math.random() - 0.5) * 0.35, r: 1 + Math.random() * 1.8, cool: Math.random() < 0.25 }));
   };
-  const at = (p, dist) => {
-    for (let i = 1; i < p.pts.length; i++) {
-      const [ax, ay] = p.pts[i - 1], [bx, by] = p.pts[i], seg = Math.abs(bx - ax) + Math.abs(by - ay);
-      if (dist <= seg) return [ax + (bx - ax) * dist / seg, ay + (by - ay) * dist / seg];
-      dist -= seg;
-    }
-    return p.pts[p.pts.length - 1];
-  };
+  const LINK = 150;
   const frame = () => {
-    if (!document.hidden && root.style.getPropertyValue('--circuit') !== '0') {
+    if (!document.hidden) {
       ctx.clearRect(0, 0, W, H);
-      ctx.drawImage(base, 0, 0, W, H);
-      paths.forEach((p) => {
-        p.t += p.v; if (p.t > 1.2) p.t = -0.2;
-        for (let k = 0; k < 6; k++) {
-          const d = (p.t - k * 0.012) * p.len;
-          if (d < 0 || d > p.len) continue;
-          const [x, y] = at(p, d);
-          ctx.beginPath(); ctx.arc(x, y, 2.2 - k * 0.3, 0, 6.3);
-          ctx.fillStyle = p.cool ? `rgba(120,220,255,${0.9 - k * 0.15})` : `rgba(255,150,60,${0.9 - k * 0.15})`;
-          ctx.shadowColor = p.cool ? '#5fd8ff' : '#ff7a28'; ctx.shadowBlur = k ? 0 : 14;
-          ctx.fill();
-        }
-      });
-      ctx.shadowBlur = 0;
+      for (const p of nodes) { p.x += p.vx; p.y += p.vy; if (p.x < 0 || p.x > W) p.vx *= -1; if (p.y < 0 || p.y > H) p.vy *= -1; }
+      ctx.lineWidth = 1;
+      for (let i = 0; i < nodes.length; i++) for (let j = i + 1; j < nodes.length; j++) {
+        const a = nodes[i], b = nodes[j], dx = a.x - b.x, dy = a.y - b.y, d2 = dx * dx + dy * dy;
+        if (d2 < LINK * LINK) { ctx.strokeStyle = `rgba(255,150,80,${0.16 * (1 - Math.sqrt(d2) / LINK)})`; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
+      }
+      for (const p of nodes) { ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, 6.3); ctx.fillStyle = p.cool ? 'rgba(120,220,255,.7)' : 'rgba(255,160,80,.75)'; ctx.fill(); }
     }
     requestAnimationFrame(frame);
   };

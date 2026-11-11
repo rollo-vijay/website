@@ -64,7 +64,7 @@ function webgl2() {
   try { return !!document.createElement('canvas').getContext('webgl2'); } catch { return false; }
 }
 async function start3D() {
-  if (new URLSearchParams(location.search).has('no3d')) return;
+  if (!new URLSearchParams(location.search).has('3d')) return; // board backdrop retired: the site covers many domains, not only electronics
   if (navigator.connection?.saveData || !webgl2()) return;
   const canvas = document.createElement('canvas');
   canvas.className = 'bg3d';
